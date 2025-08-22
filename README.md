@@ -123,7 +123,9 @@
       <p>Main game, belajar coding iseng-iseng, dan memiliki mimpi untuk menjadi GameDev Indie😙🤞</p>
     </div>
     <div class="card">
-      <a href=https://youtu.be/hyd8vfuQta0?si=p6-8n6Egi4JSdYuk>Di Pencet yah...</a> 
+      https://youtu.be/hyd8vfuQta0?si=p6-8n6Egi4JSdYuk<br>
+
+      <p>Link Diatas Disalin,terus tempel di Google yah..👆🗿🤞</p>
     </div>
   </main>
 
