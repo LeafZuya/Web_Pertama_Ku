@@ -1,4 +1,3 @@
-# Project-gabut-Daffa-LeafZuya-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -123,15 +122,15 @@
       <p>Main game, belajar coding iseng-iseng, dan memiliki mimpi untuk menjadi GameDev Indie😙🤞</p>
     </div>
     <div class="card">
-      https://youtu.be/hyd8vfuQta0?si=p6-8n6Egi4JSdYuk<br>
-
-      <p>Link Diatas Disalin,terus tempel di Google yah..👆🗿🤞</p>
-    </div>
+      <h2>"Video Random Kesukaanku..."</h2>
+       <video controls width="200px" height="200px" autoplay>
+      <source src="vidio.mp4">
+</div> 
   </main>
 
   <footer>
     © 2025 Fun Web by LeafZuya. Tidak Boleh Copyright.
-jangan lupa**BERNAFAS**🤫🗣️ Ang Ang Ang😛
+jangan lupa**BERNAFAS**🤫🗣️ Wkwkwkw😛
   </footer>
 </body>
 </html>
