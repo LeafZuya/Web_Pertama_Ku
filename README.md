@@ -123,14 +123,23 @@
     </div>
     <div class="card">
       <h2>"Video Random Kesukaanku..."</h2>
-       <video controls width="200px" height="200px" autoplay>
-      <source src="vidio.mp4">
-</div> 
-  </main>
-
+       <iframe width="200" height="200"
+  src="https://www.youtube.com/embed/hyd8vfuQta0?autoplay=1"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+<iframe width="200" height="200"
+  src="https://www.youtube.com/embed/nhUVc_9ki44"
+  title="USSR anthem Indonesian and russian sub"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
   <footer>
     © 2025 Fun Web by LeafZuya. Tidak Boleh Copyright.
-jangan lupa**BERNAFAS**🤫🗣️ Wkwkwkw😛
+jangan lupa**BERNAFAS**🤫🗣️ Ang Ang Ang😛
   </footer>
 </body>
 </html>
