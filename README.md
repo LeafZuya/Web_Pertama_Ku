@@ -1,4 +1,4 @@
-# Project-Random-LeafZuya-Daffa
+# Project-Random-Saja
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -182,6 +182,27 @@
     <div class="card">
       <h2>✨ Tentang 🍀</h2>
       <p>Website ini dibuat cuma buat have fun aja, bukan serius. Jadi enjoyyy 😙</p>
+    
+       Kirim kritik dan saran kalian ke <a href="mailto: kingglafeon@gmail.com">Gmail Ku [LeafZuya(Daffa)]....hehehe...🥳</a>
+
+         <div style="text-align:center; margin:30px;">
+  <a href="https://trakteer.id/leafzuya%28daffa%29" target="_blank">
+    <button style="
+      background: linear-gradient(135deg, #ff4e50, #f9d423);
+      border: none;
+      padding: 15px 35px;
+      border-radius: 40px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;">
+      🍵 Bagi yang mau Traktir......buat Beli Laptop ♥️🥳
+    </button>
+  </a>
+</div>
+     
     </div>
     <div class="card">
       <h2>📘 Pelajaran Favorit</h2>
