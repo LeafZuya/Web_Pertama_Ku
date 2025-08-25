@@ -510,7 +510,7 @@
 <div class="card">
       <h2>Tangkap Emoji....!!😎🥳😵</h2>
       <a href="https://leafzuya.github.io/Web-Have-Fun-/">Klik aku untuk Mainkan...!!!,Kalo kalah, Berarti Noob😎☝️</a>
-  <p>Cara mainnya tinggal di Klik ke kanan atau ke kiri aja,lalu tangkap semua dan kumpulkan point sebanyak-banyaknya....!!!(Hanya disediakan 3 Nyawa/Kesempatan)</p>
+  <p>Cara mainnya tinggal di Klik ke kanan atau ke kiri aja,lalu tangkap semua dan kumpulkan point sebanyak-banyaknya.....!!!(Hanya disediakan 3 Nyawa/Kesempatan)</p>
     </div>
   </main>
 
