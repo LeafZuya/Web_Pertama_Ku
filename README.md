@@ -511,6 +511,318 @@
   </script>
 </div>
 <!-- === /TIC TAC TOE === -->
+<!-- 🧠♟️ CARD: CHESS vs AI -->
+<div class="card" id="chess-card">
+  <h2>♟️ Catur vs AI</h2>
+  <div style="display:grid;grid-template-columns:1fr;gap:14px;justify-items:center;">
+    <div id="board" style="width: 360px;"></div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+      <button id="btn-new">🔁 New Game</button>
+      <button id="btn-undo">↩️ Undo</button>
+      <button id="btn-flip">🔃 Flip Board</button>
+    </div>
+
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;">
+      <label for="sel-skill"><b>Level AI:</b></label>
+      <select id="sel-skill">
+        <option value="1">1 (kebun baru)</option>
+        <option value="5">5</option>
+        <option value="10" selected>10 (menantang)</option>
+        <option value="15">15</option>
+        <option value="20">20 (dewa)</option>
+      </select>
+
+      <label for="sel-movetime"><b>Waktu Pikir AI:</b></label>
+      <select id="sel-movetime">
+        <option value="200">0.2s</option>
+        <option value="500" selected>0.5s</option>
+        <option value="1000">1s</option>
+        <option value="2000">2s</option>
+        <option value="5000">5s</option>
+      </select>
+    </div>
+
+    <div id="status" style="font-weight:600;color:#2e7d32;">Status: Siap</div>
+    <div id="lastMove" style="font-size:0.95rem;color:#444;"></div>
+  </div>
+</div>
+<!-- 🎨 chessboard.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard-1.0.0.min.css" integrity="sha512-aQ1M5E1sMoa0q2Q5gYy8bDg6GSJ3a5jC8U14U+W2j0uQ0cC6V2Wc7cOxx4fKf3wB85e7mZP1b0L8M7k1m0Fq6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- 🧩 chessboard.js + chess.js (aturan catur) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard.js/1.0.0/chessboard-1.0.0.min.js" integrity="sha512-8W8h0R3b5z7M5nqH1Hc4v8v7e0hGkXv3nDg9sQn9Z1r2bJwzQm0hJQk5uVw8Nw9oB5h0v8mJr0o7cVv6qG4s7Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js" integrity="sha512-wJrY0aHq2nXEUyq1N2o7i4c3e1Oq3n1XYcG8G9L3F0vK3m8l9G8i4tQ6m8mQyDgL8eC8m0v2Jk5bqjJv1a2H7A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- 🧠 Stockfish (AI). Jika gagal, kita pakai fallback AI sederhana -->
+<script src="https://cdn.jsdelivr.net/npm/stockfish@16/stockfish.js"></script>
+
+<script>
+(() => {
+  // ======== STATE & SETUP ========
+  const statusEl   = document.getElementById('status');
+  const lastMoveEl = document.getElementById('lastMove');
+  const skillSel   = document.getElementById('sel-skill');
+  const timeSel    = document.getElementById('sel-movetime');
+
+  let game   = new Chess();
+  let board  = null;
+  let engine = null;      // Stockfish instance
+  let usingEngine = false;
+  let boardFlipped = false;
+  let engineReady = false;
+  let pendingBestMove = null;
+
+  // ======== INIT BOARD ========
+  function onDragStart (source, piece, position, orientation) {
+    if (game.game_over()) return false;
+    // Hanya boleh gerak pion putih kalau orientasi white; kita biarkan player = side to move
+    if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
+        (game.turn() === 'b' && piece.search(/^w/) !== -1)) return false;
+  }
+
+  function onDrop (source, target) {
+    // Cek legalitas langkah
+    const move = game.move({ from: source, to: target, promotion: 'q' });
+    if (move === null) return 'snapback';
+
+    updateStatus(move);
+    window.requestAnimationFrame(() => {
+      board.position(game.fen());
+      if (!game.game_over()) {
+        // Giliran AI
+        setTimeout(aiMove, 50);
+      }
+    });
+  }
+
+  function onSnapEnd () {
+    board.position(game.fen());
+  }
+
+  function updateStatus (lastMove) {
+    let status = '';
+
+    const moveColor = (game.turn() === 'w') ? 'Putih' : 'Hitam';
+
+    if (game.in_checkmate()) {
+      status = 'Skakmat! ' + (moveColor === 'Putih' ? 'Hitam' : 'Putih') + ' menang.';
+    } else if (game.in_draw()) {
+      status = 'Seri (draw).';
+    } else {
+      status = 'Giliran: ' + moveColor + (game.in_check() ? ' — SKAK!' : '');
+    }
+
+    statusEl.textContent = 'Status: ' + status;
+
+    if (lastMove) {
+      lastMoveEl.textContent = 'Langkah terakhir: ' +
+        (lastMove.color === 'w' ? 'Putih ' : 'Hitam ') +
+        lastMove.from + ' → ' + lastMove.to + (lastMove.promotion ? ' (promosi ' + lastMove.promotion + ')' : '');
+    }
+  }
+
+  board = Chessboard('board', {
+    draggable: true,
+    position: 'start',
+    moveSpeed: 'fast',
+    snapSpeed: 'fast',
+    snapbackSpeed: 400,
+    onDragStart,
+    onDrop,
+    onSnapEnd,
+  });
+
+  // ======== STOCKFISH ENGINE INIT ========
+  try {
+    if (typeof STOCKFISH === 'function') {
+      engine = STOCKFISH(); // main-thread engine object (tanpa worker)
+      usingEngine = true;
+      setupEngine();
+    }
+  } catch (e) {
+    usingEngine = false;
+  }
+
+  function setupEngine () {
+    // Komunikasi UCI
+    engine.onmessage = function (line) {
+      const text = ('' + line).trim();
+      // console.log('SF:', text);
+
+      if (text === 'uciok') {
+        engineReady = true;
+        // set skill
+        engine.postMessage('setoption name Skill Level value ' + (+skillSel.value));
+        statusEl.textContent = 'Status: Engine siap. Giliran Putih.';
+      }
+
+      if (text.startsWith('bestmove')) {
+        const parts = text.split(' ');
+        const best = parts[1];
+        pendingBestMove = best;
+      }
+    };
+
+    // init UCI
+    engine.postMessage('uci');
+  }
+
+  function engineGo (fen, movetimeMs) {
+    pendingBestMove = null;
+    engine.postMessage('ucinewgame');
+    engine.postMessage('position fen ' + fen);
+    engine.postMessage('go movetime ' + movetimeMs);
+  }
+
+  function uciToMoveObj (uci) {
+    // e.g., "e2e4", "e7e8q"
+    if (!uci || uci.length < 4) return null;
+    const from = uci.substring(0,2);
+    const to   = uci.substring(2,4);
+    const prom = uci.length > 4 ? uci[4] : undefined;
+    return { from, to, promotion: prom };
+  }
+
+  // ======== FALLBACK AI (kalau Stockfish gagal) ========
+  const PIECE_VALUE = { p: 100, n: 320, b: 330, r: 500, q: 900, k: 20000 };
+  function evaluateBoard (chess) {
+    let total = 0;
+    const board = chess.board();
+    for (let r = 0; r < 8; r++) {
+      for (let c = 0; c < 8; c++) {
+        const p = board[r][c];
+        if (!p) continue;
+        const val = PIECE_VALUE[p.type] || 0;
+        total += (p.color === 'w') ? val : -val;
+      }
+    }
+    return total;
+  }
+
+  function pickMoveFallback (chess, depth = 2) {
+    function minimax (d, alpha, beta, maximizing) {
+      if (d === 0 || chess.game_over()) return evaluateBoard(chess);
+
+      const moves = chess.moves();
+      if (maximizing) {
+        let maxEval = -Infinity;
+        for (const m of moves) {
+          chess.move(m);
+          const evalv = minimax(d-1, alpha, beta, false);
+          chess.undo();
+          if (evalv > maxEval) maxEval = evalv;
+          if (evalv > alpha) alpha = evalv;
+          if (beta <= alpha) break;
+        }
+        return maxEval;
+      } else {
+        let minEval = Infinity;
+        for (const m of moves) {
+          chess.move(m);
+          const evalv = minimax(d-1, alpha, beta, true);
+          chess.undo();
+          if (evalv < minEval) minEval = evalv;
+          if (evalv < beta) beta = evalv;
+          if (beta <= alpha) break;
+        }
+        return minEval;
+      }
+    }
+
+    const moves = chess.moves({ verbose: true });
+    let best = null;
+    let bestScore = -Infinity;
+
+    for (const m of moves) {
+      chess.move(m);
+      const score = minimax(depth-1, -Infinity, Infinity, false);
+      chess.undo();
+      if (score > bestScore) { bestScore = score; best = m; }
+    }
+    return best ? { from: best.from, to: best.to, promotion: best.promotion } : null;
+  }
+
+  // ======== AI MOVE ========
+  function aiMove () {
+    if (game.game_over()) return;
+
+    // Coba pakai Stockfish dulu
+    if (usingEngine && engine && engineReady) {
+      engineGo(game.fen(), +timeSel.value);
+      const waitStart = performance.now();
+
+      const tick = () => {
+        if (pendingBestMove) {
+          const mv = uciToMoveObj(pendingBestMove);
+          const res = game.move(mv);
+          if (res) {
+            updateStatus(res);
+            board.position(game.fen());
+          }
+          pendingBestMove = null;
+          return;
+        }
+        // safety timeout 8s
+        if (performance.now() - waitStart > 8000) {
+          // fallback
+          usingEngine = false;
+          fallbackAndMove();
+          return;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+      return;
+    }
+
+    // Kalau engine ga ada / gagal, fallback
+    fallbackAndMove();
+  }
+
+  function fallbackAndMove () {
+    const skill = +skillSel.value;
+    // Depth fallback kasar: 2..4
+    const depth = Math.max(2, Math.min(4, Math.round(skill/5)+1));
+    const mv = pickMoveFallback(game, depth);
+    if (mv) {
+      const res = game.move(mv);
+      if (res) {
+        updateStatus(res);
+        board.position(game.fen());
+      }
+    }
+  }
+
+  // ======== CONTROLS ========
+  document.getElementById('btn-new').addEventListener('click', () => {
+    game.reset();
+    board.start();
+    updateStatus();
+  });
+
+  document.getElementById('btn-undo').addEventListener('click', () => {
+    // Undo dua langkah (player & AI) biar kembali ke giliran player
+    game.undo();
+    game.undo();
+    board.position(game.fen());
+    updateStatus();
+  });
+
+  document.getElementById('btn-flip').addEventListener('click', () => {
+    boardFlipped = !boardFlipped;
+    board.orientation(boardFlipped ? 'black' : 'white');
+  });
+
+  skillSel.addEventListener('change', () => {
+    if (engine && usingEngine) {
+      engine.postMessage('setoption name Skill Level value ' + (+skillSel.value));
+    }
+  });
+
+  updateStatus();
+})();
+</script>
   </main>
 
   <footer>
