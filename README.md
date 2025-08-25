@@ -506,6 +506,11 @@
   </script>
 </div>
 <!-- === /TIC TAC TOE === -->
+
+<div class="card">
+      <h2>Tangkap Emoji....!!😎🥳😵</h2>
+      <a href="https://leafzuya.github.io/Web-Have-Fun-/">Klik aku untuk Mainkan...!!!,Kalo kalah, Berarti Noob😎☝️</a>
+    </div>
   </main>
 
   <footer>
@@ -516,3 +521,4 @@
   </footer>
 </body>
 </html>
+
