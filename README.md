@@ -160,6 +160,7 @@
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
   </style>
+  <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
 </head>
 <body>
   <header>
