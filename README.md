@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+  <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fun Web by LeafZuya (Daffa)</title>
@@ -160,7 +161,6 @@
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
     }
   </style>
-  <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
 </head>
 <body>
   <header>
