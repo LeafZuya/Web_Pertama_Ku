@@ -224,10 +224,11 @@
     <div class="card">
       <h2>📸 Galeri SpesialZzZz</h2>
       <p>Dari:(@Danang_Argus_Prime🗿)</p>
+      <iframe width="315" height="560" 
       
-      <iframe width="220" height="220" src="https://youtube.com/shorts/dJU5PqR27rc?si=KYqD5liCx6XzcDjH"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+src="https://youtube.com/shorts/dJU5PqR27rc?si=KYqD5liCx6XzcDjH" 
+  frameborder="0" allowfullscreen>
+</iframe>
     </div>
 
      <!-- === TIC TAC TOE: Player vs AI (paste this inside <main class="container">) === -->
