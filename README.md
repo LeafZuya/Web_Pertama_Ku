@@ -223,7 +223,9 @@
     </div>
     <div class="card">
       <h2>📸 Galeri SpesialZzZz</h2>
-      <iframe width="220" height="220" src="https://www.youtube.com/embed/tucpVglVsi4"
+      <p>Dari:(@Danang_Argus_Prime🗿)</p>
+      
+      <iframe width="220" height="220" src="https://youtube.com/shorts/dJU5PqR27rc?si=KYqD5liCx6XzcDjH"
       title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
