@@ -224,7 +224,7 @@
     <div class="card">
       <h2>📸 Galeri SpesialZzZz</h2>
       <p>Dari:(@Danang_Argus_Prime🗿)</p>
-<video width="640" height="360" controls>
+<video width="220" height="220" controls>
   <source src="Danang.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
