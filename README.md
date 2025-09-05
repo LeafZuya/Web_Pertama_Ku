@@ -224,11 +224,10 @@
     <div class="card">
       <h2>📸 Galeri SpesialZzZz</h2>
       <p>Dari:(@Danang_Argus_Prime🗿)</p>
-      <iframe width="315" height="560" 
-      
-src="https://youtube.com/shorts/dJU5PqR27rc?si=KYqD5liCx6XzcDjH" 
-  frameborder="0" allowfullscreen>
-</iframe>
+<video width="640" height="360" controls>
+  <source src="Danang.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
     </div>
 
      <!-- === TIC TAC TOE: Player vs AI (paste this inside <main class="container">) === -->
