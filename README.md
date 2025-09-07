@@ -200,6 +200,20 @@
       🍵 Bagi yang mau Traktir......buat Beli Laptop ♥️🥳
     </button>
   </a>
+
+  <!-- Tombol -->
+<button onclick="playMusic()">▶️ Play Musik</button>
+
+<!-- Audio -->
+<audio id="myAudio" src="Idiot.mp3"></audio>
+<!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
+
+<script>
+  function playMusic() {
+    const audio = document.getElementById("myAudio");
+    audio.play();
+  }
+</script>
 </div>
      
     </div>
