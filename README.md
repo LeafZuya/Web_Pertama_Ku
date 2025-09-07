@@ -214,6 +214,8 @@
     audio.play();
   }
 </script>
+<b>ATAU</b>
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://youtu.be/vhMPVmkjczM?si=PL0JwbVDhHAZn_pu" alt="QR Code">
 </div>
      
     </div>
@@ -250,7 +252,6 @@
     </div>
 
     <h1>BERBAGAI MINIGAME BUATAN AKU SENDIRI....🥳🎉<h1/>
-
      <!-- === TIC TAC TOE: Player vs AI (paste this inside <main class="container">) === -->
 <div class="card" id="ttt-card">
   <h2>🎯 Tic-Tac-Toe — Player vs AI</h2>
@@ -535,7 +536,7 @@
   <img src="Emoji.jpg" width="220" height="220">
       <a href="https://leafzuya.github.io/Web-Have-Fun-/">Klik aku untuk Mainkan...!!!,Kalo kalah, Berarti Noob😎☝️</a>
   <p>Cara mainnya tinggal di Klik ke kanan atau ke kiri aja,lalu tangkap semua dan kumpulkan point sebanyak-banyaknya.....!!!(Hanya disediakan 3 Nyawa/Kesempatan)</p>
-    </div><br>
+    </div>
 
     <div class="card">
       <h2>Sound Memory....!!🗣️🎤🎧</h2>
