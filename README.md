@@ -1,5 +1,5 @@
 # Web-Have-Fun
-<!DOCTYPE html>
+
 <html lang="id">
 <head>
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
@@ -535,7 +535,7 @@
   <img src="Emoji.jpg" width="220" height="220">
       <a href="https://leafzuya.github.io/Web-Have-Fun-/">Klik aku untuk Mainkan...!!!,Kalo kalah, Berarti Noob😎☝️</a>
   <p>Cara mainnya tinggal di Klik ke kanan atau ke kiri aja,lalu tangkap semua dan kumpulkan point sebanyak-banyaknya.....!!!(Hanya disediakan 3 Nyawa/Kesempatan)</p>
-    </div>
+    </div><br>
 
     <div class="card">
       <h2>Sound Memory....!!🗣️🎤🎧</h2>
