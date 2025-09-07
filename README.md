@@ -551,7 +551,7 @@
       <a href="https://leafzuya.github.io/Kalkulator-/">Klik aku untuk Menjalankan Kalkulator,versi Buatan ku sendiri.....</a>
   <p>Konon katanya,orang yang menggunakan Kalkulator Ini,bisa menambahkan IQ Manusia Maksimal sampai 105....🗿👍</p>
     </div>
-  </main>
+
 
   <footer>
     © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa <b>BERNAFAS</b> 🤭🗣️🔥<br>
@@ -559,6 +559,4 @@
     <span class="footer-emoji">💚</span>
     <span class="footer-emoji">💙</span>
   </footer>
-</body>
-</html>
 
