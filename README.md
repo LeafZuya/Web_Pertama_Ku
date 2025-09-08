@@ -249,9 +249,27 @@
   <source src="Shiroko.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
-    </div>
 
-    <h1>BERBAGAI MINIGAME BUATAN AKU SENDIRI....🥳🎉<h1/>
+<video width="220" height="220" controls>
+  <source src="Kuroko.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video width="220" height="220" controls>
+  <source src="Hoshino.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video width="220" height="220" controls>
+  <source src="Furina.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<video width="220" height="220" controls>
+  <source src="Chibi.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+    </div>
      <!-- === TIC TAC TOE: Player vs AI (paste this inside <main class="container">) === -->
 <div class="card" id="ttt-card">
   <h2>🎯 Tic-Tac-Toe — Player vs AI</h2>
