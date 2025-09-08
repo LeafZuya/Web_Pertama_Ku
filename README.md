@@ -256,38 +256,7 @@
       title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    <div class="card">
-      <h2>📸 Galeri SpesialZzZz</h2>
-      <p>Dari:(@Danang_Argus_Prime🗿)</p>
-<video width="220" height="220" controls>
-  <source src="Danang.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<video width="220" height="220" controls>
-  <source src="Shiroko.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<video width="220" height="220" controls>
-  <source src="Kuroko.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<video width="220" height="220" controls>
-  <source src="Hoshino.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<video width="220" height="220" controls>
-  <source src="Furina.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-
-<video width="220" height="220" controls>
-  <source src="Chibi.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+    
     </div>
      <!-- === TIC TAC TOE: Player vs AI (paste this inside <main class="container">) === -->
 <div class="card" id="ttt-card">
