@@ -1,5 +1,4 @@
 # Web-Have-Fun
-
 <html lang="id">
 <head>
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
@@ -57,7 +56,7 @@
       50% { transform: translateY(-15px); }
     }
 
-    /* Container Card */
+    /* Container Card (grid default) */
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -157,6 +156,26 @@
     @keyframes rise {
       0% { transform: translateY(0) scale(1); opacity: 0.8; }
       100% { transform: translateY(-120vh) scale(1.5); opacity: 0; }
+    }
+
+    /* 🔥 Tambahan Solusi Kedua: Masonry Layout */
+    .container {
+      column-count: 3;       /* jumlah kolom, bisa diubah */
+      column-gap: 25px;      /* jarak antar kolom */
+    }
+
+    .card {
+      display: inline-block; /* wajib untuk masonry */
+      width: 100%;
+      margin: 0 0 25px;
+    }
+
+    /* Responsif masonry */
+    @media (max-width: 768px) {
+      .container { column-count: 2; }
+    }
+    @media (max-width: 480px) {
+      .container { column-count: 1; }
     }
   </style>
 </head>
