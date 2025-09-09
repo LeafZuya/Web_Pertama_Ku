@@ -177,11 +177,20 @@
     @media (max-width: 480px) {
       .container { column-count: 1; }
     }
+  .hiasan {
+    width: 400px;
+    height: 250px;
+    border: 8px solid transparent;
+    border-radius: 30px; /* sudut jadi tumpul */
+    background: linear-gradient(135deg, #4caf50, #2196f3); /* Hijau → Biru */
+    padding: 5px; /* jarak antara border & gambar */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* bayangan */
+  }
   </style>
 </head>
 <body>
   <header>
-    <img src="Iwak.gif" alt="Gambar Karya" width="150" height="150">
+    <img src="Iwak.gif" alt="Foto Karya" class="hiasan">
     <h1>🌟 Welcome to My First Web 🌟</h1>
     <p>Dibuat oleh LeafZuya (Daffa) 😎🤭</p>
 
