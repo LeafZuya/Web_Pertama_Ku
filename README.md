@@ -224,7 +224,7 @@
 <button onclick="playMusic()">▶️ Play Musik</button>
 
 <!-- Audio -->
-<audio id="myAudio" src="Idiot.mp3"></audio>
+<audio id="myAudio" src="Jokowi.mp3"></audio>
 <!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
 
 <script>
@@ -233,8 +233,11 @@
     audio.play();
   }
 </script>
-<b>ATAU</b>
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://youtu.be/vhMPVmkjczM?si=PL0JwbVDhHAZn_pu" alt="QR Code">
+<b>JANGAN COBA-COBA UNDUH CODE QR DIBAWAH INI,LALU MEMINDAI NYA DI PEMINDAI QR CODE 🗿☠️💀</b>
+<!-- Gambar bisa dilihat & diunduh -->
+<a href="Idiot.jpg" download>
+  <img src="Idiot.jpg" alt="Gambar Karya" width="200" height="200>
+</a>
 </div>
      
     </div>
