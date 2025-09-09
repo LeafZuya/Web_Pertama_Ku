@@ -197,6 +197,7 @@
   <div class="bubble green" style="left: 90%; width: 35px; height: 35px; animation-duration: 13s;"></div>
 
   <main class="container">
+    <img src="Iwak.gif" alt="Gambar Karya" width="150" height="150">
     <div class="card">
       <h2>✨ Tentang 🍀</h2>
       <p>Website ini dibuat cuma buat have fun aja, bukan serius. Jadi enjoyyy 😙</p>
@@ -233,7 +234,7 @@
     audio.play();
   }
 </script>
-<b>JANGAN COBA-COBA UNDUH CODE QR DIBAWAH INI,LALU MEMINDAI NYA DI PEMINDAI QR CODE 🗿☠️💀</b>
+<b>JANGAN COBA-COBA SCREENSHOOT CODE QR DIBAWAH INI,LALU MEMINDAI NYA DI PEMINDAI QR CODE 🗿☠️💀</b>
 
 <img src="Idiot.jpg" alt="Gambar Karya" width="200" height="200">
 
@@ -258,8 +259,15 @@
       title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-    
+    <div class="card">
+      <h2>Penasaran Karya Danang...?, Klik Dibawah Ini ya...!😋</h2>
+      
+   <a href="https://leafzuya.github.io/Khusus_Danang/">Klik aku untuk elihat berbagai Karya Buatan Danang.....😆</a>
+
+   Jangan Lupa Follow Akun Media Sosialnya...!!
+  <a href="https://tiktok.com/@zainaki_and_hoshino">Media Sosial Danang </a>
     </div>
+
      <!-- === TIC TAC TOE: Player vs AI (paste this inside <main class="container">) === -->
 <div class="card" id="ttt-card">
   <h2>🎯 Tic-Tac-Toe — Player vs AI</h2>
