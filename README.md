@@ -181,6 +181,7 @@
 </head>
 <body>
   <header>
+    <img src="Iwak.gif" alt="Gambar Karya" width="150" height="150">
     <h1>🌟 Welcome to My First Web 🌟</h1>
     <p>Dibuat oleh LeafZuya (Daffa) 😎🤭</p>
 
@@ -197,7 +198,6 @@
   <div class="bubble green" style="left: 90%; width: 35px; height: 35px; animation-duration: 13s;"></div>
 
   <main class="container">
-    <img src="Iwak.gif" alt="Gambar Karya" width="150" height="150">
     <div class="card">
       <h2>✨ Tentang 🍀</h2>
       <p>Website ini dibuat cuma buat have fun aja, bukan serius. Jadi enjoyyy 😙</p>
