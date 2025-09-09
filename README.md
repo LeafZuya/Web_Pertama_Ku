@@ -221,7 +221,7 @@
   </a>
 
   <!-- Tombol -->
-<button onclick="playMusic()">▶️ Play Musik</button>
+<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
 
 <!-- Audio -->
 <audio id="myAudio" src="Jokowi.mp3"></audio>
