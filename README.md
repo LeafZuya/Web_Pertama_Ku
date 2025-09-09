@@ -235,8 +235,7 @@
 </script>
 <b>JANGAN COBA-COBA UNDUH CODE QR DIBAWAH INI,LALU MEMINDAI NYA DI PEMINDAI QR CODE 🗿☠️💀</b>
 <!-- Gambar bisa dilihat & diunduh -->
-<a href="Idiot.jpg" download>
-  <img src="Idiot.jpg" alt="Gambar Karya" width="200" height="200>
+<a href="Idiot.jpg" <img src="Idiot.jpg" alt="Gambar Karya" width="200" height="200>
 </a>
 </div>
      
