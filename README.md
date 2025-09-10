@@ -577,12 +577,32 @@
       <a href="https://leafzuya.github.io/Kalkulator-/">Klik aku untuk Menjalankan Kalkulator,versi Buatan ku sendiri.....</a>
   <p>Konon katanya,orang yang menggunakan Kalkulator Ini,bisa menambahkan IQ Manusia Maksimal sampai 105....🗿👍</p>
     </div>
+    <script>
+const counterKey = "leafzuya-unique-visitors"; 
+
+if (!localStorage.getItem("visited")) {
+  fetch(`https://api.countapi.xyz/hit/${counterKey}/visitors`)
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById("counter").innerText = res.value;
+    });
+  localStorage.setItem("visited", "true");
+} else {
+  fetch(`https://api.countapi.xyz/get/${counterKey}/visitors`)
+    .then(res => res.json())
+    .then(res => {
+      document.getElementById("counter").innerText = res.value;
+    });
+}
+</script>
 
 
   <footer>
-    © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa <b>BERNAFAS</b> 🤭🗣️🔥<br>
-    <span class="footer-emoji">🍀</span>
-    <span class="footer-emoji">💚</span>
-    <span class="footer-emoji">💙</span>
-  </footer>
-
+  © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
+  <b>BERNAFAS</b> 🤭🗣️🔥<br>
+  <span class="footer-emoji">🍀</span>
+  <span class="footer-emoji">💚</span>
+  <span class="footer-emoji">💙</span>
+  <br>
+  Total Pengunjung Website Ku: <span id="counter">0</span>
+</footer>
