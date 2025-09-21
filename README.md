@@ -269,11 +269,12 @@
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="card">
-      <h2>Penasaran Karya Danang...?, Klik Dibawah Ini ya...!😋</h2>
+      <h2>Penasaran Karya Danang...?, Klik Dibawah Ini ya...!😋</h2><br>
       
-   <a href="https://leafzuya.github.io/Khusus_Danang/">Klik aku untuk elihat berbagai Karya Buatan Danang.....😆</a>
+   <a href="https://leafzuya.github.io/Khusus_Danang/">Klik aku untuk melihat berbagai Karya Buatan Danang.....😆</a><br>
 
-   Jangan Lupa Follow Akun Media Sosialnya...!!
+   <a>Jangan Lupa Follow Akun Media Sosialnya...!!</a><br>
+   
   <a href="https://tiktok.com/@zainaki_and_hoshino">Media Sosial Danang </a>
     </div>
 
