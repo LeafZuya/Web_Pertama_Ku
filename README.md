@@ -614,10 +614,15 @@
 <div class="card">
       <h2>Tangkap Emoji....!!😎🥳😵</h2>
   <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
-  <div class="frame-wrapper">
-  <img src="Emoji.jpg" alt="Foto Mewah" class="gold-frame">
-  <img src="Hijau.png" class="dekor dekor-kiri">
-  <img src="Biru.png" class="dekor dekor-kanan">
+  <div class="gold-frame">
+  <!-- Hiasan bunga hijau -->
+  <img src="Hijau.png" alt="hiasan bunga hijau" class="dekorasi hijau">
+
+  <!-- Hiasan bunga biru -->
+  <img src="Biru.png" alt="hiasan bunga biru" class="dekorasi biru">
+
+  <!-- Foto utama -->
+  <img src="Emoji.jpg" alt="foto utama" class="foto">
 </div>
       <a href="https://leafzuya.github.io/Web-Have-Fun-/">Klik aku untuk Mainkan...!!!,Kalo kalah, Berarti Noob😎☝️</a>
   <p>Cara mainnya tinggal di Klik ke kanan atau ke kiri aja,lalu tangkap semua dan kumpulkan point sebanyak-banyaknya.....!!!(Hanya disediakan 3 Nyawa/Kesempatan)</p>
@@ -626,10 +631,15 @@
     <div class="card">
       <h2>Sound Memory....!!🗣️🎤🎧</h2>
       <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
-      <div class="frame-wrapper">
-  <img src="Simon.jpg" alt="Foto Mewah" class="gold-frame">
-  <img src="Hijau.png" class="dekor dekor-kiri">
-  <img src="Biru.png" class="dekor dekor-kanan">
+      <div class="gold-frame">
+  <!-- Hiasan bunga hijau -->
+  <img src="Hijau.png" alt="hiasan bunga hijau" class="dekorasi hijau">
+
+  <!-- Hiasan bunga biru -->
+  <img src="Biru.png" alt="hiasan bunga biru" class="dekorasi biru">
+
+  <!-- Foto utama -->
+  <img src="Simon.jpg" alt="foto utama" class="foto">
 </div>
       <a href="https://leafzuya.github.io/Sound-Memori-/">Klik aku untuk Mainkan sound memori...!!!,Kalo cepat kalah, Berarti jangan main ini lagi,main sana game Roblox 🤓☝️</a>
   <p>Cara mainnya tinggal ikuti irama yang muncul acak dan pencet tombol sesuai irama yang muncul pada tombol tersebut.....semakin lama akan semakin banyak irama yang akan di putar/mainkan..... Semangat....!!!🥳♥️🔥</p>
@@ -637,10 +647,15 @@
     <div class="card">
       <h2>Kalkulator LeafZuya 😆🌿➗➖➕</h2>
       <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
-      <div class="frame-wrapper">
-  <img src="Kalkulator.jpg" alt="Foto Mewah" class="gold-frame">
-  <img src="Hijau.png" class="dekor dekor-kiri">
-  <img src="Biru.png" class="dekor dekor-kanan">
+      <div class="gold-frame">
+  <!-- Hiasan bunga hijau -->
+  <img src="Hijau.png" alt="hiasan bunga hijau" class="dekorasi hijau">
+
+  <!-- Hiasan bunga biru -->
+  <img src="Biru.png" alt="hiasan bunga biru" class="dekorasi biru">
+
+  <!-- Foto utama -->
+  <img src="Kalkulator.jpg" alt="foto utama" class="foto">
 </div>
       <a href="https://leafzuya.github.io/Kalkulator-/">Klik aku untuk Menjalankan Kalkulator,versi Buatan ku sendiri.....</a>
   <p>Konon katanya,orang yang menggunakan Kalkulator Ini,bisa menambahkan IQ Manusia Maksimal sampai 105....🗿👍</p>
