@@ -5,6 +5,21 @@
   <title>Fun Web by LeafZuya (Daffa)</title>
   <link rel="icon" type="image/png" href="LeafZuya.png">
   <style>
+    .gold-frame {
+  width: 250px;
+  border: 6px solid gold;
+  border-radius: 20px;
+  padding: 8px;
+  background: linear-gradient(135deg, #fffde7, #fff3c2);
+}
+
+.dekor {
+  width: 50px;
+  position: absolute;
+}
+
+.dekor-kiri { top: -10px; left: -20px; }
+.dekor-kanan { bottom: -10px; right: -20px; }
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     * {
