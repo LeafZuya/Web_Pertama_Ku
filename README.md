@@ -187,60 +187,6 @@
     padding: 5px; /* jarak antara border & gambar */
     box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* bayangan */
   }
-  .gold-frame {
-  position: relative;
-  display: inline-block;
-  padding: 15px;
-  border: 6px solid gold;
-  border-radius: 25px; /* sudut tumpul */
-  background: white;
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8),
-              0 0 30px rgba(255, 0, 0, 0.6); /* kilauan emas + merah */
-  overflow: hidden;
-}
-
-/* Foto utama */
-.gold-frame .foto {
-  max-width: 350px;
-  border-radius: 20px; 
-  display: block;
-}
-
-/* Efek kilau bergerak */
-.gold-frame::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(120deg, rgba(255,215,0,0.2) 0%, rgba(255,0,0,0.2) 50%, rgba(255,215,0,0.2) 100%);
-  transform: rotate(25deg);
-  animation: shine 5s linear infinite;
-}
-
-@keyframes shine {
-  0% { transform: translateX(-100%) rotate(25deg); }
-  100% { transform: translateX(100%) rotate(25deg); }
-}
-
-/* Dekorasi bunga */
-.gold-frame .dekorasi {
-  position: absolute;
-  width: 80px;
-  pointer-events: none;
-}
-
-/* Posisi khusus */
-.gold-frame .hijau {
-  top: -20px;
-  left: -20px;
-}
-
-.gold-frame .biru {
-  bottom: -20px;
-  right: -20px;
-}
   </style>
 </head>
 <body>
