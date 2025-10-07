@@ -661,6 +661,23 @@
   <p>Konon katanya,orang yang menggunakan Kalkulator Ini,bisa menambahkan IQ Manusia Maksimal sampai 105....🗿👍</p>
     </div>
 
+    <div class="card">
+      <h2>Kalkulator LeafZuya 😆🌿➗➖➕</h2>
+      <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
+      <div class="gold-frame">
+  <!-- Hiasan bunga hijau -->
+  <img src="Hijau.png" alt="hiasan bunga hijau" class="dekorasi hijau">
+
+  <!-- Hiasan bunga biru -->
+  <img src="Biru.png" alt="hiasan bunga biru" class="dekorasi biru">
+
+  <!-- Foto utama -->
+  <img src="LeafCy.jpg" alt="foto utama" class="foto">
+</div>
+      <a href="https://leafzuya.github.io/Kalkulator-/">Klik aku untuk Menjalankan Kalkulator,versi Buatan ku sendiri.....</a>
+  <p>Jangan Lupa Klik Tombol Diatas yah....Itu adalah AI Buatan ku Sendiri (LeafZuya),tapi masih Tahap Pengembangan (Beta)...kalian juga bisa Tambahkan Obrolan dan Jawaban Obrolan Nya...Bareng LeafCy 😆🤞☘️🍃</p>
+    </div>
+
   <footer>
   © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
   <b>BERNAFAS</b> 🤭🗣️🔥<br>
