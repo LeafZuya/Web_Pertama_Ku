@@ -662,7 +662,7 @@
     </div>
 
     <div class="card">
-      <h2>Kalkulator LeafZuya 😆🌿➗➖➕</h2>
+      <h2>LeafCy AI😆🌿</h2>
       <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
       <div class="gold-frame">
   <!-- Hiasan bunga hijau -->
