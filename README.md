@@ -2,8 +2,10 @@
 <html lang="id">
 <head>
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
+  <!-- 🌿 Favicon / Icon Website -->
+<link rel="icon" type="image/png" href="Favicon.png" />
+<link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
   <title>Fun Web by LeafZuya (Daffa)</title>
-  <link rel="icon" type="image/png" href="LeafZuya.png">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
