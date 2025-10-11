@@ -3,8 +3,30 @@
 <head>
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
   <title>Fun Web by LeafZuya (Daffa)</title>
-<link rel="shortcut icon"
-  href="./Favicon.png" type="image/x-icon">
+<!-- 🌿 Favicon -->
+<link rel="icon" type="image/png" href="Favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="Favicon.png">
+
+<!-- 🌐 SEO Meta Tags -->
+<meta name="title" content="LeafZuya Web — Have Fun">
+<meta name="description" content="LeafZuya Website khusus untuk orang-orang yang sedang mencari kesenangan di waktu luang 🌿💙">
+<meta name="keywords" content="LeafCy, LeafZuya, AI Chat, Virtual Friend, Artificial Intelligence, Blue Archive Inspired, Web AI Indonesia, Web Have Fun, Karya Anak Gabut">
+<meta name="author" content="LeafZuya (Daffa)">
+
+<!-- 📱 Open Graph (Facebook, Discord, Google Rich Preview) -->
+<meta property="og:title" content="LeafZuya Web — Have Fun">
+<meta property="og:description" content="Website ini dibuat hanya karena kegabutan LeafZuya — dan sekadar hobi di waktu luang 😆">
+<meta property="og:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leafzuya.github.io/Web_Pertama_Ku/">
+<meta property="og:locale" content="id_ID">
+
+<!-- 🐦 Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LeafZuya Web — Have Fun">
+<meta name="twitter:description" content="Website buatan LeafZuya (Daffa), dibuat hanya untuk bersenang-senang 🌿✨">
+<meta name="twitter:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
+<meta name="twitter:creator" content="@LeafZuya">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
