@@ -3,10 +3,14 @@
 <head>
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
   <title>Fun Web by LeafZuya (Daffa)</title>
-<!-- 🌿 Favicon -->
-<link rel="icon" type="image/png" href="Favicon.png">
-<link rel="shortcut icon" type="image/x-icon" href="Favicon.png">
 
+  <!-- 🌿 Favicon untuk semua perangkat -->
+<link rel="icon" type="image/png" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
+<link rel="shortcut icon" type="image/x-icon" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
+
+<!-- 🌿 Untuk Android dan Chrome -->
+<link rel="apple-touch-icon" sizes="180x180" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
+<link rel="manifest" href="https://leafzuya.github.io/Web_Pertama_Ku/manifest.json">
 <!-- 🌐 SEO Meta Tags -->
 <meta name="title" content="LeafZuya Web — Have Fun">
 <meta name="description" content="LeafZuya Website khusus untuk orang-orang yang sedang mencari kesenangan di waktu luang 🌿💙">
