@@ -763,7 +763,7 @@
     </div>
     
     <!-- Tombol menuju halaman Tentang -->
-<button id="aboutBtn" class="btn-about">ℹ️ Tentang</button>
+<button id="aboutBtn" class="btn-about">ℹ️ Tentang(Opsional,tapi Disarankan 🗿☕)</button>
 
 <!-- Halaman Tentang (disembunyikan awalnya) -->
 <section id="aboutPage" class="about-page">
@@ -788,7 +788,7 @@
     <p>-Perbaikan Bug</p>
     <p>-Update Minigame <b>TANGKAP EMOJI</b></p>
     <p>-Update Minigame <b>KALKULATOR LEAFZUYA</b></p>
-    <p>-Update Bug Pada <b>LEAFCY AI</b></p>
+    <p>-Perbaikan Bug Pada <b>LEAFCY AI</b></p>
     <p>-Penambahan Minigame <b>CEK HEWAN DALAM JIWA</b></p>
    
     
