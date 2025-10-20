@@ -761,6 +761,153 @@
 </style>
   <p>Apakah Kalian Sering Bertanya Dalam Hati"Sebenarnya, Apasih Hewan/Khodam Dalam Diri ku ini?"...Nahh,untuk itu, Kunjungi Minigame Diatas,untuk Memecahkan Rasa Penasaran Kamu...🗿🙏☕</p>
     </div>
+    
+    <!-- Tombol menuju halaman Tentang -->
+<button id="aboutBtn" class="btn-about">ℹ️ Tentang</button>
+
+<!-- Halaman Tentang (disembunyikan awalnya) -->
+<section id="aboutPage" class="about-page">
+  <div class="about-content">
+    <h2>🌿 LeafZuya Web Have Fun</h2>
+    <p>
+      Website ini dibuat sebagai hiburan Di Waktu Luang,Jangan Terlalu Fokus/Serius pada Website ini,Hidup kalian lebih berwarna,jika kalian melakukan Hal-Hal yang Bermanfaat untuk Orang lain dan Diri Sendiri...Ingat!,kita Ini Makhluk Yang Lemah!,Jangan Sombong kepada sang Pencipta!,Karena Dialah yang Berkuasa atas Dunia Ini,dan Jangan Lupa <b>BERBUAT BAIK</b> 💚.
+    </p>
+
+    <ul>
+      
+      <li><b>🧩 Versi:</b> v1.3 — "Daun Mekar"</li>
+      <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
+    </ul>
+
+    <p class="dev-note">
+      ✨ Catatan Developer:<br>
+      "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
+    </p>
+    <li><b>📅 Update terakhir:</b> 20 Oktober 2025</li>
+      <h1> •Apa Yang Baru?</h1>
+    <p>-Perbaikan Bug</p>
+    <p>-Update Minigame <b>TANGKAP EMOJI</b></p>
+    <p>-Update Minigame <b>KALKULATOR LEAFZUYA</b></p>
+    <p>-Update Bug Pada <b>LEAFCY AI</b></p>
+    <p>-Penambahan Minigame <b>CEK HEWAN DALAM JIWA</b></p>
+   
+    
+    
+
+    <button id="backBtn" class="btn-back">⬅️ Kembali</button>
+  </div>
+</section>
+
+<style>
+/* tombol tentang */
+.btn-about {
+  position: fixed;
+  top: 18px; right: 18px;
+  background: linear-gradient(135deg, #00c16b, #27a2ff);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  z-index: 50;
+  transition: transform .2s ease, box-shadow .3s;
+}
+.btn-about:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(255,255,150,0.5); }
+
+/* halaman Tentang */
+.about-page {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #00e69a, #39a7ff, #ffd54d33);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #033;
+  text-align: center;
+  padding: 20px;
+  z-index: 100;
+  animation: fadeIn .6s ease;
+}
+.about-page.show {
+  display: flex;
+}
+
+.about-content {
+  background: rgba(255,255,255,0.9);
+  border-radius: 20px;
+  box-shadow: 0 8px 50px rgba(0,0,0,0.2), 0 0 60px rgba(255,240,150,0.4);
+  padding: 26px 30px;
+  max-width: 600px;
+  width: 90%;
+}
+
+.about-content h2 {
+  color: #046;
+  margin-bottom: 12px;
+  text-shadow: 0 2px 10px rgba(255,255,150,0.4);
+}
+
+.about-content p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.about-content ul {
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+.about-content li {
+  margin: 6px 0;
+  font-size: 14.5px;
+}
+
+.dev-note {
+  font-style: italic;
+  font-size: 13.5px;
+  margin-top: 14px;
+  color: #155;
+}
+
+.btn-back {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #27a2ff, #00c16b);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform .2s ease;
+}
+.btn-back:hover { transform: scale(1.05); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+<script>
+// Tombol "Tentang"
+const aboutBtn = document.getElementById('aboutBtn');
+const aboutPage = document.getElementById('aboutPage');
+const backBtn = document.getElementById('backBtn');
+
+// buka halaman tentang
+aboutBtn.addEventListener('click', ()=>{
+  aboutPage.classList.add('show');
+});
+
+// kembali ke halaman utama
+backBtn.addEventListener('click', ()=>{
+  aboutPage.classList.remove('show');
+});
+</script>
 
   <footer>
   © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
@@ -770,3 +917,4 @@
   <span class="footer-emoji">💙</span>
   <br>
 </footer>
+
