@@ -766,7 +766,7 @@
       <h2>LeafPy!🐦🌿</h2>
       <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
       
-  <img src="Hewan.jpg" alt="Foto Karya" class="hiasan">
+  <img src="Burung.jpg" alt="Foto Karya" class="hiasan">
      
       <!-- 🌿 Tombol Unik Hijau-Biru -->
 <a href="https://leafzuya.github.io/LeafPy/" class="magic-btn">Kunjungi LeafPy🗿🍃🐦</a>
