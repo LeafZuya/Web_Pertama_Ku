@@ -834,14 +834,14 @@
       ✨ Catatan Developer:<br>
       "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
     </p>
-    <li><b>📅 Update terakhir:</b> 20 Oktober 2025</li>
+    <li><b>📅 Update terakhir:</b> 22 Oktober 2025</li>
       <h1> •Apa Yang Baru?</h1>
     <p>-Perbaikan Bug</p>
     <p>-Update Minigame <b>TANGKAP EMOJI</b></p>
     <p>-Update Minigame <b>KALKULATOR LEAFZUYA</b></p>
     <p>-Perbaikan Bug Pada <b>LEAFCY AI</b></p>
     <p>-Penambahan Minigame <b>CEK HEWAN DALAM JIWA</b></p>
-   
+   <p>Penambahan Minigame <b>LEAFPY </b></p>
     
     
 
