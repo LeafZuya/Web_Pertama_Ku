@@ -764,12 +764,12 @@
 
     <div class="card">
       <h2>LeafPy!🐦🌿</h2>
-      <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
+      <p><b>SEDANG DALAM PERBAIKAN!!!</b></p>
       
-  <img src="Burung.jpg" alt="Foto Karya" class="hiasan">
+  <img src="Server.jpg" alt="Foto Karya" class="hiasan">
      
       <!-- 🌿 Tombol Unik Hijau-Biru -->
-<a href="https://leafzuya.github.io/LeafPy/" class="magic-btn">Kunjungi LeafPy🗿🍃🐦</a>
+<a href="https://leafzuya.github.io/LeafPy/23" class="magic-btn">Sedang Dalam Perbaikan ☕🗿🍃🐦</a>
 
 <style>
 .magic-btn {
