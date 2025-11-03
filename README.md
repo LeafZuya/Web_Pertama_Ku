@@ -4,7 +4,7 @@
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
   <title>Fun Web by LeafZuya (Daffa)</title>
   
-  <link rel="icon" href="Favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.png" type="image/png">
 
 <!-- 🌿 Untuk Android dan Chrome -->
