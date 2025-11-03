@@ -3,10 +3,8 @@
 <head>
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
   <title>Fun Web by LeafZuya (Daffa)</title>
-
-  <!-- 🌿 Favicon untuk semua perangkat -->
-<link rel="icon" type="image/png" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
-<link rel="shortcut icon" type="image/x-icon" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
+  
+<link rel="icon" href="favicon.png" type="image/png">
 
 <!-- 🌿 Untuk Android dan Chrome -->
 <link rel="apple-touch-icon" sizes="180x180" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
