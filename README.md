@@ -13,7 +13,7 @@
 <link rel="manifest" href="https://leafzuya.github.io/Web_Pertama_Ku/manifest.json">
 <!-- 🌐 SEO Meta Tags -->
 <meta name="title" content="LeafZuya Web — Have Fun">
-<meta name="description" content="LeafZuya Website khusus untuk orang-orang yang sedang mencari kesenangan di waktu luang 🌿💙">
+<meta name="description" content="LeafZuya Adalah Website khusus untuk orang-orang yang sedang mencari kesenangan di waktu luang 🌿💙">
 <meta name="keywords" content="LeafCy, LeafZuya, AI Chat, Virtual Friend, Artificial Intelligence, Blue Archive Inspired, Web AI Indonesia, Web Have Fun, Karya Anak Gabut">
 <meta name="author" content="LeafZuya (Daffa)">
 
