@@ -766,10 +766,10 @@
       <h2>LeafPy!🐦🌿</h2>
       <p><b>SEDANG DALAM PERBAIKAN!!!</b></p>
       
-  <img src="Server.jpg" alt="Foto Karya" class="hiasan">
+  <img src="Burung.jpg" alt="Foto Karya" class="hiasan">
      
       <!-- 🌿 Tombol Unik Hijau-Biru -->
-<a href="https://leafzuya.github.io/LeafPy/23" class="magic-btn">Sedang Dalam Perbaikan ☕🗿🍃🐦</a>
+<a href="https://leafzuya.github.io/LeafPy/" class="magic-btn">Sedang Dalam Perbaikan ☕🗿🍃🐦</a>
 
 <style>
 .magic-btn {
