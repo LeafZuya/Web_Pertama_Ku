@@ -764,12 +764,12 @@
 
     <div class="card">
       <h2>LeafPy!🐦🌿</h2>
-      <p><b>SEDANG DALAM PERBAIKAN!!!</b></p>
+      <p><b>Dibawah ini Hanya Gambar Ilustrasi saja!!</b></p>
       
-  <img src="Burung.jpg" alt="Foto Karya" class="hiasan">
+  <img src="LeafPy.jpg" alt="Foto Karya" class="hiasan">
      
       <!-- 🌿 Tombol Unik Hijau-Biru -->
-<a href="https://leafzuya.github.io/LeafPy/" class="magic-btn">Sedang Dalam Perbaikan ☕🗿🍃🐦</a>
+<a href="https://leafzuya.github.io/LeafPy/" class="magic-btn">Game Burung Santai, selamat Bermain  ☕🗿🍃🐦</a>
 
 <style>
 .magic-btn {
@@ -826,7 +826,7 @@
 
     <ul>
       
-      <li><b>🧩 Versi:</b> v1.3 — "Daun Mekar"</li>
+      <li><b>🧩 Versi:</b> v1.4 — "Daun Kemarau"</li>
       <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
     </ul>
 
@@ -834,14 +834,11 @@
       ✨ Catatan Developer:<br>
       "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
     </p>
-    <li><b>📅 Update terakhir:</b> 22 Oktober 2025</li>
+    <li><b>📅 Update terakhir:</b> 8 November 2025</li>
       <h1> •Apa Yang Baru?</h1>
     <p>-Perbaikan Bug</p>
-    <p>-Update Minigame <b>TANGKAP EMOJI</b></p>
-    <p>-Update Minigame <b>KALKULATOR LEAFZUYA</b></p>
-    <p>-Perbaikan Bug Pada <b>LEAFCY AI</b></p>
-    <p>-Penambahan Minigame <b>CEK HEWAN DALAM JIWA</b></p>
-   <p>Penambahan Minigame <b>LEAFPY </b></p>
+    <p>-Perbaikan Bug Ngeselin Minigame <b>LEAFPY BIRD</b>
+    <p>-Menambahkan Minigame <b>HANGLEAF</b>
     
     
 
