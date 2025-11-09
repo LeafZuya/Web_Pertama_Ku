@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://leafzuya.github.io/Web_Pertama_Ku/sitemap.xml
