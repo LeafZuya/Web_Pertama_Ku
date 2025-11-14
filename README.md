@@ -947,7 +947,7 @@ function playFrameSound() {
 
     <ul>
       
-      <li><b>🧩 Versi:</b> v1.4 — "Daun Kemarau"</li>
+      <li><b>🧩 Versi:</b> v1.4.3 — "Daun Harapan Saudara ♥️🇵🇸"</li>
       <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
     </ul>
 
@@ -955,11 +955,10 @@ function playFrameSound() {
       ✨ Catatan Developer:<br>
       "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
     </p>
-    <li><b>📅 Update terakhir:</b> 8 November 2025</li>
+    <li><b>📅 Update terakhir:</b> 14 November 2025</li>
       <h1> •Apa Yang Baru?</h1>
     <p>-Perbaikan Bug</p>
-    <p>-Perbaikan Bug Ngeselin Minigame <b>LEAFPY BIRD</b>
-    <p>-Menambahkan Minigame <b>HANGLEAF</b>
+    <p>-Menambahkan Papan Untuk Amal Sumbangan Untuk <b>Palestina ♥️🇵🇸</b></p>
     
     
 
