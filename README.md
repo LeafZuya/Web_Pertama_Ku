@@ -214,6 +214,77 @@
     padding: 5px; /* jarak antara border & gambar */
     box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* bayangan */
   }
+.donate-btn-wrapper {
+    text-align: center;
+}
+
+.donate-btn {
+    display: inline-block;
+    padding: 0;
+    border-radius: 40px;
+    border: 4px solid #ce1126; /* merah Palestina */
+    background: #000000;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.15s ease-in-out;
+    box-shadow: 0 0 12px rgba(206, 17, 38, 0.5);
+}
+
+/* Efek Hover */
+.donate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 18px rgba(206, 17, 38, 0.8);
+}
+
+/* Efek Saat Ditekan */
+.donate-btn:active {
+    transform: scale(0.94);
+    box-shadow: 0 0 8px rgba(206, 17, 38, 0.5);
+}
+
+/* Gambar Tombol */
+.donate-btn img {
+    width: 250px;
+    display: block;
+}
+.gold-frame {
+    width: 230px;
+    border: 8px solid;
+    border-image: linear-gradient(45deg, #d4af37, #f7d774, #d4af37) 1;
+    padding: 8px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 
+        0 0 15px rgba(255, 215, 0, 0.6),
+        0 0 25px rgba(255, 230, 120, 0.4);
+    transition: 0.18s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover efek kilau mewah */
+.gold-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 
+        0 0 25px rgba(255, 215, 0, 0.9),
+        0 0 40px rgba(255, 255, 150, 0.7);
+}
+
+/* Saat ditekan */
+.gold-frame:active {
+    transform: scale(0.94);
+}
+
+/* Gambar ilustrasi di dalam frame */
+.gold-frame img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+/* --- AUDIO HIDDEN --- */
+#frameSound {
+    display: none;
+}
   </style>
 </head>
 <body>
@@ -276,8 +347,58 @@
 <img src="Idiot.jpg" alt="Gambar Karya" width="200" height="200">
 
 </div>
-     
+     </div>
+     <div class="card" style="
+    border: 3px solid #000;
+    background: linear-gradient(135deg, #1a1a1a, #ffffff, #009739, #ce1126);
+    color: #000;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+">
+
+    <h2 style="text-align:center; color:#000; font-weight:bold;">
+        🇵🇸 Donasi Untuk Palestina
+    </h2>
+
+    <!-- Gambar Ilustrasi -->
+    <!-- Gambar Ilustrasi GOLD FRAME Mewah -->
+<div style="text-align:center; margin-bottom:15px;">
+    <div class="gold-frame" onclick="playFrameSound()">
+        <img src="Palestina.jpg" alt="Support Palestine">
     </div>
+
+    <!-- Sound Efek -->
+    <audio id="frameSound" src="Free.mp3"></audio>
+    <script>
+function playFrameSound() {
+    const audio = document.getElementById("frameSound");
+    audio.currentTime = 0;
+    audio.play();
+}
+</script>
+</div>
+
+    <!-- Tombol PNG Menuju Website Donasi -->
+    <div class="donate-btn-wrapper">
+    <a href="https://www.rumahzakat.org/donasi/palestina" target="_blank"
+        class="donate-btn">
+        <img src="PalestinaT.jpg" alt="Donasi Palestina">
+    </a>
+    
+</div>
+
+    <!-- Deskripsi -->
+    <p style="text-align:center; background:#fff; padding:10px; border-radius:10px;">
+        Bantu saudara-saudara kita di Palestina yang sedang mengalami krisis kemanusiaan.  
+        Sepeser Bantuan kecil dari kalian dapat memberi dampak besar bagi mereka.  
+        🇵🇸💚 Terima kasih untuk kebaikan hati kalian.<br>
+        
+        <b>~By:LeafZuya</b>
+    </p>
+    
+    <p style="text-align:center; background:#fff; padding:10px; border-radius:10px;">Nanti Kalian Akan Diarahkan Ke <b>WEBSITE/SITUS RESMI DAN AMAN</b> untuk Menyumbangkan Amal Sumbangan...Jadi Uang-Nya Tidak Masuk Ke <b>REKENING PRIBADI-KU</b> Yahh!!...</p>
+</div>
     <div class="card">
       <h2>📘 Pelajaran Favorit</h2>
       <p>Matematika & Informatika 💚💙 Karena Melatih Berpikir Kritis dalam menyelesaikan Sesuatu Masalah...!!!!! hehe...gak jelas ah...</p>
@@ -965,4 +1086,5 @@ backBtn.addEventListener('click', ()=>{
   <span class="footer-emoji">💙</span>
   <br>
 </footer>
+
 
