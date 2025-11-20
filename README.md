@@ -1,37 +1,44 @@
-# Web-Have-Fun
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5781435134045433"
+     crossorigin="anonymous"></script>
+<!DOCTYPE html>
 <html lang="id">
 <head>
+  <!-- KODE ADSENSE DITEMPELKAN DI SINI -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5781435134045433"
+     crossorigin="anonymous"></script>
+  
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.png" type="image/png">
+  <link rel="icon" href="favicon.png" type="image/png">
   
   <meta name="google-site-verification" content="df6EtL6mKtOPWlg4bi57__R4cjbLIAuNwZisuD42fHo" />
   <title>Fun Web by LeafZuya (Daffa)</title>
 
+  <!-- 🌿 Untuk Android dan Chrome -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
+  <link rel="manifest" href="https://leafzuya.github.io/Web_Pertama_Ku/manifest.json">
+  <!-- 🌐 SEO Meta Tags -->
+  <meta name="title" content="LeafZuya Web — Have Fun">
+  <meta name="description" content="LeafZuya Adalah Website khusus untuk orang-orang yang sedang mencari kesenangan di waktu luang 🌿💙">
+  <meta name="keywords" content="LeafCy, LeafZuya, AI Chat, Virtual Friend, Artificial Intelligence, Blue Archive Inspired, Web AI Indonesia, Web Have Fun, Karya Anak Gabut">
+  <meta name="author" content="LeafZuya (Daffa)">
 
-<!-- 🌿 Untuk Android dan Chrome -->
-<link rel="apple-touch-icon" sizes="180x180" href="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
-<link rel="manifest" href="https://leafzuya.github.io/Web_Pertama_Ku/manifest.json">
-<!-- 🌐 SEO Meta Tags -->
-<meta name="title" content="LeafZuya Web — Have Fun">
-<meta name="description" content="LeafZuya Adalah Website khusus untuk orang-orang yang sedang mencari kesenangan di waktu luang 🌿💙">
-<meta name="keywords" content="LeafCy, LeafZuya, AI Chat, Virtual Friend, Artificial Intelligence, Blue Archive Inspired, Web AI Indonesia, Web Have Fun, Karya Anak Gabut">
-<meta name="author" content="LeafZuya (Daffa)">
+  <!-- 📱 Open Graph (Facebook, Discord, Google Rich Preview) -->
+  <meta property="og:title" content="LeafZuya Web — Have Fun">
+  <meta property="og:description" content="Website ini dibuat hanya karena kegabutan LeafZuya — dan sekadar hobi di waktu luang 😆">
+  <meta property="og:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leafzuya.github.io/Web_Pertama_Ku/">
+  <meta property="og:locale" content="id_ID">
 
-<!-- 📱 Open Graph (Facebook, Discord, Google Rich Preview) -->
-<meta property="og:title" content="LeafZuya Web — Have Fun">
-<meta property="og:description" content="Website ini dibuat hanya karena kegabutan LeafZuya — dan sekadar hobi di waktu luang 😆">
-<meta property="og:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://leafzuya.github.io/Web_Pertama_Ku/">
-<meta property="og:locale" content="id_ID">
-
-<!-- 🐦 Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LeafZuya Web — Have Fun">
-<meta name="twitter:description" content="Website buatan LeafZuya (Daffa), dibuat hanya untuk bersenang-senang 🌿✨">
-<meta name="twitter:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
-<meta name="twitter:creator" content="@LeafZuya">
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LeafZuya Web — Have Fun">
+  <meta name="twitter:description" content="Website buatan LeafZuya (Daffa), dibuat hanya untuk bersenang-senang 🌿✨">
+  <meta name="twitter:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
+  <meta name="twitter:creator" content="@LeafZuya">
+  
   <style>
+    /* SEMUA STYLE ANDA YANG SUDAH ADA TETAP SAMA */
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
     * {
@@ -205,86 +212,89 @@
     @media (max-width: 480px) {
       .container { column-count: 1; }
     }
-  .hiasan {
-    width: 400px;
-    height: 250px;
-    border: 8px solid transparent;
-    border-radius: 30px; /* sudut jadi tumpul */
-    background: linear-gradient(135deg, #4caf50, #2196f3); /* Hijau → Biru */
-    padding: 5px; /* jarak antara border & gambar */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* bayangan */
-  }
-.donate-btn-wrapper {
-    text-align: center;
-}
+    
+    .hiasan {
+      width: 400px;
+      height: 250px;
+      border: 8px solid transparent;
+      border-radius: 30px; /* sudut jadi tumpul */
+      background: linear-gradient(135deg, #4caf50, #2196f3); /* Hijau → Biru */
+      padding: 5px; /* jarak antara border & gambar */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3); /* bayangan */
+    }
+    
+    .donate-btn-wrapper {
+      text-align: center;
+    }
 
-.donate-btn {
-    display: inline-block;
-    padding: 0;
-    border-radius: 40px;
-    border: 4px solid #ce1126; /* merah Palestina */
-    background: #000000;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.15s ease-in-out;
-    box-shadow: 0 0 12px rgba(206, 17, 38, 0.5);
-}
+    .donate-btn {
+      display: inline-block;
+      padding: 0;
+      border-radius: 40px;
+      border: 4px solid #ce1126; /* merah Palestina */
+      background: #000000;
+      overflow: hidden;
+      cursor: pointer;
+      transition: 0.15s ease-in-out;
+      box-shadow: 0 0 12px rgba(206, 17, 38, 0.5);
+    }
 
-/* Efek Hover */
-.donate-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 0 18px rgba(206, 17, 38, 0.8);
-}
+    /* Efek Hover */
+    .donate-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 18px rgba(206, 17, 38, 0.8);
+    }
 
-/* Efek Saat Ditekan */
-.donate-btn:active {
-    transform: scale(0.94);
-    box-shadow: 0 0 8px rgba(206, 17, 38, 0.5);
-}
+    /* Efek Saat Ditekan */
+    .donate-btn:active {
+      transform: scale(0.94);
+      box-shadow: 0 0 8px rgba(206, 17, 38, 0.5);
+    }
 
-/* Gambar Tombol */
-.donate-btn img {
-    width: 250px;
-    display: block;
-}
-.gold-frame {
-    width: 230px;
-    border: 8px solid;
-    border-image: linear-gradient(45deg, #d4af37, #f7d774, #d4af37) 1;
-    padding: 8px;
-    border-radius: 15px;
-    background: #fff;
-    box-shadow: 
-        0 0 15px rgba(255, 215, 0, 0.6),
-        0 0 25px rgba(255, 230, 120, 0.4);
-    transition: 0.18s ease-in-out;
-    cursor: pointer;
-}
+    /* Gambar Tombol */
+    .donate-btn img {
+      width: 250px;
+      display: block;
+    }
+    
+    .gold-frame {
+      width: 230px;
+      border: 8px solid;
+      border-image: linear-gradient(45deg, #d4af37, #f7d774, #d4af37) 1;
+      padding: 8px;
+      border-radius: 15px;
+      background: #fff;
+      box-shadow: 
+          0 0 15px rgba(255, 215, 0, 0.6),
+          0 0 25px rgba(255, 230, 120, 0.4);
+      transition: 0.18s ease-in-out;
+      cursor: pointer;
+    }
 
-/* Hover efek kilau mewah */
-.gold-frame:hover {
-    transform: scale(1.05);
-    box-shadow: 
-        0 0 25px rgba(255, 215, 0, 0.9),
-        0 0 40px rgba(255, 255, 150, 0.7);
-}
+    /* Hover efek kilau mewah */
+    .gold-frame:hover {
+      transform: scale(1.05);
+      box-shadow: 
+          0 0 25px rgba(255, 215, 0, 0.9),
+          0 0 40px rgba(255, 255, 150, 0.7);
+    }
 
-/* Saat ditekan */
-.gold-frame:active {
-    transform: scale(0.94);
-}
+    /* Saat ditekan */
+    .gold-frame:active {
+      transform: scale(0.94);
+    }
 
-/* Gambar ilustrasi di dalam frame */
-.gold-frame img {
-    width: 100%;
-    border-radius: 10px;
-    display: block;
-}
+    /* Gambar ilustrasi di dalam frame */
+    .gold-frame img {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+    }
 
-/* --- AUDIO HIDDEN --- */
-#frameSound {
-    display: none;
-}
+    /* --- AUDIO HIDDEN --- */
+    #frameSound {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -1085,5 +1095,3 @@ backBtn.addEventListener('click', ()=>{
   <span class="footer-emoji">💙</span>
   <br>
 </footer>
-
-
