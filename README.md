@@ -992,8 +992,7 @@ function playFrameSound() {
   left: 125%;
 }
 </style>
-  <p>Kalian Suka Tantangan Global?,Nahh,maka Dari itu,mainkan LEAF-FAST yang Dipercaya Dapat Meningkatkan Kecepatan Otot Jari Hingga 100 Gerakan/Dtk(Jangan Pakai Auto Clicker Loh yah...)</p>
-    </div>
+  <p>Kalian Suka Tantangan Global?,Nahh,maka Dari itu,mainkan LEAF-FAST yang Dipercaya Dapat Meningkatkan Kecepatan Otot Jari Hingga 100 Gerakan/Dtk(Jangan Pakai Auto Clicker Loh yah...🗿☕)</p>
     
     <!-- Tombol menuju halaman Tentang -->
 <button id="aboutBtn" class="btn-about">ℹ️ Tentang(Opsional,tapi Disarankan 🗿☕)</button>
@@ -1004,12 +1003,8 @@ function playFrameSound() {
     <h2>🌿 LeafZuya Web Have Fun</h2>
     <p>
       Website ini dibuat sebagai hiburan Di Waktu Luang,Jangan Terlalu Fokus/Serius pada Website ini,Hidup kalian lebih berwarna,jika kalian melakukan Hal-Hal yang Bermanfaat untuk Orang lain dan Diri Sendiri...Ingat!,kita Ini Makhluk Yang Lemah!,Jangan Sombong kepada sang Pencipta!,Karena Dialah yang Berkuasa atas Dunia Ini,dan Jangan Lupa <b>BERBUAT BAIK</b> 💚.
-    </p><br>
-  
-    <p>Website Ini Dipercayai Oleh 150+ Orang² Gabut dari Seluruh Dunia,dan Diawasi Oleh Organisasi Perkumpulan Orang² Gabut Se-Asia Tenggara(OPO2GAT)</p>
-    
-
-    <ul>
+    </p><br><p>Website Ini Dipercayai Oleh 150+ Orang² Gabut dari Seluruh Dunia,dan Diawasi Oleh Organisasi Perkumpulan Orang² Gabut Se-Asia Tenggara(OPO2GAT)</p>
+  <ul>
       
       <li><b>🧩 Versi:</b> v1.4.5— "Daun Kemarau"</li>
       <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
