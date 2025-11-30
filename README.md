@@ -944,55 +944,7 @@ function playFrameSound() {
   <p>Kalian Suka Tantangan Skor Paling Banyak Dengan Orang lain Di Seluruh Dunia???,Nahhh...kalian Datang Di tempat yang Tepat,Di LeafPy,Kalian Bisa Mengumpulkan Skor sebanyak-banyaknya dengan cara melewati Rintangan Pipa Merah!!!, Minigame Ini juga Dilengkapi Leaderboard Online Mengandalkan Lokal Storage Browser....(Butuh Waktu 4 Minggu Woilah Baru Selesai 🗿🙏☕)</p>
     </div>
     
-    <div class="card">
-      <h2>LeafFast!🌿</h2>
-      <p><b>Dibawah ini Hanya Gambar Ilustrasi saja!!</b></p>
-      
-  <img src="Fast.jpg" alt="Foto Karya" class="hiasan">
-     
-      <!-- 🌿 Tombol Unik Hijau-Biru -->
-<a href="https://leafzuya.github.io/LeafFast/" class="magic-btn">Game Klik Secepatnya🗿🍃/<a>
-
-<style>
-.magic-btn {
-  display: inline-block;
-  padding: 14px 26px;
-  font-size: 17px;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  border-radius: 18px; /* Sudut tumpul */
-  background: linear-gradient(135deg, #00e69a, #1ea7ff);
-  box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
-  transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efek kilau lembut */
-.magic-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: skewX(-25deg);
-  transition: all 0.6s ease;
-}
-
-/* Efek hover */
-.magic-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 28px rgba(0, 150, 255, 0.5);
-}
-
-.magic-btn:hover::after {
-  left: 125%;
-}
-</style>
-  <p>Kalian Suka Tantangan Global?,Nahh,maka Dari itu,mainkan LEAF-FAST yang Dipercaya Dapat Meningkatkan Kecepatan Otot Jari Hingga 100 Gerakan/Dtk(Jangan Pakai Auto Clicker Loh yah...🗿☕)</p>
+    
     
     <!-- Tombol menuju halaman Tentang -->
 <button id="aboutBtn" class="btn-about">ℹ️ Tentang(Opsional,tapi Disarankan 🗿☕)</button>
@@ -1003,8 +955,12 @@ function playFrameSound() {
     <h2>🌿 LeafZuya Web Have Fun</h2>
     <p>
       Website ini dibuat sebagai hiburan Di Waktu Luang,Jangan Terlalu Fokus/Serius pada Website ini,Hidup kalian lebih berwarna,jika kalian melakukan Hal-Hal yang Bermanfaat untuk Orang lain dan Diri Sendiri...Ingat!,kita Ini Makhluk Yang Lemah!,Jangan Sombong kepada sang Pencipta!,Karena Dialah yang Berkuasa atas Dunia Ini,dan Jangan Lupa <b>BERBUAT BAIK</b> 💚.
-    </p><br><p>Website Ini Dipercayai Oleh 150+ Orang² Gabut dari Seluruh Dunia,dan Diawasi Oleh Organisasi Perkumpulan Orang² Gabut Se-Asia Tenggara(OPO2GAT)</p>
-  <ul>
+    </p><br>
+  
+    <p>Website Ini Dipercayai Oleh 150+ Orang² Gabut dari Seluruh Dunia,dan Diawasi Oleh Organisasi Perkumpulan Orang² Gabut Se-Asia Tenggara(OPO2GAT)</p>
+    
+
+    <ul>
       
       <li><b>🧩 Versi:</b> v1.4.5— "Daun Kemarau"</li>
       <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
