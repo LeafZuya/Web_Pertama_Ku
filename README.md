@@ -1,6 +1,3 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5781435134045433"
-     crossorigin="anonymous"></script>
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <!-- KODE ADSENSE DITEMPELKAN DI SINI -->
@@ -894,57 +891,6 @@ function playFrameSound() {
     </div>
     
     <div class="card">
-      <h2>LeafFast!🌿</h2>
-      <p><b>Dibawah ini Hanya Gambar Ilustrasi saja!!</b></p>
-      
-  <img src="Fast.jpg" alt="Foto Karya" class="hiasan">
-     
-      <!-- 🌿 Tombol Unik Hijau-Biru -->
-<a href="https://leafzuya.github.io/LeafFast/" class="magic-btn">Game Klik Secepatnya🗿🍃/<a>
-
-<style>
-.magic-btn {
-  display: inline-block;
-  padding: 14px 26px;
-  font-size: 17px;
-  font-weight: 700;
-  color: white;
-  text-decoration: none;
-  border-radius: 18px; /* Sudut tumpul */
-  background: linear-gradient(135deg, #00e69a, #1ea7ff);
-  box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
-  transition: all 0.25s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Efek kilau lembut */
-.magic-btn::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: skewX(-25deg);
-  transition: all 0.6s ease;
-}
-
-/* Efek hover */
-.magic-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 10px 28px rgba(0, 150, 255, 0.5);
-}
-
-.magic-btn:hover::after {
-  left: 125%;
-}
-</style>
-  <p>Kalian Suka Tantangan Global?,Nahh,maka Dari itu,mainkan LEAF-FAST yang Dipercaya Dapat Meningkatkan Kecepatan Otot Jari Hingga 100 Gerakan/Dtk(Jangan Pakai Auto Clicker Loh yah...)</p>
-    </div>
-
-    <div class="card">
       <h2>LeafPy!🐦🌿</h2>
       <p><b>Dibawah ini Hanya Gambar Ilustrasi saja!!</b></p>
       
@@ -1151,4 +1097,3 @@ backBtn.addEventListener('click', ()=>{
   <span class="footer-emoji">💙</span>
   <br>
 </footer>
-
