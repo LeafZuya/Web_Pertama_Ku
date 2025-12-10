@@ -970,7 +970,6 @@ function playFrameSound() {
     <li><b>📅 Update terakhir:</b> 29 November 2025</li>
       <h1> •Apa Yang Baru?</h1>
     <p>-Memperkecil Ukuran Website, supaya Ringan</p>
-    <p>-Menambahkan Minigame Baru, "<b>LEAFFAST</b>"</p>
     
     
 
