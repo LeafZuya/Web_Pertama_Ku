@@ -1187,9 +1187,9 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 29 November 2025</li>
+      <li><b>📅 Update terakhir:</b> 23 Januari 2026(Akhirnya Update Lagi Cuyyy.... Alhamdulillah setelah Sekian Lama🥳🤩✨)</li>
         <h1> •Apa Yang Baru?</h1>
-      <p>-Memperkecil Ukuran Website, supaya Ringan</p>
+      <p>-Menambahkan Loading Screen,Sebelum Masuk Ke Website</p>
       
       
 
