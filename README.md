@@ -1158,7 +1158,58 @@
     left: 125%;
   }
   </style>
-    <p>Kalian Suka Tantangan Skor Paling Banyak Dengan Orang lain Di Seluruh Dunia???,Nahhh...kalian Datang Di tempat yang Tepat,Di LeafPy,Kalian Bisa Mengumpulkan Skor sebanyak-banyaknya dengan cara melewati Rintangan Pipa Merah!!!, Minigame Ini juga Dilengkapi Leaderboard Online Mengandalkan Lokal Storage Browser....(Butuh Waktu 4 Minggu Woilah Baru Selesai 🗿🙏☕)</p>
+    <p>Kalian Suka Tantangan Skor Paling Banyak Dengan Orang lain Di Seluruh Dunia???,Nahhh...kalian Datang Di tempat yang Tepat,Di LeafPy,Kalian Bisa Mengumpulkan Skor sebanyak-banyaknya dengan cara melewati Rintangan Pipa Merah!!!, Minigame Ini juga Dilengkapi Leaderboard Online Mengandalkan Server Storage Browser....(Butuh Waktu 4 Minggu Woilah Baru Selesai 🗿🙏☕)</p>
+      </div>
+      
+      <div class="card">
+        <h2>Uji Kekuatan Kecepatan Jari!🌿</h2>
+        <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
+        
+    <img src="Fast.jpg" alt="Foto Karya" class="hiasan">
+       
+        <!-- 🌿 Tombol Unik Hijau-Biru -->
+  <a href="https://leafzuya.github.io/LeafFast/" class="magic-btn">Kunjungi LeafFast ☘️✅🗿</a>
+
+  <style>
+  .magic-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-radius: 18px; /* Sudut tumpul */
+    background: linear-gradient(135deg, #00e69a, #1ea7ff);
+    box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efek kilau lembut */
+  .magic-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: all 0.6s ease;
+  }
+
+  /* Efek hover */
+  .magic-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(0, 150, 255, 0.5);
+  }
+
+  .magic-btn:hover::after {
+    left: 125%;
+  }
+  </style>
+    <p>Apakah Kalian Mempunyai Kekuatan Kecepatan Super???,Kalo iya,buktikan Dengan Memainkan Minigame ini🗿🙏☕</p>
       </div>
       
       
@@ -1179,7 +1230,7 @@
 
       <ul>
         
-        <li><b>🧩 Versi:</b> v1.4.5— "Daun Kemarau"</li>
+        <li><b>🧩 Versi:</b> v1.4.7— "Holy Leaf"</li>
         <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
       </ul>
 
@@ -1187,10 +1238,10 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 23 Januari 2026(Akhirnya Update Lagi Cuyyy.... Alhamdulillah setelah Sekian Lama🥳🤩✨)</li>
+      <li><b>📅 Update terakhir:</b> 24 Januari 2026(Update Lagi,Hore..!)</li>
         <h1> •Apa Yang Baru?</h1>
-      <p>-Menambahkan Loading Screen,Sebelum Masuk Ke Website</p>
-      
+      <p>-Menambahkan Loading Screen sebelum Masuk</p>
+      <p>Menambahkan Minigame <b>LeafFast!</b></p>
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
