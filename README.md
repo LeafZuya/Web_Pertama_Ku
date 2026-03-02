@@ -1686,7 +1686,7 @@ body {
   </main>
 
   <footer>
-    © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
+    © 2026 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
     <b>BERNAFAS</b> 🤭🗣️🔥<br>
     <span class="footer-emoji">🍀</span>
     <span class="footer-emoji">💚</span>
@@ -1844,7 +1844,7 @@ body {
       const intervalDuration = 100; // Update setiap 100ms
       const progressPerInterval = 100 / (totalDuration / intervalDuration);
       const messages = [
-        "Menyiapkan pengalaman seru...",
+        "Marhaban Ya Ramadhan ✨🌟🌙...",
         "Memuat konten menarik...",
         "Menyiapkan game-game keren...",
         "Hampir selesai...",
