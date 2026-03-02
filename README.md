@@ -1987,7 +1987,7 @@ if(now.getHours() === 18){
 }
 
 /* 🕌 Countdown Idul Fitri (set manual tanggal) */
-const idulFitri = new Date("March 30, 2026 00:00:00").getTime();
+const idulFitri = new Date("March 19, 2026 00:00:00").getTime();
 setInterval(function(){
   const now = new Date().getTime();
   const distance = idulFitri - now;
