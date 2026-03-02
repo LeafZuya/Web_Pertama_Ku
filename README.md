@@ -1985,15 +1985,43 @@ const now = new Date();
 if(now.getHours() === 18){
   document.getElementById("iftarPopup").style.display = "block";
 }
+  // 🕌 Countdown Idul Fitri (17 hari, tidak reset saat refresh)
 
-/* 🕌 Countdown Idul Fitri (set manual tanggal) */
-const idulFitri = new Date("March 19, 2026 00:00:00").getTime();
-setInterval(function(){
-  const now = new Date().getTime();
-  const distance = idulFitri - now;
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  document.getElementById("countdown").innerText = days + " Hari Lagi";
-},1000);
+  let targetDate = localStorage.getItem("idulFitriTarget");
+
+  // Kalau belum pernah diset, buat target 17 hari dari sekarang
+  if (!targetDate) {
+    const now = new Date().getTime();
+    targetDate = now + (17 * 24 * 60 * 60 * 1000);
+    localStorage.setItem("idulFitriTarget", targetDate);
+  }
+
+  targetDate = parseInt(targetDate);
+
+  const interval = setInterval(function() {
+
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    if (distance <= 0) {
+      clearInterval(interval);
+      document.getElementById("countdown").innerHTML = "Selamat Idul Fitri 🌙✨";
+      localStorage.removeItem("idulFitriTarget");
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML =
+      days + " Hari " +
+      hours + " Jam " +
+      minutes + " Menit " +
+      seconds + " Detik Lagi Menuju Idul Fitri 🕌";
+
+  }, 1000);
 
 /* ✨ Confetti saat klik */
 document.addEventListener("click", function(e){
