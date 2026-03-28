@@ -36,281 +36,6 @@
   <meta name="twitter:creator" content="@LeafZuya">
   
   <style>
-  /* ===============================
-   🌙 BULAN SABIT REAL
-================================ */
-
-.crescent-moon {
-  position: fixed;
-  top: 80px;
-  right: 120px;
-  width: 120px;
-  height: 120px;
-  background: gold;
-  border-radius: 50%;
-  box-shadow: 0 0 60px gold;
-  animation: floatMoon 6s infinite ease-in-out;
-}
-
-.crescent-moon::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 30px;
-  width: 120px;
-  height: 120px;
-  background: #021a13;
-  border-radius: 50%;
-}
-
-@keyframes floatMoon {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
-}
-
-/* ===============================
-   ✨ STAR FIELD RANDOM
-================================ */
-
-.star-field {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-image:
-    radial-gradient(white 1px, transparent 1px),
-    radial-gradient(white 1px, transparent 1px);
-  background-size: 80px 80px, 120px 120px;
-  background-position: 0 0, 40px 60px;
-  animation: twinkleStars 2s infinite alternate;
-}
-
-@keyframes twinkleStars {
-  from { opacity: 0.5; }
-  to { opacity: 1; }
-}
-
-/* ===============================
-   🕌 SILUET MASJID
-================================ */
-
-.mosque-silhouette {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 150px;
-  background: url("https://i.imgur.com/6QZ6K9x.png") no-repeat center bottom;
-  background-size: cover;
-  opacity: 0.4;
-}
-
-/* ===============================
-   📜 LEMBARAN AYAT STYLE
-================================ */
-
-.ayat-paper {
-  position: relative;
-  max-width: 600px;
-  margin: 120px auto;
-  padding: 30px;
-  background: #fdf6e3;
-  border-radius: 10px;
-  box-shadow: 
-    0 10px 20px rgba(0,0,0,0.3),
-    inset 0 0 30px rgba(0,0,0,0.1);
-  font-family: "Georgia", serif;
-  transform: rotate(-1deg);
-}
-
-.ayat-paper h3 {
-  text-align: center;
-  color: #14532d;
-}
-
-.ayat-paper p {
-  font-size: 20px;
-  text-align: right;
-  direction: rtl;
-  margin-bottom: 15px;
-}
-
-.ayat-paper small {
-  display: block;
-  text-align: center;
-  color: #333;
-}
-  /* ===============================
-   🌙 RAMADHAN FESTIVAL EXTREME
-================================ */
-
-body {
-  background: radial-gradient(circle at top, #043927, #021a13);
-  overflow-x: hidden;
-  animation: glowBackground 6s infinite alternate;
-}
-
-@keyframes glowBackground {
-  from { filter: brightness(1); }
-  to { filter: brightness(1.1); }
-}
-
-/* 🌙 Moon */
-.moon {
-  position: fixed;
-  top: 60px;
-  right: 100px;
-  width: 100px;
-  height: 100px;
-  background: radial-gradient(circle, #fffacd, #f1c40f);
-  border-radius: 50%;
-  box-shadow: 0 0 50px gold;
-  animation: floatMoon 8s ease-in-out infinite;
-}
-
-@keyframes floatMoon {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(20px); }
-}
-
-/* ✨ Stars */
-.stars::after {
-  content: "";
-  position: fixed;
-  width: 2px;
-  height: 2px;
-  background: white;
-  box-shadow:
-    100px 200px white,
-    400px 150px white,
-    700px 300px white,
-    900px 100px white,
-    1200px 250px white,
-    1500px 400px white;
-  animation: twinkle 1.5s infinite alternate;
-}
-
-@keyframes twinkle {
-  from { opacity: 0.3; }
-  to { opacity: 1; }
-}
-
-/* 🌠 Shooting Stars */
-.shooting-stars::after {
-  content: "";
-  position: fixed;
-  top: -100px;
-  left: -100px;
-  width: 3px;
-  height: 100px;
-  background: linear-gradient(white, transparent);
-  transform: rotate(45deg);
-  animation: shoot 5s infinite;
-}
-
-@keyframes shoot {
-  0% { top: -100px; left: -100px; opacity: 1; }
-  100% { top: 100%; left: 100%; opacity: 0; }
-}
-
-/* 🏮 Lantern */
-.lantern {
-  position: fixed;
-  top: 0;
-  width: 50px;
-  height: 80px;
-  background: linear-gradient(gold, orange);
-  border-radius: 15px;
-  box-shadow: 0 0 30px gold;
-  animation: swing 3s infinite ease-in-out;
-}
-
-.lantern-left { left: 20%; }
-.lantern-right { right: 20%; }
-
-@keyframes swing {
-  0%,100% { transform: rotate(-6deg); }
-  50% { transform: rotate(6deg); }
-}
-
-/* 🐛 Fireflies */
-.fireflies::after {
-  content: "";
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: yellow;
-  border-radius: 50%;
-  box-shadow:
-    200px 300px yellow,
-    500px 200px yellow,
-    800px 350px yellow,
-    1100px 150px yellow;
-  animation: fly 4s infinite alternate;
-}
-
-@keyframes fly {
-  from { transform: translateY(0); }
-  to { transform: translateY(40px); }
-}
-
-/* 🧺 Ketupat */
-.ketupat {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  background: #198754;
-  transform: rotate(45deg);
-  top: 200px;
-  animation: floatKetupat 5s infinite ease-in-out;
-}
-
-.ketupat-left { left: 40px; }
-.ketupat-right { right: 40px; }
-
-@keyframes floatKetupat {
-  0%,100% { transform: rotate(45deg) translateY(0); }
-  50% { transform: rotate(45deg) translateY(20px); }
-}
-
-/* 📿 Tasbih */
-.tasbih-counter {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #14532d;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 25px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 20px green;
-}
-
-/* 🌙 Iftar Popup */
-.iftar-popup {
-  position: fixed;
-  top: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: gold;
-  padding: 12px 25px;
-  border-radius: 30px;
-  font-weight: bold;
-  display: none;
-  box-shadow: 0 0 25px gold;
-}
-
-/* 🕌 Countdown */
-.countdown-box {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(255,215,0,0.2);
-  padding: 10px 15px;
-  border-radius: 15px;
-  color: gold;
-  font-weight: bold;
-  box-shadow: 0 0 15px gold;
-}
     /* ============ LOADING SCREEN STYLES ============ */
     #loading-screen {
       position: fixed;
@@ -779,7 +504,6 @@ body {
     BAGIAN UNTUK CUSTOM AUDIO SETTINGS
     ============================================
     -->
-    
     <div id="audio-controls" style="margin-top: 20px; display: none;">
       <button id="mute-btn" style="background: rgba(255,255,255,0.2); color: white; border: 1px solid white; padding: 8px 16px; border-radius: 20px; cursor: pointer;">
         🔇 Mute
@@ -787,58 +511,9 @@ body {
       <input type="range" id="volume-slider" min="0" max="100" value="80" style="width: 150px; margin-left: 10px;">
     </div>
   </div>
-  <!-- 🌙🌟 RAMADHAN FESTIVAL PACK 🌟🌙 -->
-
-<div class="ramadhan-sky">
-  <div class="moon"></div>
-  <div class="stars"></div>
-  <div class="shooting-stars"></div>
-</div>
-
-<div class="lantern lantern-left"></div>
-<div class="lantern lantern-right"></div>
-
-<div class="fireflies"></div>
-
-<div class="ketupat ketupat-left"></div>
-<div class="ketupat ketupat-right"></div>
-
-<div class="tasbih-counter" onclick="addTasbih()">
-  📿 <span id="tasbihCount">0</span>
-</div>
-
-<div id="iftarPopup" class="iftar-popup">
-  🌙 Selamat Berbuka, Zuya ✨
-</div>
-
-<div class="countdown-box">
-  🕌 Menuju Idul Fitri:
-  <span id="countdown"></span>
-</div>
   
   <!-- ============ KONTEN UTAMA WEBSITE ============ -->
   <!-- (Konten utama website tetap sama seperti sebelumnya) -->
-  <!-- 🌙 RAMADHAN VISUAL UPGRADE -->
-
-<div class="ramadhan-sky">
-  <div class="crescent-moon"></div>
-  <div class="star-field"></div>
-</div>
-
-<div class="mosque-silhouette"></div>
-
-<!-- 📜 LEMBARAN AYAT -->
-<div class="ayat-paper">
-  <h3>📖 QS. Al-Baqarah: 183</h3>
-  <p>
-    يَا أَيُّهَا الَّذِينَ آمَنُوا كُتِبَ عَلَيْكُمُ الصِّيَامُ
-    كَمَا كُتِبَ عَلَى الَّذِينَ مِن قَبْلِكُمْ لَعَلَّكُمْ تَتَّقُونَ
-  </p>
-  <small>
-    "Wahai orang-orang yang beriman, diwajibkan atas kamu berpuasa 
-    sebagaimana diwajibkan atas orang-orang sebelum kamu agar kamu bertakwa."
-  </small>
-</div>
   <div class="main-content">
     <header>
       <img src="Iwak.gif" alt="Foto Karya" class="hiasan">
@@ -1686,7 +1361,7 @@ body {
   </main>
 
   <footer>
-    © 2026 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
+    © 2025 Fun Web by LeafZuya. Jangan Copyright...!! dan Jangan Lupa 
     <b>BERNAFAS</b> 🤭🗣️🔥<br>
     <span class="footer-emoji">🍀</span>
     <span class="footer-emoji">💚</span>
@@ -1844,7 +1519,7 @@ body {
       const intervalDuration = 100; // Update setiap 100ms
       const progressPerInterval = 100 / (totalDuration / intervalDuration);
       const messages = [
-        "Marhaban Ya Ramadhan ✨🌟🌙...",
+        "Menyiapkan pengalaman seru...",
         "Memuat konten menarik...",
         "Menyiapkan game-game keren...",
         "Hampir selesai...",
@@ -1973,70 +1648,5 @@ body {
     };
   });
   </script>
-  <script>
-let tasbih = 0;
-function addTasbih(){
-  tasbih++;
-  document.getElementById("tasbihCount").innerText = tasbih;
-}
-
-/* 🌙 Popup Maghrib */
-const now = new Date();
-if(now.getHours() === 18){
-  document.getElementById("iftarPopup").style.display = "block";
-}
-  // 🕌 Countdown Idul Fitri (17 hari, tidak reset saat refresh)
-
-  let targetDate = localStorage.getItem("idulFitriTarget");
-
-  // Kalau belum pernah diset, buat target 17 hari dari sekarang
-  if (!targetDate) {
-    const now = new Date().getTime();
-    targetDate = now + (17 * 24 * 60 * 60 * 1000);
-    localStorage.setItem("idulFitriTarget", targetDate);
-  }
-
-  targetDate = parseInt(targetDate);
-
-  const interval = setInterval(function() {
-
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance <= 0) {
-      clearInterval(interval);
-      document.getElementById("countdown").innerHTML = "Selamat Idul Fitri 🌙✨";
-      localStorage.removeItem("idulFitriTarget");
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    document.getElementById("countdown").innerHTML =
-      days + " Hari " +
-      hours + " Jam " +
-      minutes + " Menit " +
-      seconds + " Detik Lagi Menuju Idul Fitri 🕌";
-
-  }, 1000);
-
-/* ✨ Confetti saat klik */
-document.addEventListener("click", function(e){
-  const spark = document.createElement("div");
-  spark.style.position="fixed";
-  spark.style.left=e.clientX+"px";
-  spark.style.top=e.clientY+"px";
-  spark.style.width="6px";
-  spark.style.height="6px";
-  spark.style.background="gold";
-  spark.style.borderRadius="50%";
-  spark.style.boxShadow="0 0 10px gold";
-  document.body.appendChild(spark);
-  setTimeout(()=>{spark.remove();},500);
-});
-</script>
 </body>
 </html>
