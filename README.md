@@ -1212,6 +1212,56 @@
     <p>Apakah Kalian Mempunyai Kekuatan Kecepatan Super???,Kalo iya,buktikan Dengan Memainkan Minigame ini🗿🙏☕</p>
       </div>
       
+      <div class="card">
+        <h2>Uji Ingatan Otak!🌿</h2>
+        <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
+        
+    <img src="Flip.png" alt="Foto Karya" class="hiasan">
+       
+        <!-- 🌿 Tombol Unik Hijau-Biru -->
+  <a href="https://leafzuya.github.io/Leaf_Flip/" class="magic-btn">Kunjungi LeafFast ☘️✅🗿</a>
+
+  <style>
+  .magic-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-radius: 18px; /* Sudut tumpul */
+    background: linear-gradient(135deg, #00e69a, #1ea7ff);
+    box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efek kilau lembut */
+  .magic-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: all 0.6s ease;
+  }
+
+  /* Efek hover */
+  .magic-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(0, 150, 255, 0.5);
+  }
+
+  .magic-btn:hover::after {
+    left: 125%;
+  }
+  </style>
+    <p>Ingin Punya Ingatan Super???,Ingin Punya IQ Tingi???,Nahh...Mainkan Lah,Minigame Ini!🗿🙏☕</p>
+      </div>
       
       
       <!-- Tombol menuju halaman Tentang -->
@@ -1230,7 +1280,7 @@
 
       <ul>
         
-        <li><b>🧩 Versi:</b> v1.4.7— "Holy Leaf"</li>
+        <li><b>🧩 Versi:</b> v1.5.0— "Meta Leaf"</li>
         <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
       </ul>
 
@@ -1238,10 +1288,10 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 24 Januari 2026(Update Lagi,Hore..!)</li>
+      <li><b>📅 Update terakhir:</b> 1 April 2026</li>
         <h1> •Apa Yang Baru?</h1>
-      <p>-Menambahkan Loading Screen sebelum Masuk</p>
-      <p>Menambahkan Minigame <b>LeafFast!</b></p>
+      <p>-Meringankan Ukuran Web</p>
+      <p>Menambahkan Minigame <b>Leaf_Flip!</b></p>
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
