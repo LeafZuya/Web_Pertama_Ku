@@ -1267,7 +1267,7 @@
         <h2>Uji Ingatan Otak!🌿</h2>
         <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
         
-    <img src="Sneaky.jpg" alt="Foto Karya" class="hiasan">
+    <img src="Sneak.jpg" alt="Foto Karya" class="hiasan">
        
         <!-- 🌿 Tombol Unik Hijau-Biru -->
   <a href="https://leafzuya.github.io/Sneaky/" class="magic-btn">Mainkan Sneaky! ☘️🗿</a>
