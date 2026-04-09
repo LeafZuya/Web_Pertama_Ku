@@ -1219,7 +1219,7 @@
     <img src="Flip.png" alt="Foto Karya" class="hiasan">
        
         <!-- 🌿 Tombol Unik Hijau-Biru -->
-  <a href="https://leafzuya.github.io/Leaf_Flip/" class="magic-btn">Kunjungi LeafFast ☘️✅🗿</a>
+  <a href="https://leafzuya.github.io/Leaf_Flip/" class="magic-btn">Mainkan Supaya Punya IQ tinggi!☘️🗿</a>
 
   <style>
   .magic-btn {
@@ -1264,7 +1264,7 @@
       </div>
       
       <div class="card">
-        <h2>Uji Ingatan Otak!🌿</h2>
+        <h2>Sneaky!🌿🗿</h2>
         <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
         
     <img src="Sneak.jpg" alt="Foto Karya" class="hiasan">
