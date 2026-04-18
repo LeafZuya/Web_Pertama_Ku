@@ -556,10 +556,23 @@
     </a>
 
     <!-- Tombol -->
-<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
+<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿v2</button>
 
 <!-- Audio -->
 <audio id="myAudio" src="Jokowi.mp3"></audio>
+<!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
+
+<script>
+  function playMusic() {
+    const audio = document.getElementById("myAudio");
+    audio.play();
+  }
+</script>
+<!-- Tombol -->
+<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
+
+<!-- Audio -->
+<audio id="myAudio" src="gok.mp3"></audio>
 <!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
 
 <script>
@@ -1329,7 +1342,7 @@
 
       <ul>
         
-        <li><b>🧩 Versi:</b> v1.5.1— "Lime Leaf"</li>
+        <li><b>🧩 Versi:</b> v1.5.1— "Vanilla Leaf"</li>
         <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
       </ul>
 
@@ -1337,10 +1350,10 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 8 April 2026</li>
+      <li><b>📅 Update terakhir:</b> 18 April 2026</li>
         <h1> •Apa Yang Baru?</h1>
       <p>-Meringankan Ukuran Web(55KB)</p>
-      <p>-Menambahkan Minigame <b>SNEAKY!!</b></p>
+      <p>-Menambahkan Secret Button v2</p>
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
