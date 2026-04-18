@@ -556,7 +556,7 @@
     </a>
 
     <!-- Tombol -->
-<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿v2</button>
+<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
 
 <!-- Audio -->
 <audio id="myAudio" src="Jokowi.mp3"></audio>
@@ -569,7 +569,7 @@
   }
 </script>
 <!-- Tombol -->
-<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
+<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿v2</button>
 
 <!-- Audio -->
 <audio id="myAudio" src="gok.mp3"></audio>
