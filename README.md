@@ -1499,7 +1499,7 @@
         <h1> •Apa Yang Baru?</h1>
       <p>-Meringankan Ukuran Web(55KB)</p>
       <p>-Menambahkan Secret Button v2</p>
-      <p>Menambahkan Jam Digital Di Home Utama Website!</p>
+      <p>-Menambahkan Jam Digital Di Home Utama Website!</p>
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
