@@ -699,30 +699,23 @@
       </button>
     </a>
 
-    <!-- Tombol -->
-<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
+  <!-- Tombol 1 - Jokowi.mp3 -->
+<button onclick="playMusic('Jokowi.mp3')">Jangan Pencet Aku....☠️🗿</button>
+<audio id="audio1" src="Jokowi.mp3"></audio>
 
-<!-- Audio -->
-<audio id="myAudio" src="Jokowi.mp3"></audio>
-<!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
-
-<script>
-  function playMusic() {
-    const audio = document.getElementById("myAudio");
-    audio.play();
-  }
-</script>
-
-<!-- Tombol -->
-<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿v2</button>
-
-<!-- Audio -->
-<audio id="myAudio" src="gok.mp3"></audio>
-<!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
+<!-- Tombol 2 - gok.mp3 -->
+<button onclick="playMusic('gok.mp3')">Jangan Pencet Aku....☠️🗿v2</button>
+<audio id="audio2" src="gok.mp3"></audio>
 
 <script>
-  function playMusic() {
-    const audio = document.getElementById("myAudio");
+  function playMusic(soundFile) {
+    let audio;
+    if (soundFile === 'Jokowi.mp3') {
+      audio = document.getElementById("audio1");
+    } else {
+      audio = document.getElementById("audio2");
+    }
+    audio.currentTime = 0; // Reset ke awal
     audio.play();
   }
 </script>
