@@ -1111,7 +1111,7 @@
         <h2>LeafCy AI😆🌿</h2>
         <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
         
-    <img src="LeafCy.jpg" alt="Foto Karya" class="hiasan">
+    <img src="leafcy.png" alt="Foto Karya" class="hiasan">
        
         <!-- 🌿 Tombol Unik Hijau-Biru -->
   <a href="https://leafzuya.github.io/Chat-With-LeafCy/" class="magic-btn">Kunjungi LeafCy AI☘️😆</a>
