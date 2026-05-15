@@ -1155,7 +1155,7 @@
     left: 125%;
   }
   </style>
-    <p>Jangan Lupa Klik Tombol Diatas yah....Itu adalah AI Buatan ku Sendiri (LeafZuya),tapi masih Tahap Pengembangan (Beta)...kalian juga bisa Tambahkan Obrolan dan Jawaban Obrolan Nya...Bareng LeafCy 😆🤞☘️🍃</p>
+    <p>Jangan Lupa Klik Tombol Diatas yah....Itu adalah AI Buatan ku Sendiri (LeafZuya),tapi masih Tahap Pengembangan (Beta)...kalian juga bisa Tambahkan Obrolan dan Jawaban Obrolan Nya...[LeafCy AI X OpenRouter]😆🤞☘️🍃</p>
       </div>
 
       <div class="card">
@@ -1488,11 +1488,11 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 19 April 2026</li>
+      <li><b>📅 Update terakhir:</b> 15 Mei 2026</li>
         <h1> •Apa Yang Baru?</h1>
-      <p>-Meringankan Ukuran Web(55KB)</p>
-      <p>-Menambahkan Secret Button v2</p>
-      <p>-Menambahkan Jam Digital Di Home Utama Website!</p>
+      <p>-Memperbaiki Bug</p>
+      <p>-Mengubah Deskripsi dan Gambar Ilustrasi LeafCy AI</p>
+      <p>-Update LeafCy AI,Jadi Punya Logikanya Sendiri!!😆</p>
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
