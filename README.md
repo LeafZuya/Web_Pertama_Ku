@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <!-- KODE ADSENSE DITEMPELKAN DI SINI -->
@@ -456,6 +455,136 @@
     #frameSound {
       display: none;
     }
+
+    /* ============ TAMBAHAN STYLE JAM DIGITAL (Hijau-Biru, Glow, Shadow, Kilau) ============ */
+    /* Container jam digital - diletakkan di bawah header, tidak mengganggu layout lain */
+    .jam-digital-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px auto 10px auto;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Kotak jam utama dengan efek kaca & glow */
+    .jam-digital {
+      background: rgba(7, 18, 30, 0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 60px;
+      padding: 20px 40px;
+      text-align: center;
+      box-shadow: 
+        0 0 30px rgba(0, 255, 200, 0.4),
+        inset 0 0 20px rgba(0, 255, 200, 0.1),
+        0 20px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 255, 210, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .jam-digital:hover {
+      box-shadow: 
+        0 0 50px rgba(0, 255, 200, 0.7),
+        inset 0 0 30px rgba(0, 255, 200, 0.2);
+      transform: scale(1.02);
+    }
+
+    /* Waktu utama (HH:MM) format 24 jam */
+    .waktu {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      color: #0ff;
+      text-shadow: 
+        0 0 8px #0ff,
+        0 0 15px #0ff,
+        0 0 30px #0ff,
+        0 0 60px #0af;
+      background: linear-gradient(135deg, #0ff, #0fa);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: kilauJam 1.8s infinite alternate;
+    }
+
+    /* Info detik & AM/PM */
+    .info-jam {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 12px;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .detik-jam {
+      color: #2af;
+      text-shadow: 0 0 8px #2af, 0 0 12px #0ff;
+      background: rgba(0, 255, 200, 0.15);
+      padding: 5px 18px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+    }
+
+    .ampm-jam {
+      color: #6f6;
+      text-shadow: 0 0 8px #6f6, 0 0 12px #0f0;
+      background: rgba(0, 255, 100, 0.15);
+      padding: 5px 22px;
+      border-radius: 40px;
+      letter-spacing: 2px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Efek berkilau pada teks jam */
+    @keyframes kilauJam {
+      0% {
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0af;
+        opacity: 0.9;
+      }
+      100% {
+        text-shadow: 0 0 15px #0ff, 0 0 30px #0ff, 0 0 60px #0ff, 0 0 90px #0fa;
+        opacity: 1;
+      }
+    }
+
+    /* Efek titik berkedip */
+    @keyframes kedipJam {
+      0%, 100% { opacity: 1; text-shadow: 0 0 8px #0ff; }
+      50% { opacity: 0.5; text-shadow: 0 0 2px #0fa; }
+    }
+
+    .titik-jam {
+      animation: kedipJam 1s infinite;
+      display: inline-block;
+      width: 18px;
+      text-align: center;
+    }
+
+    /* Tanggal di jam */
+    .tanggal-jam {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #8cf;
+      text-shadow: 0 0 5px #0cf;
+      letter-spacing: 1.5px;
+      background: rgba(0, 255, 200, 0.1);
+      display: inline-block;
+      padding: 5px 20px;
+      border-radius: 40px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Responsif untuk jam */
+    @media (max-width: 550px) {
+      .jam-digital { padding: 12px 20px; }
+      .waktu { font-size: 2.2rem; letter-spacing: 3px; }
+      .info-jam { font-size: 1rem; gap: 12px; }
+      .detik-jam, .ampm-jam { padding: 3px 12px; }
+      .tanggal-jam { font-size: 0.7rem; }
+      .titik-jam { width: 12px; }
+    }
   </style>
 </head>
 
@@ -513,7 +642,7 @@
   </div>
   
   <!-- ============ KONTEN UTAMA WEBSITE ============ -->
-  <!-- (Konten utama website tetap sama seperti sebelumnya) -->
+  <!-- (Konten utama website tetap sama seperti sebelumnya, ditambah jam digital di bawah header) -->
   <div class="main-content">
     <header>
       <img src="Iwak.gif" alt="Foto Karya" class="hiasan">
@@ -524,6 +653,20 @@
       <div class="emoji-decor emoji2">✨</div>
       <div class="emoji-decor emoji3">💙</div>
     </header>
+
+    <!-- ============ JAM DIGITAL TAMBAHAN (HIJAU-BIRU, GLOW, SHADOW, 24 JAM + AM/PM) ============ -->
+    <div class="jam-digital-wrapper">
+      <div class="jam-digital">
+        <div class="waktu" id="jamMenitUtama">
+          00<span class="titik-jam">:</span>00
+        </div>
+        <div class="info-jam">
+          <div class="detik-jam" id="detikUtama">00</div>
+          <div class="ampm-jam" id="ampmUtama">AM</div>
+        </div>
+        <div class="tanggal-jam" id="tanggalUtama"></div>
+      </div>
+    </div>
 
     <!-- Gelembung Hijau + Biru -->
     <div class="bubble green" style="left: 10%; width: 40px; height: 40px; animation-duration: 14s;"></div>
@@ -556,16 +699,23 @@
       </button>
     </a>
 
-    <!-- Tombol -->
-<button onclick="playMusic()">Jangan Pencet Aku....☠️🗿</button>
+  <!-- Tombol 1 - Jokowi.mp3 -->
+<button onclick="playMusic('Jokowi.mp3')">Jangan Pencet Aku....☠️🗿</button>
+<audio id="audio1" src="Jokowi.mp3"></audio>
 
-<!-- Audio -->
-<audio id="myAudio" src="Jokowi.mp3"></audio>
-<!-- ganti "music/bgmusic.mp3" sesuai lokasi file MP3 kamu -->
+<!-- Tombol 2 - gok.mp3 -->
+<button onclick="playMusic('gok.mp3')">Jangan Pencet Aku....☠️🗿v2</button>
+<audio id="audio2" src="gok.mp3"></audio>
 
 <script>
-  function playMusic() {
-    const audio = document.getElementById("myAudio");
+  function playMusic(soundFile) {
+    let audio;
+    if (soundFile === 'Jokowi.mp3') {
+      audio = document.getElementById("audio1");
+    } else {
+      audio = document.getElementById("audio2");
+    }
+    audio.currentTime = 0; // Reset ke awal
     audio.play();
   }
 </script>
@@ -1005,7 +1155,7 @@
     left: 125%;
   }
   </style>
-    <p>Jangan Lupa Klik Tombol Diatas yah....Itu adalah AI Buatan ku Sendiri (LeafZuya),tapi masih Tahap Pengembangan (Beta)...kalian juga bisa Tambahkan Obrolan dan Jawaban Obrolan Nya...Bareng LeafCy 😆🤞☘️🍃</p>
+    <p>Jangan Lupa Klik Tombol Diatas yah....Itu adalah AI Buatan ku Sendiri (LeafZuya),tapi masih Tahap Pengembangan (Beta)...kalian juga bisa Tambahkan Obrolan dan Jawaban Obrolan Nya...[LeafCy AI X OpenRouter]😆🤞☘️🍃</p>
       </div>
 
       <div class="card">
@@ -1219,7 +1369,7 @@
     <img src="Flip.png" alt="Foto Karya" class="hiasan">
        
         <!-- 🌿 Tombol Unik Hijau-Biru -->
-  <a href="https://leafzuya.github.io/Leaf_Flip/" class="magic-btn">Kunjungi LeafFast ☘️✅🗿</a>
+  <a href="https://leafzuya.github.io/Leaf_Flip/" class="magic-btn">Mainkan Supaya Punya IQ tinggi!☘️🗿</a>
 
   <style>
   .magic-btn {
@@ -1264,10 +1414,10 @@
       </div>
       
       <div class="card">
-        <h2>Uji Ingatan Otak!🌿</h2>
+        <h2>Sneaky!🌿🗿</h2>
         <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
         
-    <img src="Sneaky.jpg" alt="Foto Karya" class="hiasan">
+    <img src="Sneak.jpg" alt="Foto Karya" class="hiasan">
        
         <!-- 🌿 Tombol Unik Hijau-Biru -->
   <a href="https://leafzuya.github.io/Sneaky/" class="magic-btn">Mainkan Sneaky! ☘️🗿</a>
@@ -1330,7 +1480,7 @@
 
       <ul>
         
-        <li><b>🧩 Versi:</b> v1.5.1— "Lime Leaf"</li>
+        <li><b>🧩 Versi:</b> v1.5.2— "Vanilla Leaf"</li>
         <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
       </ul>
 
@@ -1338,10 +1488,11 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 8 April 2026</li>
+      <li><b>📅 Update terakhir:</b> 15 Mei 2026</li>
         <h1> •Apa Yang Baru?</h1>
-      <p>-Meringankan Ukuran Web(55KB)</p>
-      <p>-Menambahkan Minigame <b>SNEAKY!!</b></p>
+      <p>-Memperbaiki Bug</p>
+      <p>-Mengubah Deskripsi dan Gambar Ilustrasi LeafCy AI</p>
+      <p>-Update LeafCy AI,Jadi Punya Logikanya Sendiri!!😆</p>
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
@@ -1747,6 +1898,54 @@
       }
     };
   });
+  </script>
+
+  <!-- ============ SCRIPT JAM DIGITAL (24 JAM + AM/PM) ============ -->
+  <script>
+  // Fungsi untuk memperbarui jam digital (format 24 jam + AM/PM)
+  function updateJamDigital() {
+    const now = new Date();
+
+    // Ambil jam dalam format 24 jam (0-23)
+    let jam24 = now.getHours();
+    const menit = now.getMinutes().toString().padStart(2, '0');
+    const detik = now.getSeconds().toString().padStart(2, '0');
+
+    // Tentukan AM/PM berdasarkan jam 24
+    const ampm = jam24 >= 12 ? 'PM' : 'AM';
+
+    // Tampilkan jam dalam format 24 jam (00-23)
+    const jamFormatted = jam24.toString().padStart(2, '0');
+
+    // Update elemen jam
+    const jamMenitElem = document.getElementById('jamMenitUtama');
+    if (jamMenitElem) {
+      jamMenitElem.innerHTML = `${jamFormatted}<span class="titik-jam">:</span>${menit}`;
+    }
+    
+    const detikElem = document.getElementById('detikUtama');
+    if (detikElem) {
+      detikElem.innerText = detik;
+    }
+    
+    const ampmElem = document.getElementById('ampmUtama');
+    if (ampmElem) {
+      ampmElem.innerText = ampm;
+    }
+
+    // Format tanggal (Indonesia)
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const tanggalString = now.toLocaleDateString('id-ID', options);
+    const tanggalElem = document.getElementById('tanggalUtama');
+    if (tanggalElem) {
+      tanggalElem.innerHTML = '📅 ' + tanggalString;
+    }
+  }
+
+  // Jalankan pertama kali
+  updateJamDigital();
+  // Update setiap detik
+  setInterval(updateJamDigital, 1000);
   </script>
 </body>
 </html>
