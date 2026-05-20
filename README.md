@@ -1488,11 +1488,12 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 15 Mei 2026</li>
+      <li><b>📅 Update terakhir:</b> 20 Mei 2026</li>
         <h1> •Apa Yang Baru?</h1>
       <p>-Memperbaiki Bug</p>
       <p>-Mengubah Deskripsi dan Gambar Ilustrasi LeafCy AI</p>
       <p>-Update LeafCy AI,Jadi Punya Logikanya Sendiri!!😆</p>
+      <p>-Update LeafCy Jadi Punya Akselerasi buat Mengetik "Zuya Ganteng 😎 " Sebanyak 1000x,Untuk Me-Redeem Pengurangan Waktu Selama 30 Menit🗿🙏
       
 
       <button id="backBtn" class="btn-back">⬅️ Kembali</button>
