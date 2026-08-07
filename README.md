@@ -1111,7 +1111,7 @@
     <img src="leafcy.png" alt="Foto Karya" class="hiasan">
        
         <!-- 🌿 Tombol Unik Hijau-Biru -->
-  <a href="https://leafzuya.github.io/Chat-With-LeafCy/" class="magic-btn">Kunjungi LeafCy AI☘️😆</a>
+  <a href="https://leafcyai.my.id/" class="magic-btn">Kunjungi LeafCy AI☘️😆</a>
 
   <style>
   .magic-btn {
