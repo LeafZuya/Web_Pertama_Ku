@@ -19,7 +19,7 @@
   <!-- 📱 Open Graph (Facebook, Discord, Google Rich Preview) -->
   <meta property="og:title" content="LeafZuya Web — Have Fun">
   <meta property="og:description" content="Website ini dibuat hanya karena kegabutan LeafZuya — dan sekadar hobi di waktu luang 😆">
-  <meta property="og:image" content="https://leafzuya.github.io/Web_Pertama_Ku/Favicon.png">
+  <meta property="og:image" content="https://leafzuya.github.io/Web_Pertama_Ku/favicon.png">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://leafzuya.github.io/Web_Pertama_Ku/">
   <meta property="og:locale" content="id_ID">
