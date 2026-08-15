@@ -1527,8 +1527,9 @@
       
 
       <ul>
+      <li>Dibuat Sejak:10 Agustus 2025
         
-        <li><b>🧩 Versi:</b> v1.5.2— "Vanilla Leaf"</li>
+        <li><b>🧩 Versi:</b> v17.8.45— "Blood Leaves of Struggle🇮🇩🔥"</li>
         <li><b>💬 Dibuat oleh:</b> <span style="color:#09b;">LeafZuya(Daffa)</span></li>
       </ul>
 
@@ -1536,7 +1537,7 @@
         ✨ Catatan Developer:<br>
         "Ubahlah Waktu Luang Kalian Yang Tidak Bermanfaat,Menjadi <b>SEDIKIT</b> lebih Bermanfaat"
       </p>
-      <li><b>📅 Update terakhir:</b> 20 Mei 2026</li>
+      <li><b>📅 Update terakhir:</b> 16 Agustus 2026</li>
         <h1> •Apa Yang Baru?</h1>
       <p>-Memperbaiki Bug</p>
       <p>-Mengubah Deskripsi dan Gambar Ilustrasi LeafCy AI</p>
