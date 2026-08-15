@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ReflexZ</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#1fbf75,#27ae60,#1abc9c,#3498db);
+    background-size:400% 400%;
+    animation:bgMove 12s ease infinite;
+}
+
+/* Animasi background */
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* Daun */
+
+.leaf{
+position:fixed;
+top:-60px;
+font-size:24px;
+animation:fall linear infinite;
+opacity:.65;
+pointer-events:none;
+}
+
+@keyframes fall{
+0%{
+transform:translateY(-50px) rotate(0deg);
+}
+100%{
+transform:translateY(120vh) rotate(360deg);
+}
+}
+
+.container{
+
+width:430px;
+max-width:94%;
+
+padding:35px;
+
+text-align:center;
+
+border-radius:24px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.35);
+
+color:white;
+
+position:relative;
+
+}
+
+h1{
+
+font-size:42px;
+
+margin-bottom:8px;
+
+letter-spacing:2px;
+
+}
+
+small{
+
+opacity:.85;
+
+}
+
+#status{
+
+margin:22px 0;
+
+font-size:21px;
+
+font-weight:bold;
+
+min-height:30px;
+
+}
+
+#result{
+
+font-size:24px;
+
+margin-top:18px;
+
+font-weight:bold;
+
+}
+
+#best{
+
+margin-top:12px;
+
+color:#fff176;
+
+font-size:18px;
+
+}
+
+#button{
+
+width:240px;
+height:240px;
+
+border:none;
+
+border-radius:28px;
+
+cursor:pointer;
+
+font-size:30px;
+
+font-weight:bold;
+
+color:white;
+
+transition:.15s;
+
+box-shadow:0 12px 25px rgba(0,0,0,.3);
+
+}
+
+.red{
+
+background:#e53935;
+
+}
+
+.green{
+
+background:#2ecc71;
+
+box-shadow:0 0 40px #7CFF7C;
+
+}
+
+#button:active{
+
+transform:scale(.96);
+
+}
+
+/* Tombol Bantuan Orang Cupu */
+
+#helpBtn{
+position:fixed;
+top:20px;
+right:20px;
+padding:12px 18px;
+border:none;
+border-radius:30px;
+background:rgba(255,215,0,0.85);
+color:#333;
+font-weight:bold;
+font-size:14px;
+cursor:pointer;
+backdrop-filter:blur(6px);
+box-shadow:0 6px 20px rgba(0,0,0,.3);
+z-index:999;
+transition:all .2s;
+}
+
+#helpBtn:hover{
+transform:scale(1.05);
+background:rgba(255,215,0,1);
+}
+
+#helpBtn:active{
+transform:scale(0.95);
+}
+
+#helpStatus{
+position:fixed;
+top:75px;
+right:20px;
+background:rgba(0,0,0,0.7);
+color:#fff;
+padding:8px 16px;
+border-radius:20px;
+font-size:13px;
+backdrop-filter:blur(4px);
+z-index:998;
+opacity:0;
+transition:opacity .3s;
+pointer-events:none;
+}
+
+#helpStatus.show{
+opacity:1;
+}
+
+/* Popup Teks Bantuan */
+.popup-teks{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0.8);
+width:240px;
+height:240px;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(10px);
+border-radius:28px;
+border:3px solid rgba(255,215,0,0.6);
+box-shadow:0 0 60px rgba(255,215,0,0.3);
+color:white;
+font-size:28px;
+font-weight:bold;
+z-index:1000;
+opacity:0;
+pointer-events:none;
+transition:all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+line-height:1.4;
+}
+
+.popup-teks.show{
+opacity:1;
+transform:translate(-50%,-50%) scale(1);
+pointer-events:none;
+}
+
+.popup-teks.hide{
+opacity:0;
+transform:translate(-50%,-50%) scale(0.8);
+}
+
+/* Tombol History */
+#historyBtn{
+position:fixed;
+top:20px;
+left:20px;
+padding:12px 18px;
+border:none;
+border-radius:30px;
+background:rgba(52,152,219,0.85);
+color:white;
+font-weight:bold;
+font-size:14px;
+cursor:pointer;
+backdrop-filter:blur(6px);
+box-shadow:0 6px 20px rgba(0,0,0,.3);
+z-index:999;
+transition:all .2s;
+}
+
+#historyBtn:hover{
+transform:scale(1.05);
+background:rgba(52,152,219,1);
+}
+
+#historyBtn:active{
+transform:scale(0.95);
+}
+
+/* Modal History */
+.history-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+backdrop-filter:blur(8px);
+z-index:1001;
+display:none;
+justify-content:center;
+align-items:center;
+animation:fadeIn 0.3s ease;
+}
+
+.history-modal.show{
+display:flex;
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+.history-box{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(20px);
+border-radius:28px;
+padding:30px;
+width:400px;
+max-width:90%;
+max-height:80vh;
+color:white;
+box-shadow:0 20px 60px rgba(0,0,0,0.5);
+border:1px solid rgba(255,255,255,0.2);
+}
+
+.history-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+padding-bottom:15px;
+border-bottom:2px solid rgba(255,255,255,0.2);
+}
+
+.history-header h2{
+font-size:24px;
+}
+
+.history-close{
+background:rgba(255,0,0,0.3);
+border:none;
+color:white;
+width:36px;
+height:36px;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
+transition:all .2s;
+}
+
+.history-close:hover{
+background:rgba(255,0,0,0.6);
+transform:rotate(90deg);
+}
+
+.history-list{
+max-height:50vh;
+overflow-y:auto;
+padding-right:10px;
+}
+
+.history-list::-webkit-scrollbar{
+width:6px;
+}
+
+.history-list::-webkit-scrollbar-track{
+background:rgba(255,255,255,0.1);
+border-radius:10px;
+}
+
+.history-list::-webkit-scrollbar-thumb{
+background:rgba(255,255,255,0.3);
+border-radius:10px;
+}
+
+.history-item{
+background:rgba(255,255,255,0.08);
+padding:12px 18px;
+margin-bottom:8px;
+border-radius:12px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+transition:all .2s;
+}
+
+.history-item:hover{
+background:rgba(255,255,255,0.15);
+transform:translateX(5px);
+}
+
+.history-item .index{
+color:rgba(255,255,255,0.5);
+font-size:14px;
+font-weight:bold;
+margin-right:15px;
+}
+
+.history-item .time{
+font-weight:bold;
+font-size:18px;
+color:#fff176;
+}
+
+.history-item .date{
+font-size:12px;
+color:rgba(255,255,255,0.5);
+}
+
+.history-empty{
+text-align:center;
+padding:40px 0;
+color:rgba(255,255,255,0.5);
+font-size:16px;
+}
+
+.history-stats{
+display:flex;
+justify-content:space-around;
+padding:15px 0;
+margin-bottom:15px;
+background:rgba(255,255,255,0.05);
+border-radius:15px;
+}
+
+.history-stats div{
+text-align:center;
+}
+
+.history-stats .label{
+font-size:12px;
+color:rgba(255,255,255,0.5);
+}
+
+.history-stats .value{
+font-size:20px;
+font-weight:bold;
+color:#fff176;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Tombol Bantuan -->
+<button id="helpBtn">🤖 Bantuan Orang Cupu</button>
+<div id="helpStatus">⚡ AI Aktif...</div>
+
+<!-- Tombol History -->
+<button id="historyBtn">📜 ReflexZ History</button>
+
+<!-- Popup Teks -->
+<div id="popup" class="popup-teks"></div>
+
+<!-- Modal History -->
+<div id="historyModal" class="history-modal">
+    <div class="history-box">
+        <div class="history-header">
+            <h2>📜 History Refleks</h2>
+            <button class="history-close" id="historyClose">✕</button>
+        </div>
+        <div class="history-stats">
+            <div>
+                <div class="label">Total Permainan</div>
+                <div class="value" id="totalGames">0</div>
+            </div>
+            <div>
+                <div class="label">Rata-rata</div>
+                <div class="value" id="avgTime">-</div>
+            </div>
+            <div>
+                <div class="label">Terbaik</div>
+                <div class="value" id="bestHistory">-</div>
+            </div>
+        </div>
+        <div class="history-list" id="historyList">
+            <div class="history-empty">Belum ada data history nih.main dulu Woilah😹 🎮</div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+<h1>🌿 ReflexZ</h1>
+
+<small>Seberapa Cepat Reflek Jari Sampean?😹</small>
+
+<br><br>
+
+<button id="button" class="red">
+START
+</button>
+
+<div id="status">
+Tekan START lalu tunggu sampai tombol berubah HIJAU.
+</div>
+
+<div id="result">-</div>
+
+<div id="best">
+🏆 Best Time : --
+</div>
+
+</div>
+
+<script>
+
+const btn=document.getElementById("button");
+const statusText=document.getElementById("status");
+const result=document.getElementById("result");
+const best=document.getElementById("best");
+const helpBtn=document.getElementById("helpBtn");
+const helpStatus=document.getElementById("helpStatus");
+const popup=document.getElementById("popup");
+const historyBtn=document.getElementById("historyBtn");
+const historyModal=document.getElementById("historyModal");
+const historyClose=document.getElementById("historyClose");
+const historyList=document.getElementById("historyList");
+const totalGames=document.getElementById("totalGames");
+const avgTime=document.getElementById("avgTime");
+const bestHistory=document.getElementById("bestHistory");
+
+let waiting=false;
+let ready=false;
+let timer;
+let startTime;
+let bestTime=null;
+let aiActive=false;
+let aiTimeout=null;
+let popupTimeout=null;
+let historyData=[];
+
+// Load data dari Local Storage
+function loadData(){
+    // Load best time
+    const savedBest = localStorage.getItem('reflexz_best');
+    if(savedBest !== null){
+        bestTime = parseFloat(savedBest);
+        best.innerHTML = "🏆 Best Time : "+(bestTime/1000).toFixed(3)+" detik";
+    }
+    
+    // Load history
+    const savedHistory = localStorage.getItem('reflexz_history');
+    if(savedHistory !== null){
+        historyData = JSON.parse(savedHistory);
+    }
+}
+
+// Save data ke Local Storage
+function saveData(){
+    if(bestTime !== null){
+        localStorage.setItem('reflexz_best', bestTime.toString());
+    }
+    localStorage.setItem('reflexz_history', JSON.stringify(historyData));
+}
+
+// Update history display
+function updateHistoryDisplay(){
+    if(historyData.length === 0){
+        historyList.innerHTML = '<div class="history-empty">Belum ada data history. Yuk main dulu! 🎮</div>';
+        totalGames.textContent = '0';
+        avgTime.textContent = '-';
+        bestHistory.textContent = '-';
+        return;
+    }
+    
+    // Tampilkan semua history (max 230)
+    const displayData = historyData.slice(0, 230);
+    let html = '';
+    displayData.forEach((item, index) => {
+        const date = new Date(item.timestamp);
+        const dateStr = date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID', {hour:'2-digit', minute:'2-digit'});
+        const timeInSeconds = (item.time / 1000).toFixed(3);
+        html += `
+            <div class="history-item">
+                <span class="index">#${index + 1}</span>
+                <span class="time">${timeInSeconds} detik</span>
+                <span class="date">${dateStr}</span>
+            </div>
+        `;
+    });
+    historyList.innerHTML = html;
+    
+    // Update stats
+    totalGames.textContent = historyData.length;
+    
+    // Hitung rata-rata
+    const total = historyData.reduce((sum, item) => sum + item.time, 0);
+    const avg = total / historyData.length;
+    avgTime.textContent = (avg / 1000).toFixed(3) + ' detik';
+    
+    // Best dari history
+    const bestHistoryTime = Math.min(...historyData.map(item => item.time));
+    bestHistory.textContent = (bestHistoryTime / 1000).toFixed(3) + ' detik';
+}
+
+// Tambah history baru
+function addHistory(time){
+    historyData.unshift({
+        time: time,
+        timestamp: Date.now()
+    });
+    
+    // Batasi maks 230
+    if(historyData.length > 230){
+        historyData = historyData.slice(0, 230);
+    }
+    
+    saveData();
+    updateHistoryDisplay();
+}
+
+/* Daun */
+
+for(let i=0;i<25;i++){
+
+const leaf=document.createElement("div");
+
+leaf.className="leaf";
+
+leaf.innerHTML="🍃";
+
+leaf.style.left=Math.random()*100+"vw";
+
+leaf.style.animationDuration=(5+Math.random()*7)+"s";
+
+leaf.style.animationDelay=Math.random()*6+"s";
+
+leaf.style.fontSize=(18+Math.random()*18)+"px";
+
+document.body.appendChild(leaf);
+
+}
+
+/* Sound Effect */
+
+const audio=new(window.AudioContext||window.webkitAudioContext)();
+
+function boom(){
+
+const osc=audio.createOscillator();
+const gain=audio.createGain();
+
+osc.type="sawtooth";
+osc.frequency.setValueAtTime(120,audio.currentTime);
+osc.frequency.exponentialRampToValueAtTime(35,audio.currentTime+.4);
+
+gain.gain.setValueAtTime(.25,audio.currentTime);
+gain.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.45);
+
+osc.connect(gain);
+gain.connect(audio.destination);
+
+osc.start();
+osc.stop(audio.currentTime+.45);
+
+}
+
+function showPopup(text, isActive){
+    // Hapus timeout sebelumnya
+    if(popupTimeout){
+        clearTimeout(popupTimeout);
+        popupTimeout = null;
+    }
+    
+    // Hapus class
+    popup.classList.remove('show', 'hide');
+    
+    // Set teks dan warna border
+    popup.textContent = text;
+    if(isActive){
+        popup.style.borderColor = 'rgba(255,215,0,0.6)';
+        popup.style.boxShadow = '0 0 60px rgba(255,215,0,0.3)';
+    } else {
+        popup.style.borderColor = 'rgba(46,204,113,0.6)';
+        popup.style.boxShadow = '0 0 60px rgba(46,204,113,0.3)';
+    }
+    
+    // Tampilkan
+    requestAnimationFrame(() => {
+        popup.classList.add('show');
+    });
+    
+    // Sembunyikan setelah 1.5 detik
+    popupTimeout = setTimeout(() => {
+        popup.classList.remove('show');
+        popup.classList.add('hide');
+        popupTimeout = null;
+    }, 1500);
+}
+
+btn.onclick=function(){
+
+boom();
+
+/* Klik terlalu cepat */
+
+if(waiting){
+
+clearTimeout(timer);
+
+waiting=false;
+
+btn.className="red";
+
+btn.innerHTML="TRY AGAIN";
+
+statusText.innerHTML="❌ Kecepetan Pinterr😹";
+
+result.innerHTML="Reflek Abal-Abal😹";
+
+return;
+
+}
+
+/* Saat hijau */
+
+if(ready){
+
+let reaction=performance.now()-startTime;
+
+let second=(reaction/1000).toFixed(3);
+
+result.innerHTML="⏱ "+second+" detik";
+
+let text="";
+
+if(reaction<180){
+
+text="⚡ Superhuman Reflexes!!";
+
+}else if(reaction<250){
+
+text="🔥 Incredible!";
+
+}else if(reaction<320){
+
+text="😎 Excellent!";
+
+}else if(reaction<420){
+
+text="👍 Nice Reflex!";
+
+}else if(reaction<550){
+
+text="🙂 Lumayan cepat!";
+
+}else if(reaction<700){
+
+text="😅 Agak lambat...";
+
+}else if(reaction<1000){
+
+text="🐢 Wah... Refleksmu lambat.";
+
+}else{
+
+text="💤 Bangun dulu yuk 😂";
+
+}
+
+statusText.innerHTML=text;
+
+// Simpan ke history
+addHistory(reaction);
+
+if(bestTime===null||reaction<bestTime){
+
+bestTime=reaction;
+
+best.innerHTML="🏆 Best Time : "+(bestTime/1000).toFixed(3)+" detik";
+saveData();
+
+}
+
+btn.className="red";
+
+btn.innerHTML="PLAY AGAIN";
+
+ready=false;
+
+return;
+
+}
+
+/* Mulai */
+
+statusText.innerHTML="⏳ Bersiap...";
+
+result.innerHTML="-";
+
+btn.innerHTML="WAIT";
+
+btn.className="red";
+
+waiting=true;
+
+let delay=Math.random()*5000+2000;
+
+timer=setTimeout(()=>{
+
+waiting=false;
+
+ready=true;
+
+btn.className="green";
+
+btn.innerHTML="CLICK!";
+
+statusText.innerHTML="🟢 SEKARANG!!!";
+
+startTime=performance.now();
+
+// Jika AI aktif, langsung klik otomatis dengan delay 1-10ms
+if(aiActive){
+    const aiDelay = Math.random() * 9 + 1; // 1-10ms
+    aiTimeout = setTimeout(() => {
+        if(ready){
+            btn.click();
+        }
+    }, aiDelay);
+}
+
+},delay);
+
+};
+
+// Fungsi AI Bantuan
+helpBtn.onclick=function(){
+    boom();
+    aiActive = !aiActive;
+    
+    if(aiActive){
+        helpBtn.innerHTML = '🤖 AI ON';
+        helpBtn.style.background = 'rgba(46,204,113,0.9)';
+        helpBtn.style.color = '#fff';
+        helpStatus.textContent = '⚡ AI Aktif - Siap membantu!';
+        helpStatus.classList.add('show');
+        
+        // Tampilkan popup
+        showPopup('Yahaha Pakai Bantuan,\nCupu Deckk?😹', true);
+        
+        // Jika tombol sedang hijau dan siap, langsung klik
+        if(ready){
+            const aiDelay = Math.random() * 9 + 1;
+            aiTimeout = setTimeout(() => {
+                if(ready){
+                    btn.click();
+                }
+            }, aiDelay);
+        }
+    } else {
+        helpBtn.innerHTML = '🤖 Bantuan Orang Cupu';
+        helpBtn.style.background = 'rgba(255,215,0,0.85)';
+        helpBtn.style.color = '#333';
+        helpStatus.textContent = '⏸️ AI Dinonaktifkan';
+        helpStatus.classList.add('show');
+        
+        // Tampilkan popup
+        showPopup('Nahh..Gitu Dongg,\nKan Kerenn!😎👍', false);
+        
+        setTimeout(() => {
+            helpStatus.classList.remove('show');
+        }, 1500);
+        if(aiTimeout){
+            clearTimeout(aiTimeout);
+            aiTimeout = null;
+        }
+    }
+};
+
+// Reset AI jika tombol di-reset
+const origClick = btn.onclick;
+btn.onclick = function(e){
+    if(aiTimeout){
+        clearTimeout(aiTimeout);
+        aiTimeout = null;
+    }
+    origClick.call(this, e);
+};
+
+// History Modal
+historyBtn.onclick = function(){
+    historyModal.classList.add('show');
+    updateHistoryDisplay();
+};
+
+historyClose.onclick = function(){
+    historyModal.classList.remove('show');
+};
+
+// Tutup modal saat klik di luar
+historyModal.onclick = function(e){
+    if(e.target === historyModal){
+        historyModal.classList.remove('show');
+    }
+};
+
+// Load data saat startup
+loadData();
+updateHistoryDisplay();
+
+</script>
+
+</body>
+</html>
