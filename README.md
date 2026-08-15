@@ -1460,6 +1460,57 @@
   </style>
     <p>Game Gabut Final Bos,Tema Nostalgia+Jadul,tapi Dengan Nuansa Dan Fitur Modern!🗿🙏☕</p>
       </div>
+
+      <div class="card">
+        <h2>ReflexZ😆🌿</h2>
+        <p>dibawah ini,hanya Ilustrasi gambar...jadi,percuma Di-Klik² berapa kali pun </p>
+        
+    <img src="ReflexZ.png" alt="Foto Karya" class="hiasan">
+       
+        <!-- 🌿 Tombol Unik Hijau-Biru -->
+  <a href="ReflekZ.html" class="magic-btn">Kunjungi ReflexZ!😆</a>
+
+  <style>
+  .magic-btn {
+    display: inline-block;
+    padding: 14px 26px;
+    font-size: 17px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-radius: 18px; /* Sudut tumpul */
+    background: linear-gradient(135deg, #00e69a, #1ea7ff);
+    box-shadow: 0 6px 20px rgba(0, 150, 136, 0.4);
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Efek kilau lembut */
+  .magic-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-25deg);
+    transition: all 0.6s ease;
+  }
+
+  /* Efek hover */
+  .magic-btn:hover {
+    transform: scale(1.07);
+    box-shadow: 0 10px 28px rgba(0, 150, 255, 0.5);
+  }
+
+  .magic-btn:hover::after {
+    left: 125%;
+  }
+  </style>
+    <p>Gas Aja Mainin,ga Usah Basa-Basi🤞🍃</p>
+      </div>
       
       <!-- Tombol menuju halaman Tentang -->
   <button id="aboutBtn" class="btn-about">ℹ️ Tentang(Opsional,tapi Disarankan 🗿☕)</button>
