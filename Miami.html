@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🇮🇩 Quiz Kemerdekaan Indonesia 2026</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0a0a0a;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* ============================================================
+   BACKGROUND DENGAN GAMBAR IDN.png (GANTI URL NYA)
+   ============================================================ */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        /* Ganti URL ini dengan gambar kamu */
+        url('IDN.png') center/cover no-repeat,
+        linear-gradient(135deg, #1a0000, #2d0000, #4a1a00, #2d0000);
+    background-size: cover, 400% 400%;
+    background-blend-mode: overlay;
+    z-index: -2;
+    animation: bgZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes bgZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.03); }
+}
+
+/* Overlay merah-putih berkilau */
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255,0,0,0.1), transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.05), transparent 50%);
+    z-index: -1;
+    animation: lightPulse 5s ease-in-out infinite alternate;
+}
+
+@keyframes lightPulse {
+    0% { opacity: 0.4; }
+    100% { opacity: 0.8; }
+}
+
+/* ============================================================
+   BENDERA BERKIBAR
+   ============================================================ */
+.flag-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    display: flex;
+    pointer-events: none;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(255,0,0,0.2);
+}
+
+.flag {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    animation: wave 3s ease-in-out infinite;
+    flex: 1;
+    min-width: 60px;
+}
+
+.flag-red {
+    background: #e74c3c;
+    height: 50%;
+    width: 100%;
+}
+
+.flag-white {
+    background: #ffffff;
+    height: 50%;
+    width: 100%;
+}
+
+@keyframes wave {
+    0%, 100% { transform: skewX(-3deg) scaleY(1); }
+    50% { transform: skewX(3deg) scaleY(1.01); }
+}
+
+/* ============================================================
+   BAMBU JATUH DARI BAWAH KE ATAS - DIKITIN
+   ============================================================ */
+.bamboo-container {
+    position: fixed;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.bamboo {
+    position: absolute;
+    bottom: -100px;
+    font-size: 24px;
+    animation: bambooRise linear infinite;
+    opacity: 0.35;
+    transform-origin: bottom center;
+}
+
+@keyframes bambooRise {
+    0% {
+        transform: translateY(0) rotate(0deg) scale(0.5);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.5;
+    }
+    85% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg) scale(1);
+        opacity: 0;
+    }
+}
+
+/* ============================================================
+   API / OBOR EFEK PARTIKEL - DIKITIN
+   ============================================================ */
+.fire-particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 998;
+    border-radius: 50%;
+    animation: fireRise linear infinite;
+}
+
+@keyframes fireRise {
+    0% {
+        transform: translateY(0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* ============================================================
+   EFEK CAHAYA KILAU
+   ============================================================ */
+.glow-effect {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255,215,0,0.04), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    animation: glowPulse 4s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.3; }
+    100% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.6; }
+}
+
+/* ============================================================
+   CONTAINER UTAMA
+   ============================================================ */
+.container {
+    width: 100%;
+    max-width: 750px;
+    padding: 30px 25px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    box-shadow: 
+        0 0 40px rgba(255,215,0,0.1),
+        0 0 80px rgba(255,0,0,0.08);
+    color: white;
+    text-align: center;
+    border: 2px solid rgba(255,215,0,0.2);
+    position: relative;
+    z-index: 1;
+    max-height: 92vh;
+    overflow-y: auto;
+    animation: containerGlow 5s ease-in-out infinite alternate;
+}
+
+@keyframes containerGlow {
+    0% { border-color: rgba(255,215,0,0.15); box-shadow: 0 0 40px rgba(255,215,0,0.08); }
+    100% { border-color: rgba(255,215,0,0.3); box-shadow: 0 0 80px rgba(255,215,0,0.15); }
+}
+
+/* Scrollbar */
+.container::-webkit-scrollbar {
+    width: 5px;
+}
+.container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #f1c40f, #e74c3c);
+    border-radius: 10px;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+h1 {
+    font-size: 38px;
+    margin-bottom: 5px;
+    text-shadow: 
+        0 0 20px rgba(255,215,0,0.2),
+        0 0 40px rgba(255,0,0,0.15);
+    background: linear-gradient(135deg, #f1c40f, #e74c3c, #f1c40f);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: textGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+.subtitle {
+    font-size: 15px;
+    opacity: 0.85;
+    margin-bottom: 15px;
+    color: rgba(255,255,255,0.8);
+}
+
+/* ============================================================
+   LEVEL SELECTION
+   ============================================================ */
+#levelSelection p {
+    margin: 15px 0;
+    opacity: 0.9;
+    font-size: 17px;
+    font-weight: bold;
+    color: #f1c40f;
+}
+
+.level-select {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.level-btn {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    flex: 1;
+    min-width: 100px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+
+.level-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.4);
+}
+
+.level-btn:active {
+    transform: scale(0.95);
+}
+
+.level-btn.easy {
+    background: linear-gradient(135deg, #1a7a3a, #2ecc71);
+}
+.level-btn.medium {
+    background: linear-gradient(135deg, #b7950b, #f1c40f);
+}
+.level-btn.hard {
+    background: linear-gradient(135deg, #922b21, #e74c3c);
+}
+
+.level-btn small {
+    font-size: 11px;
+    opacity: 0.8;
+    display: block;
+    margin-top: 2px;
+}
+
+/* ============================================================
+   BINGKAI GAMBAR LZ.png - BERDENYUT PELAN
+   ============================================================ */
+.lz-frame {
+    margin: 15px auto 5px auto;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    border: 3px solid rgba(255,215,0,0.4);
+    overflow: hidden;
+    box-shadow: 
+        0 0 30px rgba(255,215,0,0.15),
+        inset 0 0 30px rgba(255,215,0,0.05);
+    animation: lzPulse 2.5s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.3);
+}
+
+.lz-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes lzPulse {
+    0% { 
+        transform: scale(1); 
+        border-color: rgba(255,215,0,0.3);
+        box-shadow: 0 0 20px rgba(255,215,0,0.1);
+    }
+    50% { 
+        transform: scale(1.04); 
+        border-color: rgba(255,215,0,0.7);
+        box-shadow: 0 0 50px rgba(255,215,0,0.25), 0 0 80px rgba(255,0,0,0.1);
+    }
+    100% { 
+        transform: scale(1); 
+        border-color: rgba(255,215,0,0.3);
+        box-shadow: 0 0 20px rgba(255,215,0,0.1);
+    }
+}
+
+/* ============================================================
+   QUIZ AREA
+   ============================================================ */
+.quiz-area {
+    display: none;
+    margin-top: 10px;
+}
+
+.quiz-area.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Progress */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 12px 0;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f1c40f, #e74c3c);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.question-counter {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    color: #f1c40f;
+}
+
+.question-text {
+    font-size: 23px;
+    font-weight: bold;
+    margin: 12px 0 20px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4;
+    color: #fff;
+}
+
+/* ============================================================
+   OPTIONS
+   ============================================================ */
+.options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 500px) {
+    .options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.option-btn {
+    padding: 14px 20px;
+    border: 2px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.option-btn:hover {
+    background: rgba(255,255,255,0.12);
+    transform: scale(1.02);
+    border-color: #f1c40f;
+}
+
+.option-btn.correct {
+    background: rgba(46, 204, 113, 0.3);
+    border-color: #2ecc71;
+    animation: correctPop 0.4s ease;
+}
+
+.option-btn.wrong {
+    background: rgba(231, 76, 60, 0.3);
+    border-color: #e74c3c;
+    animation: wrongShake 0.4s ease;
+}
+
+.option-btn.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@keyframes correctPop {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+/* ============================================================
+   TIMER
+   ============================================================ */
+.timer {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f1c40f;
+    margin: 8px 0;
+}
+
+.timer.warning {
+    color: #e74c3c;
+    animation: timerPulse 0.5s ease infinite;
+}
+
+@keyframes timerPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
+/* ============================================================
+   RESULT
+   ============================================================ */
+.result-area {
+    display: none;
+    margin-top: 15px;
+}
+
+.result-area.active {
+    display: block;
+    animation: resultFade 0.6s ease;
+}
+
+@keyframes resultFade {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.score {
+    font-size: 56px;
+    font-weight: bold;
+    margin: 8px 0;
+    background: linear-gradient(135deg, #f1c40f, #e74c3c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.result-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.stat-item {
+    background: rgba(255,255,255,0.05);
+    padding: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.stat-item .label {
+    font-size: 12px;
+    opacity: 0.7;
+}
+
+.stat-item .value {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 4px;
+}
+
+.result-message {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 12px 0;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.04);
+    line-height: 1.6;
+    border: 1px solid rgba(255,215,0,0.08);
+}
+
+.btn-restart {
+    padding: 14px 45px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #f1c40f, #e67e22);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 12px;
+    box-shadow: 0 6px 25px rgba(241,196,15,0.25);
+}
+
+.btn-restart:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 35px rgba(241,196,15,0.35);
+}
+
+/* ============================================================
+   FIREWORKS
+   ============================================================ */
+.fireworks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999;
+    display: none;
+}
+
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    animation: fireworkBurst 1.2s ease-out forwards;
+}
+
+@keyframes fireworkBurst {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 16px;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,215,0,0.1);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+}
+
+.back-btn:hover {
+    background: rgba(0,0,0,0.8);
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   TOMBOL LAGU & KRITIK SARAN - POJOK KANAN ATAS
+   ============================================================ */
+.music-btn {
+    position: fixed;
+    top: 75px;
+    right: 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255,215,0,0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s;
+    border: 2px solid rgba(255,215,0,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.music-btn:hover {
+    transform: scale(1.05);
+    background: rgba(255,215,0,0.35);
+    border-color: rgba(255,215,0,0.6);
+}
+
+.music-btn.playing {
+    background: rgba(46,204,113,0.3);
+    border-color: #2ecc71;
+    animation: musicPulse 1s ease-in-out infinite;
+}
+
+.music-btn.playing:hover {
+    background: rgba(46,204,113,0.5);
+}
+
+@keyframes musicPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(46,204,113,0.2); }
+    50% { box-shadow: 0 0 40px rgba(46,204,113,0.5), 0 0 80px rgba(46,204,113,0.2); }
+}
+
+.feedback-btn {
+    position: fixed;
+    top: 130px;
+    right: 20px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(52,152,219,0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s;
+    border: 2px solid rgba(52,152,219,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.feedback-btn:hover {
+    transform: scale(1.05);
+    background: rgba(52,152,219,0.4);
+    border-color: rgba(52,152,219,0.7);
+}
+
+.feedback-btn.hidden {
+    display: none;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 600px) {
+    h1 { font-size: 28px; }
+    .question-text { font-size: 19px; min-height: 55px; }
+    .level-btn { font-size: 14px; padding: 10px 16px; }
+    .score { font-size: 40px; }
+    .result-stats { grid-template-columns: 1fr; }
+    .container { padding: 18px 14px; }
+    .flag-container { height: 40px; }
+    .flag { min-width: 40px; }
+    .lz-frame { width: 80px; height: 80px; }
+    .music-btn { top: 70px; right: 10px; font-size: 12px; padding: 8px 12px; }
+    .feedback-btn { top: 120px; right: 10px; font-size: 11px; padding: 8px 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+   EFEK GLOW
+   ============================================================ -->
+<div class="glow-effect"></div>
+
+<!-- ============================================================
+   BENDERA BERKIBAR
+   ============================================================ -->
+<div class="flag-container" id="flagContainer"></div>
+
+<!-- ============================================================
+   BAMBU JATUH DARI BAWAH KE ATAS
+   ============================================================ -->
+<div class="bamboo-container" id="bambooContainer"></div>
+
+<!-- ============================================================
+   TOMBOL LAGU INDONESIA RAYA - POJOK KANAN ATAS
+   ============================================================ -->
+<button class="music-btn" id="musicBtn">🎵 Putar Lagu</button>
+
+<!-- ============================================================
+   TOMBOL KRITIK & SARAN - POJOK KANAN ATAS (HANYA DI LOBBY)
+   ============================================================ -->
+<a class="feedback-btn" id="feedbackBtn" href="https://mail.google.com/mail/mu/mp/199/#co">
+    📧 Kritik & Saran (kingglafeon@gmail.com)
+</a>
+
+<!-- ============================================================
+   CONTAINER UTAMA
+   ============================================================ -->
+<div class="container" id="mainContainer">
+
+    <h1>🇮🇩 QUIZ KEMERDEKAAN</h1>
+    <div class="subtitle">Semangat Kemerdekaan Terus Membara Sejak • 17 Agustus 1945 — 17 Agustus 2026</div>
+
+    <!-- Level Selection -->
+    <div id="levelSelection">
+        <p>⚡ Pilih Tingkat Kesulitan ⚡</p>
+        <div class="level-select">
+            <button class="level-btn easy" data-level="easy">🟢 Pemula<br><small>20 Soal</small></button>
+            <button class="level-btn medium" data-level="medium">🟡 Umum<br><small>50 Soal</small></button>
+            <button class="level-btn hard" data-level="hard">🔴 Ahli<br><small>150 Soal</small></button>
+        </div>
+
+        <!-- ============================================================
+             BINGKAI GAMBAR LZ.png - BERDENYUT PELAN
+             ============================================================ -->
+      <h6>Dibuat Oleh (Create By):</h6>
+        <div class="lz-frame">
+            <img src="LZ.png" alt="LZ" onerror="this.style.display='none'">
+        </div>
+    </div>
+  <h6>Spesial  Hari Kemerdekaan Tanah Air Tercinta</h6>
+
+    <!-- Quiz Area -->
+    <div class="quiz-area" id="quizArea">
+        <div class="timer" id="timerDisplay">⏱️ 10</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+        <div class="question-counter" id="questionCounter">Soal 1 / 20</div>
+        <div class="question-text" id="questionText">Loading...</div>
+        <div class="options" id="optionsContainer"></div>
+    </div>
+
+    <!-- Result Area -->
+    <div class="result-area" id="resultArea">
+        <h2 style="margin-bottom: 8px;">🎉 Selesai!</h2>
+        <div class="score" id="finalScore">0</div>
+        <div style="font-size: 16px; opacity: 0.8;">dari <span id="totalQuestions">0</span> soal</div>
+        <div class="result-stats">
+            <div class="stat-item">
+                <div class="label">✅ Benar</div>
+                <div class="value" id="correctCount" style="color: #2ecc71;">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="label">❌ Salah</div>
+                <div class="value" id="wrongCount" style="color: #e74c3c;">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="label">⏱️ Rata-rata Waktu</div>
+                <div class="value" id="avgTimeResult" style="color: #f1c40f;">0s</div>
+            </div>
+        </div>
+        <div class="result-message" id="resultMessage">🇮🇩 Dirgahayu Indonesia!</div>
+        <button class="btn-restart" onclick="resetQuiz()">🔄 Main Lagi</button>
+    </div>
+</div>
+
+<!-- Back Button -->
+<button class="back-btn" onclick="window.location.reload()">🏠 Kembali</button>
+
+<!-- Fireworks Container -->
+<div class="fireworks" id="fireworksContainer"></div>
+
+<script>
+// ============================================================
+// DATA SOAL (TETAP SAMA - 224 SOAL)
+// ============================================================
+
+const allQuestions = [
+    // ======================================================================
+    // SEJARAH & PROKLAMASI (55 soal)
+    // ======================================================================
+    {
+        question: "Siapa yang membacakan teks Proklamasi Kemerdekaan Indonesia?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Ahmad Soebardjo", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Tanggal berapa Proklamasi Kemerdekaan Indonesia dibacakan?",
+        options: ["17 Agustus 1945", "18 Agustus 1945", "16 Agustus 1945", "19 Agustus 1945"],
+        correct: 0
+    },
+    {
+        question: "Di manakah teks Proklamasi dibacakan?",
+        options: ["Gedung Merdeka", "Jalan Pegangsaan Timur 56", "Istana Merdeka", "Gedung Sate"],
+        correct: 1
+    },
+    {
+        question: "Siapakah yang mengetik naskah Proklamasi?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Sayuti Melik", "Ahmad Soebardjo"],
+        correct: 2
+    },
+    {
+        question: "Berapa tahun Indonesia merdeka pada tahun 2026?",
+        options: ["80 tahun", "81 tahun", "82 tahun", "79 tahun"],
+        correct: 1
+    },
+    {
+        question: "Siapa yang pertama kali mengusulkan kata 'Proklamasi'?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Ahmad Soebardjo", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama rumah di Jalan Pegangsaan Timur 56?",
+        options: ["Rumah Soekarno", "Rumah Proklamasi", "Rumah Merdeka", "Rumah Garuda"],
+        correct: 1
+    },
+    {
+        question: "Siapa yang menjahit bendera Merah Putih untuk Proklamasi?",
+        options: ["Ibu Fatmawati", "Ibu Sukmawati", "Ibu Rahmawati", "Ibu Kartini"],
+        correct: 0
+    },
+    {
+        question: "Apa isi dari teks Proklamasi yang pertama?",
+        options: ["Kami bangsa Indonesia dengan ini menyatakan kemerdekaan Indonesia", "Indonesia merdeka", "Merdeka atau mati", "Sekali merdeka tetap merdeka"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menyusun teks Proklamasi bersama Soekarno?",
+        options: ["Moh. Hatta", "Ahmad Soebardjo", "Sayuti Melik", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama peristiwa penculikan Soekarno-Hatta?",
+        options: ["Peristiwa Rengasdengklok", "Peristiwa Proklamasi", "Peristiwa Surabaya", "Peristiwa Bandung"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang memimpin peristiwa Rengasdengklok?",
+        options: ["Chairul Saleh", "Wikana", "Soekarno", "Hatta"],
+        correct: 0
+    },
+    {
+        question: "Apa alasan pemuda menculik Soekarno-Hatta?",
+        options: ["Agar proklamasi segera dilaksanakan", "Ingin menggulingkan Soekarno", "Ingin berdamai dengan Jepang", "Ingin kemerdekaan ditunda"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menjabat sebagai Presiden pertama Indonesia?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Soepomo", "Ahmad Soebardjo"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menjabat sebagai Wakil Presiden pertama Indonesia?",
+        options: ["Moh. Hatta", "Ir. Soekarno", "Soepomo", "Ahmad Soebardjo"],
+        correct: 0
+    },
+    {
+        question: "Apa lambang negara Indonesia?",
+        options: ["Garuda Pancasila", "Bendera Merah Putih", "Padi dan Kapas", "Bintang"],
+        correct: 0
+    },
+    {
+        question: "Berapa sila dalam Pancasila?",
+        options: ["5", "6", "4", "7"],
+        correct: 0
+    },
+    {
+        question: "Sila pertama Pancasila berbunyi...",
+        options: ["Ketuhanan Yang Maha Esa", "Kemanusiaan yang Adil dan Beradab", "Persatuan Indonesia", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan"],
+        correct: 0
+    },
+    {
+        question: "Sila kedua Pancasila berbunyi...",
+        options: ["Kemanusiaan yang Adil dan Beradab", "Ketuhanan Yang Maha Esa", "Persatuan Indonesia", "Keadilan Sosial bagi Seluruh Rakyat Indonesia"],
+        correct: 0
+    },
+    {
+        question: "Sila ketiga Pancasila berbunyi...",
+        options: ["Persatuan Indonesia", "Ketuhanan Yang Maha Esa", "Kemanusiaan yang Adil dan Beradab", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan"],
+        correct: 0
+    },
+    {
+        question: "Sila keempat Pancasila berbunyi...",
+        options: ["Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan", "Keadilan Sosial bagi Seluruh Rakyat Indonesia", "Persatuan Indonesia", "Ketuhanan Yang Maha Esa"],
+        correct: 0
+    },
+    {
+        question: "Sila kelima Pancasila berbunyi...",
+        options: ["Keadilan Sosial bagi Seluruh Rakyat Indonesia", "Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan", "Persatuan Indonesia", "Kemanusiaan yang Adil dan Beradab"],
+        correct: 0
+    },
+    {
+        question: "Apa semboyan negara Indonesia yang tertulis di Garuda Pancasila?",
+        options: ["Bhinneka Tunggal Ika", "Merdeka", "Indonesia Raya", "Satyameva Jayate"],
+        correct: 0
+    },
+    {
+        question: "Bhinneka Tunggal Ika berarti...",
+        options: ["Berbeda-beda tetapi tetap satu", "Bersatu kita teguh", "Indonesia jaya", "Merdeka atau mati"],
+        correct: 0
+    },
+    {
+        question: "Apa dasar negara Indonesia?",
+        options: ["Pancasila", "UUD 1945", "Bhinneka Tunggal Ika", "Garuda Pancasila"],
+        correct: 0
+    },
+    {
+        question: "Kapan BPUPKI dibentuk?",
+        options: ["29 April 1945", "1 Maret 1945", "17 Agustus 1945", "1 Juni 1945"],
+        correct: 0
+    },
+    {
+        question: "Siapa ketua BPUPKI?",
+        options: ["Dr. Radjiman Wedyodiningrat", "Ir. Soekarno", "Moh. Hatta", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Kapan PPKI dibentuk?",
+        options: ["7 Agustus 1945", "17 Agustus 1945", "1 Juni 1945", "29 April 1945"],
+        correct: 0
+    },
+    {
+        question: "Siapa ketua PPKI?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Dr. Radjiman", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama sidang pertama BPUPKI?",
+        options: ["Sidang 29 Mei - 1 Juni 1945", "Sidang 10-17 Juli 1945", "Sidang Proklamasi", "Sidang Kemerdekaan"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang mengusulkan nama Pancasila?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Soepomo", "Muhammad Yamin"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang mengusulkan rumusan Pancasila pertama kali?",
+        options: ["Muhammad Yamin", "Ir. Soekarno", "Soepomo", "Moh. Hatta"],
+        correct: 0
+    },
+    {
+        question: "Apa nama peristiwa Pertempuran Surabaya?",
+        options: ["Peristiwa 10 November 1945", "Peristiwa 17 Agustus 1945", "Peristiwa 1 Juni 1945", "Peristiwa 29 April 1945"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang memimpin pertempuran Surabaya?",
+        options: ["Bung Tomo", "Jenderal Soedirman", "Ahmad Yani", "Gatot Soebroto"],
+        correct: 0
+    },
+    {
+        question: "Apa nama peristiwa Bandung Lautan Api?",
+        options: ["Peristiwa 24 Maret 1946", "Peristiwa 10 November 1945", "Peristiwa 17 Agustus 1945", "Peristiwa 1 Juni 1945"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang memimpin peristiwa Bandung Lautan Api?",
+        options: ["Mohammad Toha", "Bung Tomo", "Jenderal Soedirman", "Ahmad Yani"],
+        correct: 0
+    },
+    {
+        question: "Apa nama perjanjian yang mengakui kedaulatan Indonesia?",
+        options: ["Konferensi Meja Bundar", "Perjanjian Linggarjati", "Perjanjian Renville", "Perjanjian Roem-Royen"],
+        correct: 0
+    },
+    {
+        question: "Kapan Konferensi Meja Bundar dilaksanakan?",
+        options: ["23 Agustus - 2 November 1949", "15 November 1946", "17 Januari 1948", "7 Mei 1949"],
+        correct: 0
+    },
+    {
+        question: "Di mana Konferensi Meja Bundar dilaksanakan?",
+        options: ["Den Haag", "Jakarta", "Yogyakarta", "Bandung"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang mewakili Indonesia di KMB?",
+        options: ["Moh. Hatta", "Ir. Soekarno", "Soepomo", "Ahmad Soebardjo"],
+        correct: 0
+    },
+    {
+        question: "Apa hasil dari Konferensi Meja Bundar?",
+        options: ["Pengakuan kedaulatan Indonesia", "Perang berlanjut", "Indonesia dijajah kembali", "Tidak ada hasil"],
+        correct: 0
+    },
+    {
+        question: "Kapan Indonesia diakui secara de facto oleh Belanda?",
+        options: ["27 Desember 1949", "17 Agustus 1945", "15 November 1946", "17 Januari 1948"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menjabat sebagai Perdana Menteri pertama Indonesia?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Soepomo", "Sutan Sjahrir"],
+        correct: 3
+    },
+    {
+        question: "Apa nama kabinet pertama Indonesia?",
+        options: ["Kabinet Presidensial", "Kabinet Parlementer", "Kabinet Sjahrir", "Kabinet Soekarno"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menjabat sebagai Menteri Pendidikan pertama?",
+        options: ["Ki Hajar Dewantara", "Moh. Hatta", "Ir. Soekarno", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama lembaga pendidikan tinggi pertama di Indonesia?",
+        options: ["Universitas Gadjah Mada", "Universitas Indonesia", "ITB", "Unair"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menjabat sebagai Menteri Luar Negeri pertama?",
+        options: ["Ahmad Soebardjo", "Moh. Hatta", "Ir. Soekarno", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama bendera Indonesia?",
+        options: ["Sang Saka Merah Putih", "Merah Putih", "Bendera Pusaka", "Semua benar"],
+        correct: 3
+    },
+    {
+        question: "Siapa yang membawa bendera Merah Putih ke perundingan?",
+        options: ["Latief Hendraningrat", "Soekarno", "Hatta", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama lagu kebangsaan Indonesia?",
+        options: ["Indonesia Raya", "Indonesia Pusaka", "Bagimu Negeri", "Tanah Airku"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menciptakan lagu Indonesia Raya?",
+        options: ["W.R. Supratman", "Ibu Sud", "Kusbini", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Kapan lagu Indonesia Raya pertama kali diperdengarkan?",
+        options: ["28 Oktober 1928", "17 Agustus 1945", "1 Juni 1945", "29 April 1945"],
+        correct: 0
+    },
+    {
+        question: "Apa nama organisasi pemuda yang mengadakan Sumpah Pemuda?",
+        options: ["Kongres Pemuda II", "Kongres Pemuda I", "Budi Utomo", "Indische Partij"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang mencetuskan Sumpah Pemuda?",
+        options: ["Soegondo Djojopuspito", "Ir. Soekarno", "Moh. Hatta", "Ki Hajar Dewantara"],
+        correct: 0
+    },
+    {
+        question: "Apa isi Sumpah Pemuda?",
+        options: ["Satu tanah air, satu bangsa, satu bahasa", "Indonesia merdeka", "Merdeka atau mati", "Sekali merdeka tetap merdeka"],
+        correct: 0
+    },
+    {
+        question: "Kapan Sumpah Pemuda diikrarkan?",
+        options: ["28 Oktober 1928", "17 Agustus 1945", "1 Juni 1945", "29 April 1945"],
+        correct: 0
+    },
+    {
+        question: "Di mana Sumpah Pemuda diikrarkan?",
+        options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"],
+        correct: 0
+    },
+
+    // ======================================================================
+    // PAHLAWAN NASIONAL (38 soal)
+    // ======================================================================
+    {
+        question: "Siapa pahlawan yang dikenal sebagai 'Bapak Pendidikan Nasional'?",
+        options: ["Ki Hajar Dewantara", "RA. Kartini", "Ir. Soekarno", "Moh. Hatta"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan wanita dari Jepara yang memperjuangkan emansipasi wanita?",
+        options: ["RA. Kartini", "Dewi Sartika", "Cut Nyak Dien", "Martha Tiahahu"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Aceh yang berjuang melawan Belanda?",
+        options: ["Cut Nyak Dien", "Teuku Umar", "Tuanku Imam Bonjol", "Pangeran Diponegoro"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang memimpin Perang Diponegoro?",
+        options: ["Pangeran Diponegoro", "Pangeran Mangkubumi", "Sultan Agung", "Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Maluku yang dikenal sebagai 'Pattimura'?",
+        options: ["Thomas Matulessy", "Frans Kaisiepo", "Marthen Indey", "Johannes Leimena"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang disebut 'Bapak Koperasi Indonesia'?",
+        options: ["Moh. Hatta", "Ir. Soekarno", "Ki Hajar Dewantara", "Ahmad Yani"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Sulawesi Selatan yang gigih melawan Belanda?",
+        options: ["Sultan Hasanuddin", "Tuanku Imam Bonjol", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dikenal sebagai 'Singa Karawang'?",
+        options: ["Sultan Agung", "Pangeran Diponegoro", "Teuku Umar", "Tuanku Imam Bonjol"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Sumatra Barat yang berjuang melawan Belanda?",
+        options: ["Tuanku Imam Bonjol", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang berjasa dalam perang Aceh?",
+        options: ["Cut Nyak Dien", "RA. Kartini", "Ki Hajar Dewantara", "Moh. Hatta"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dijuluki 'Pangeran Antasari'?",
+        options: ["Pangeran Antasari", "Pangeran Diponegoro", "Sultan Hasanuddin", "Tuanku Imam Bonjol"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Kalimantan Selatan?",
+        options: ["Pangeran Antasari", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Papua yang memperjuangkan Irian Barat?",
+        options: ["Frans Kaisiepo", "Marthen Indey", "Thomas Matulessy", "Johannes Leimena"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dijuluki 'Jenderal Kecil'?",
+        options: ["Jenderal Soedirman", "Jenderal Ahmad Yani", "Jenderal Gatot Soebroto", "Jenderal Nasution"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang memimpin Perang Surabaya?",
+        options: ["Bung Tomo", "Jenderal Soedirman", "Ahmad Yani", "Gatot Soebroto"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang dijuluki 'Bapak Proklamator'?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Ki Hajar Dewantara", "RA. Kartini"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang dijuluki 'Bapak Koperasi'?",
+        options: ["Moh. Hatta", "Ir. Soekarno", "Ki Hajar Dewantara", "Ahmad Yani"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang berjasa di bidang pendidikan?",
+        options: ["Ki Hajar Dewantara", "RA. Kartini", "Cut Nyak Dien", "Dewi Sartika"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan wanita yang berjuang di Maluku?",
+        options: ["Martha Tiahahu", "Cut Nyak Dien", "RA. Kartini", "Dewi Sartika"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang berjuang di Sulawesi?",
+        options: ["Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar", "Tuanku Imam Bonjol"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang memimpin pasukan dalam Perang Padri?",
+        options: ["Tuanku Imam Bonjol", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Jawa Tengah yang melawan Belanda?",
+        options: ["Pangeran Diponegoro", "Sultan Agung", "Tuanku Imam Bonjol", "Sultan Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Yogyakarta yang dikenal sebagai 'Sultan'?",
+        options: ["Sultan Hamengkubuwono IX", "Pangeran Diponegoro", "Sultan Agung", "Sultan Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang berjasa dalam pembentukan Irian Barat?",
+        options: ["Frans Kaisiepo", "Marthen Indey", "Thomas Matulessy", "Johannes Leimena"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dijuluki 'Pangeran Antasari' dari Kalimantan?",
+        options: ["Pangeran Antasari", "Sultan Agung", "Pangeran Diponegoro", "Tuanku Imam Bonjol"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Banten yang melawan Belanda?",
+        options: ["Sultan Ageng Tirtayasa", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dikenal sebagai 'Pangeran Mangkubumi'?",
+        options: ["Hamengkubuwono I", "Pangeran Diponegoro", "Sultan Agung", "Sultan Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Bali yang berjuang melawan Belanda?",
+        options: ["I Gusti Ngurah Rai", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dikenal sebagai 'Pangeran Samudera'?",
+        options: ["Sultan Suriansyah", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Minahasa yang melawan Belanda?",
+        options: ["Sam Ratulangi", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dikenal sebagai 'Pangeran Hidayatullah'?",
+        options: ["Pangeran Hidayatullah", "Sultan Agung", "Pangeran Diponegoro", "Tuanku Imam Bonjol"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Lampung yang berjuang melawan Belanda?",
+        options: ["Radin Inten II", "Sultan Hasanuddin", "Pangeran Diponegoro", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dijuluki 'Bapak Republik Indonesia'?",
+        options: ["Ir. Soekarno", "Moh. Hatta", "Ki Hajar Dewantara", "RA. Kartini"],
+        correct: 0
+    },
+    {
+        question: "Siapa yang menjabat sebagai Perdana Menteri Indonesia pertama?",
+        options: ["Sutan Sjahrir", "Ir. Soekarno", "Moh. Hatta", "Soepomo"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Nusa Tenggara Timur?",
+        options: ["I.N. Koyobatu", "Frans Kaisiepo", "Sam Ratulangi", "Sultan Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Kalimantan Timur?",
+        options: ["Aji Muhammad Idris", "Pangeran Antasari", "Sultan Suriansyah", "Sam Ratulangi"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan dari Sumatra Selatan?",
+        options: ["Sultan Mahmud Badaruddin II", "Tuanku Imam Bonjol", "Sultan Hasanuddin", "Teuku Umar"],
+        correct: 0
+    },
+    {
+        question: "Siapa pahlawan yang dikenal sebagai 'Pahlawan Revolusi'?",
+        options: ["Jenderal Ahmad Yani", "Jenderal Soedirman", "Bung Tomo", "Ki Hajar Dewantara"],
+        correct: 0
+    },
+
+    // ======================================================================
+    // IPS, GEOGRAFI & MATEMATIKA (40 soal)
+    // ======================================================================
+    {
+        question: "Ibu kota Indonesia adalah...",
+        options: ["Jakarta", "Bandung", "Surabaya", "Yogyakarta"],
+        correct: 0
+    },
+    {
+        question: "Ibu kota Nusantara (IKN) berada di...",
+        options: ["Penajam Paser Utara", "Balikpapan", "Samarinda", "Banjarmasin"],
+        correct: 0
+    },
+    {
+        question: "Berapa jumlah provinsi di Indonesia pada tahun 2026?",
+        options: ["38", "34", "41", "35"],
+        correct: 0
+    },
+    {
+        question: "Pulau terbesar di Indonesia adalah...",
+        options: ["Kalimantan", "Sumatra", "Papua", "Jawa"],
+        correct: 0
+    },
+    {
+        question: "Gunung tertinggi di Indonesia adalah...",
+        options: ["Puncak Jaya", "Kerinci", "Rinjani", "Semeru"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 17 + 8 + 1945 - 2026?",
+        options: ["-56", "56", "-46", "46"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 45 × 17 - 765?",
+        options: ["0", "10", "5", "15"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 1945 - 17 × 5?",
+        options: ["1860", "1850", "1840", "1870"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 81 ÷ 9 + 17?",
+        options: ["26", "28", "24", "30"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 2026 - 1945?",
+        options: ["81", "80", "82", "79"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 17 × 9 - 45?",
+        options: ["108", "98", "118", "88"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 45 + 17 + 2026?",
+        options: ["2088", "2078", "2098", "2068"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 81 × 17?",
+        options: ["1377", "1367", "1387", "1357"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 2026 ÷ 17?",
+        options: ["119.17", "120.17", "118.17", "121.17"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 45 + 81 + 17?",
+        options: ["143", "153", "133", "163"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 1945 ÷ 5?",
+        options: ["389", "349", "399", "379"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 81 × 81?",
+        options: ["6561", "6461", "6661", "6761"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 17 × 17?",
+        options: ["289", "279", "299", "309"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 45 × 81?",
+        options: ["3645", "3545", "3745", "3845"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 2026 + 1945?",
+        options: ["3971", "3961", "3981", "3951"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 17 × 45?",
+        options: ["765", "755", "775", "785"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 81 - 17?",
+        options: ["64", "66", "62", "68"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 1945 ÷ 17?",
+        options: ["114.41", "115.41", "113.41", "116.41"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 2026 × 0?",
+        options: ["0", "2026", "1", "2025"],
+        correct: 0
+    },
+    {
+        question: "Apa nama selat yang memisahkan Jawa dan Sumatra?",
+        options: ["Selat Sunda", "Selat Madura", "Selat Bali", "Selat Lombok"],
+        correct: 0
+    },
+    {
+        question: "Apa nama selat yang memisahkan Bali dan Lombok?",
+        options: ["Selat Lombok", "Selat Sunda", "Selat Madura", "Selat Bali"],
+        correct: 0
+    },
+    {
+        question: "Apa nama laut di utara Jawa?",
+        options: ["Laut Jawa", "Laut Banda", "Laut Flores", "Laut Arafura"],
+        correct: 0
+    },
+    {
+        question: "Apa nama laut di timur Indonesia?",
+        options: ["Laut Banda", "Laut Jawa", "Laut Flores", "Laut Arafura"],
+        correct: 0
+    },
+    {
+        question: "Apa nama gunung berapi di Jawa Timur yang masih aktif?",
+        options: ["Gunung Semeru", "Gunung Bromo", "Gunung Merapi", "Gunung Kelud"],
+        correct: 0
+    },
+    {
+        question: "Apa nama gunung berapi di Yogyakarta yang masih aktif?",
+        options: ["Gunung Merapi", "Gunung Semeru", "Gunung Bromo", "Gunung Kelud"],
+        correct: 0
+    },
+    {
+        question: "Apa nama danau terbesar di Sumatra?",
+        options: ["Danau Toba", "Danau Kerinci", "Danau Tempe", "Danau Sentani"],
+        correct: 0
+    },
+    {
+        question: "Apa nama sungai terpanjang di Kalimantan?",
+        options: ["Sungai Kapuas", "Sungai Mahakam", "Sungai Musi", "Sungai Bengawan Solo"],
+        correct: 0
+    },
+    {
+        question: "Apa nama sungai terpanjang di Jawa?",
+        options: ["Sungai Bengawan Solo", "Sungai Kapuas", "Sungai Mahakam", "Sungai Musi"],
+        correct: 0
+    },
+    {
+        question: "Berapa jumlah pulau di Indonesia?",
+        options: ["17.000+", "15.000+", "19.000+", "13.000+"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pulau yang dikenal dengan 'Pulau Dewata'?",
+        options: ["Bali", "Lombok", "Sumbawa", "Flores"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pulau yang dikenal dengan 'Pulau Seribu'?",
+        options: ["Kepulauan Seribu", "Bali", "Lombok", "Sumbawa"],
+        correct: 0
+    },
+    {
+        question: "Apa nama ibukota provinsi Bali?",
+        options: ["Denpasar", "Mataram", "Kupang", "Ambon"],
+        correct: 0
+    },
+    {
+        question: "Apa nama ibukota provinsi NTT?",
+        options: ["Kupang", "Denpasar", "Mataram", "Ambon"],
+        correct: 0
+    },
+    {
+        question: "Apa nama ibukota provinsi Maluku?",
+        options: ["Ambon", "Kupang", "Denpasar", "Mataram"],
+        correct: 0
+    },
+    {
+        question: "Apa nama ibukota provinsi Sulawesi Selatan?",
+        options: ["Makassar", "Manado", "Kendari", "Palu"],
+        correct: 0
+    },
+
+    // ======================================================================
+    // BUDAYA, SENI & KERAGAMAN (42 soal)
+    // ======================================================================
+    {
+        question: "Tari Saman berasal dari provinsi mana?",
+        options: ["Aceh", "Sumatra Utara", "Sumatra Barat", "Riau"],
+        correct: 0
+    },
+    {
+        question: "Alat musik angklung berasal dari...",
+        options: ["Jawa Barat", "Jawa Tengah", "Jawa Timur", "Bali"],
+        correct: 0
+    },
+    {
+        question: "Rumah adat Honai berasal dari...",
+        options: ["Papua", "Maluku", "NTT", "NTB"],
+        correct: 0
+    },
+    {
+        question: "Makanan khas yang terbuat dari singkong adalah...",
+        options: ["Getuk", "Klepon", "Dawet", "Lemper"],
+        correct: 0
+    },
+    {
+        question: "Batik berasal dari daerah mana?",
+        options: ["Jawa", "Sumatra", "Kalimantan", "Sulawesi"],
+        correct: 0
+    },
+    {
+        question: "Tari Kecak berasal dari...",
+        options: ["Bali", "Jawa", "Sumatra", "Papua"],
+        correct: 0
+    },
+    {
+        question: "Rumah adat Gadang berasal dari...",
+        options: ["Sumatra Barat", "Aceh", "Riau", "Jambi"],
+        correct: 0
+    },
+    {
+        question: "Alat musik Gamelan berasal dari...",
+        options: ["Jawa", "Bali", "Sumatra", "Sulawesi"],
+        correct: 0
+    },
+    {
+        question: "Tari Pendet berasal dari...",
+        options: ["Bali", "Jawa", "Sumatra", "Papua"],
+        correct: 0
+    },
+    {
+        question: "Rumah adat Tongkonan berasal dari...",
+        options: ["Sulawesi Selatan", "Sumatra Utara", "Kalimantan", "Papua"],
+        correct: 0
+    },
+    {
+        question: "Alat musik Sasando berasal dari...",
+        options: ["NTT", "NTB", "Bali", "Jawa"],
+        correct: 0
+    },
+    {
+        question: "Tari Jaipong berasal dari...",
+        options: ["Jawa Barat", "Jawa Tengah", "Jawa Timur", "Bali"],
+        correct: 0
+    },
+    {
+        question: "Rumah adat Joglo berasal dari...",
+        options: ["Jawa Tengah", "Jawa Barat", "Jawa Timur", "Yogyakarta"],
+        correct: 0
+    },
+    {
+        question: "Alat musik Kolintang berasal dari...",
+        options: ["Sulawesi Utara", "Maluku", "Papua", "Kalimantan"],
+        correct: 0
+    },
+    {
+        question: "Tari Serimpi berasal dari...",
+        options: ["Jawa Tengah", "Jawa Barat", "Jawa Timur", "Yogyakarta"],
+        correct: 0
+    },
+    {
+        question: "Alat musik Tifa berasal dari...",
+        options: ["Maluku dan Papua", "Jawa", "Sumatra", "Bali"],
+        correct: 0
+    },
+    {
+        question: "Tari Piring berasal dari...",
+        options: ["Sumatra Barat", "Jawa", "Bali", "Papua"],
+        correct: 0
+    },
+    {
+        question: "Rumah adat Lamin berasal dari...",
+        options: ["Kalimantan", "Sumatra", "Jawa", "Sulawesi"],
+        correct: 0
+    },
+    {
+        question: "Alat musik Suling berasal dari...",
+        options: ["Jawa", "Sumatra", "Bali", "Semua daerah"],
+        correct: 3
+    },
+    {
+        question: "Tari Legong berasal dari...",
+        options: ["Bali", "Jawa", "Sumatra", "Papua"],
+        correct: 0
+    },
+    {
+        question: "Apa nama tarian tradisional dari Papua?",
+        options: ["Tari Perang", "Tari Kecak", "Tari Saman", "Tari Jaipong"],
+        correct: 0
+    },
+    {
+        question: "Apa nama makanan khas dari Bali?",
+        options: ["Babi Guling", "Sate Lilit", "Ayam Betutu", "Semua benar"],
+        correct: 3
+    },
+    {
+        question: "Apa nama makanan khas Padang?",
+        options: ["Rendang", "Sate", "Gudeg", "Rawon"],
+        correct: 0
+    },
+    {
+        question: "Apa nama makanan khas Yogyakarta?",
+        options: ["Gudeg", "Rendang", "Sate", "Rawon"],
+        correct: 0
+    },
+    {
+        question: "Apa nama makanan khas Surabaya?",
+        options: ["Rawon", "Gudeg", "Rendang", "Sate"],
+        correct: 0
+    },
+    {
+        question: "Apa nama makanan khas Makassar?",
+        options: ["Coto Makassar", "Rawon", "Gudeg", "Rendang"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pakaian adat dari Bali?",
+        options: ["Kebaya", "Baju Bodo", "Ulos", "Sarung"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pakaian adat dari Sumatera Utara?",
+        options: ["Ulos", "Kebaya", "Baju Bodo", "Sarung"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pakaian adat dari Sulawesi Selatan?",
+        options: ["Baju Bodo", "Ulos", "Kebaya", "Sarung"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pakaian adat dari Jawa?",
+        options: ["Kebaya", "Ulos", "Baju Bodo", "Sarung"],
+        correct: 0
+    },
+    {
+        question: "Apa nama senjata tradisional dari Bugis?",
+        options: ["Badik", "Keris", "Golok", "Pedang"],
+        correct: 0
+    },
+    {
+        question: "Apa nama senjata tradisional dari Aceh?",
+        options: ["Rencong", "Keris", "Badik", "Golok"],
+        correct: 0
+    },
+    {
+        question: "Apa nama senjata tradisional dari Jawa?",
+        options: ["Keris", "Badik", "Rencong", "Golok"],
+        correct: 0
+    },
+    {
+        question: "Apa nama upacara adat dari Toraja?",
+        options: ["Rambu Solo", "Ngaben", "Perang Topat", "Kasada"],
+        correct: 0
+    },
+    {
+        question: "Apa nama upacara adat dari Bali?",
+        options: ["Ngaben", "Rambu Solo", "Perang Topat", "Kasada"],
+        correct: 0
+    },
+    {
+        question: "Apa nama upacara adat dari Suku Baduy?",
+        options: ["Kawalu", "Ngaben", "Rambu Solo", "Perang Topat"],
+        correct: 0
+    },
+    {
+        question: "Apa nama tarian dari Maluku?",
+        options: ["Tari Cakalele", "Tari Saman", "Tari Kecak", "Tari Jaipong"],
+        correct: 0
+    },
+    {
+        question: "Apa nama tarian dari Sumatra Utara?",
+        options: ["Tari Tortor", "Tari Saman", "Tari Kecak", "Tari Jaipong"],
+        correct: 0
+    },
+
+    // ======================================================================
+    // LAGU & SENI MUSIK (22 soal)
+    // ======================================================================
+    {
+        question: "Lagu Indonesia Raya diciptakan oleh...",
+        options: ["W.R. Supratman", "Ibu Sud", "Kusbini", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Bagimu Negeri' diciptakan oleh...",
+        options: ["Kusbini", "W.R. Supratman", "Ibu Sud", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Indonesia Pusaka' diciptakan oleh...",
+        options: ["Kusbini", "W.R. Supratman", "Ibu Sud", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Halo-Halo Bandung' adalah lagu perjuangan dari...",
+        options: ["Bandung", "Jakarta", "Surabaya", "Yogyakarta"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Ibu Pertiwi' diciptakan oleh...",
+        options: ["Kusbini", "W.R. Supratman", "Ibu Sud", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Tanah Airku' diciptakan oleh...",
+        options: ["Ibu Sud", "Kusbini", "W.R. Supratman", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Dari Sabang sampai Merauke' diciptakan oleh...",
+        options: ["R. Soerarjo", "Kusbini", "Ibu Sud", "W.R. Supratman"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Satu Nusa Satu Bangsa' diciptakan oleh...",
+        options: ["Liberty Manik", "Kusbini", "W.R. Supratman", "Ibu Sud"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Berkibarlah Benderaku' diciptakan oleh...",
+        options: ["Ibu Sud", "Kusbini", "W.R. Supratman", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Maju Tak Gentar' diciptakan oleh...",
+        options: ["C. Simanjuntak", "W.R. Supratman", "Ibu Sud", "Kusbini"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Garuda Pancasila' diciptakan oleh...",
+        options: ["Ibu Sud", "Kusbini", "W.R. Supratman", "C. Simanjuntak"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Apuse' berasal dari daerah...",
+        options: ["Papua", "Maluku", "NTT", "NTB"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Yamko Rambe Yamko' berasal dari...",
+        options: ["Papua", "Maluku", "NTT", "NTB"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Ampar-Ampar Pisang' berasal dari...",
+        options: ["Kalimantan Selatan", "Kalimantan Timur", "Kalimantan Barat", "Kalimantan Tengah"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Solihin' berasal dari...",
+        options: ["Jawa Barat", "Jawa Tengah", "Jawa Timur", "Bali"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Pileuleuyan' berasal dari...",
+        options: ["Jawa Barat", "Jawa Tengah", "Jawa Timur", "Bali"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Gundul-Gundul Pacul' berasal dari...",
+        options: ["Jawa Tengah", "Jawa Barat", "Jawa Timur", "Yogyakarta"],
+        correct: 0
+    },
+    {
+        question: "Lagu 'Es Lilin' berasal dari...",
+        options: ["Jawa Barat", "Jawa Tengah", "Jawa Timur", "Bali"],
+        correct: 0
+    },
+
+    // ======================================================================
+    // TAMBAHAN LAINNYA (27 soal)
+    // ======================================================================
+    {
+        question: "Siapa presiden Indonesia ke-5?",
+        options: ["Megawati Soekarnoputri", "Abdurrahman Wahid", "BJ Habibie", "Susilo Bambang Yudhoyono"],
+        correct: 0
+    },
+    {
+        question: "Siapa presiden Indonesia ke-6?",
+        options: ["Susilo Bambang Yudhoyono", "Megawati", "Gus Dur", "Jokowi"],
+        correct: 0
+    },
+    {
+        question: "Siapa presiden Indonesia ke-7?",
+        options: ["Joko Widodo", "SBY", "Megawati", "Gus Dur"],
+        correct: 0
+    },
+    {
+        question: "Siapa wakil presiden Indonesia ke-10?",
+        options: ["Ma'ruf Amin", "Jusuf Kalla", "Boediono", "Sri Mulyani"],
+        correct: 0
+    },
+    {
+        question: "Siapa wakil presiden Indonesia ke-11?",
+        options: ["Gibran Rakabuming Raka", "Ma'ruf Amin", "Jusuf Kalla", "Boediono"],
+        correct: 0
+    },
+    {
+        question: "Apa nama monumen di Jakarta?",
+        options: ["Monas", "Tugu Muda", "Tugu Jogja", "Tugu Pahlawan"],
+        correct: 0
+    },
+    {
+        question: "Apa nama monumen di Surabaya?",
+        options: ["Tugu Pahlawan", "Monas", "Tugu Muda", "Tugu Jogja"],
+        correct: 0
+    },
+    {
+        question: "Apa nama monumen di Yogyakarta?",
+        options: ["Tugu Jogja", "Monas", "Tugu Pahlawan", "Tugu Muda"],
+        correct: 0
+    },
+    {
+        question: "Apa nama monumen di Semarang?",
+        options: ["Tugu Muda", "Monas", "Tugu Pahlawan", "Tugu Jogja"],
+        correct: 0
+    },
+    {
+        question: "Apa nama bandara di Bali?",
+        options: ["Ngurah Rai", "Soekarno-Hatta", "Juanda", "Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Apa nama bandara di Jakarta?",
+        options: ["Soekarno-Hatta", "Ngurah Rai", "Juanda", "Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Apa nama bandara di Surabaya?",
+        options: ["Juanda", "Ngurah Rai", "Soekarno-Hatta", "Hasanuddin"],
+        correct: 0
+    },
+    {
+        question: "Apa nama bandara di Makassar?",
+        options: ["Hasanuddin", "Juanda", "Ngurah Rai", "Soekarno-Hatta"],
+        correct: 0
+    },
+    {
+        question: "Apa nama jembatan terkenal di Surabaya?",
+        options: ["Jembatan Suramadu", "Jembatan Ampera", "Jembatan Semanggi", "Jembatan Barito"],
+        correct: 0
+    },
+    {
+        question: "Apa nama jembatan terkenal di Palembang?",
+        options: ["Jembatan Ampera", "Jembatan Suramadu", "Jembatan Semanggi", "Jembatan Barito"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pelabuhan di Jakarta?",
+        options: ["Tanjung Priok", "Tanjung Perak", "Tanjung Bara", "Tanjung Emas"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pelabuhan di Surabaya?",
+        options: ["Tanjung Perak", "Tanjung Priok", "Tanjung Bara", "Tanjung Emas"],
+        correct: 0
+    },
+    {
+        question: "Apa nama pelabuhan di Semarang?",
+        options: ["Tanjung Emas", "Tanjung Priok", "Tanjung Perak", "Tanjung Bara"],
+        correct: 0
+    },
+    {
+        question: "Apa nama gunung tertinggi di Pulau Sumatra?",
+        options: ["Gunung Kerinci", "Gunung Sinabung", "Gunung Marapi", "Gunung Toba"],
+        correct: 0
+    },
+    {
+        question: "Apa nama gunung tertinggi di Pulau Jawa?",
+        options: ["Gunung Semeru", "Gunung Merapi", "Gunung Bromo", "Gunung Arjuno"],
+        correct: 0
+    },
+    {
+        question: "Apa nama gunung tertinggi di Pulau Kalimantan?",
+        options: ["Gunung Kinabalu", "Gunung Meratus", "Gunung Katingan", "Gunung Saran"],
+        correct: 0
+    },
+    {
+        question: "Apa nama gunung tertinggi di Pulau Sulawesi?",
+        options: ["Gunung Rantemario", "Gunung Bawakaraeng", "Gunung Lompobattang", "Gunung Klabat"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 81 × 45?",
+        options: ["3645", "3545", "3745", "3845"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 17 × 45?",
+        options: ["765", "755", "775", "785"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 2026 - 17?",
+        options: ["2009", "2019", "1999", "2005"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 1945 + 81?",
+        options: ["2026", "2016", "2036", "2006"],
+        correct: 0
+    },
+    {
+        question: "Berapa hasil dari 17 × 81?",
+        options: ["1377", "1367", "1387", "1357"],
+        correct: 0
+    }
+];
+
+// ============================================================
+// SISTEM QUIZ (TETAP SAMA)
+// ============================================================
+
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let correct = 0;
+let wrong = 0;
+let timer = 10;
+let timerInterval = null;
+let isAnswered = false;
+let times = [];
+let level = 'easy';
+
+// 10 KATA-KATA MOTIVASI KEMERDEKAAN
+const motivationalMessages = [
+    "🇮🇩 'Merdeka! Kita telah merdeka! Tapi perjuangan belum selesai, karena membangun bangsa adalah perjuangan seumur hidup.' — Ir. Soekarno",
+    "🇮🇩 'Bangsaku yang tercinta, janganlah kamu lupa pada sejarah perjuanganmu. Karena dari sanalah kita belajar untuk terus maju.'",
+    "🇮🇩 'Kemerdekaan bukanlah akhir dari perjuangan, melainkan awal dari pengabdian untuk tanah air tercinta.'",
+    "🇮🇩 'Semangat 45 adalah semangat untuk terus berjuang, tidak menyerah, dan selalu optimis menyongsong masa depan.'",
+    "🇮🇩 'Bangsa yang besar adalah bangsa yang menghargai jasa para pahlawannya. Teruslah belajar dan berjuang!'",
+    "🇮🇩 'Indonesia adalah tanah air kita, tempat kita dilahirkan dan akan kita pertahankan sampai titik darah penghabisan.'",
+    "🇮🇩 'Merdeka bukan hanya dari penjajahan fisik, tetapi juga dari kebodohan dan kemiskinan. Mari kita bangun Indonesia!'",
+    "🇮🇩 'Kemerdekaan adalah hak segala bangsa. Oleh karena itu, kita harus terus menjaga dan mengisi kemerdekaan dengan karya.'",
+    "🇮🇩 'Indonesia Raya! Mari kita kobarkan semangat persatuan dan kesatuan untuk Indonesia yang lebih baik.'",
+    "🇮🇩 'Jangan pernah lupa bahwa kemerdekaan ini diraih dengan tetesan darah dan air mata para pahlawan. Hargai dan jaga selalu!'"
+];
+
+// DOM Elements
+const levelSelection = document.getElementById('levelSelection');
+const quizArea = document.getElementById('quizArea');
+const resultArea = document.getElementById('resultArea');
+const questionText = document.getElementById('questionText');
+const optionsContainer = document.getElementById('optionsContainer');
+const questionCounter = document.getElementById('questionCounter');
+const progressFill = document.getElementById('progressFill');
+const timerDisplay = document.getElementById('timerDisplay');
+const finalScore = document.getElementById('finalScore');
+const totalQuestions = document.getElementById('totalQuestions');
+const correctCount = document.getElementById('correctCount');
+const wrongCount = document.getElementById('wrongCount');
+const avgTimeResult = document.getElementById('avgTimeResult');
+const resultMessage = document.getElementById('resultMessage');
+const feedbackBtn = document.getElementById('feedbackBtn');
+
+// ============================================================
+// MUSIC PLAYER - INDONESIA RAYA
+// ============================================================
+const musicBtn = document.getElementById('musicBtn');
+let isMusicPlaying = false;
+let musicAudio = null;
+
+musicBtn.addEventListener('click', function() {
+    if (!musicAudio) {
+        musicAudio = new Audio('IDN.mp3');
+        musicAudio.loop = true;
+        musicAudio.volume = 0.5;
+    }
+
+    if (isMusicPlaying) {
+        musicAudio.pause();
+        isMusicPlaying = false;
+        musicBtn.classList.remove('playing');
+        musicBtn.innerHTML = '🎵 Putar Lagu';
+    } else {
+        musicAudio.play().catch(() => {
+            // Fallback jika file tidak ditemukan
+            musicBtn.innerHTML = '⚠️ File Tidak Ditemukan';
+            setTimeout(() => {
+                musicBtn.innerHTML = '🎵 Putar Lagu';
+            }, 2000);
+        });
+        isMusicPlaying = true;
+        musicBtn.classList.add('playing');
+        musicBtn.innerHTML = '⏹️ Hentikan Lagu';
+    }
+});
+
+// ============================================================
+// SOUND EFFECT - WEB AUDIO API
+// ============================================================
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+function playSound(type) {
+    try {
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        if (type === 'benar') {
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523, audioCtx.currentTime);
+            osc.frequency.setValueAtTime(659, audioCtx.currentTime + 0.1);
+            osc.frequency.setValueAtTime(784, audioCtx.currentTime + 0.2);
+            gain.gain.setValueAtTime(0.25, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.35);
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.35);
+        } else if (type === 'salah') {
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(400, audioCtx.currentTime);
+            osc.frequency.exponentialRampToValueAtTime(200, audioCtx.currentTime + 0.3);
+            gain.gain.setValueAtTime(0.15, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.3);
+            osc.start(audioCtx.currentTime);
+            osc.stop(audioCtx.currentTime + 0.3);
+        }
+    } catch (e) {}
+}
+
+// Level Buttons
+document.querySelectorAll('.level-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        level = btn.dataset.level;
+        startQuiz(level);
+    });
+});
+
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+}
+
+function shuffleOptions(question) {
+    const indices = [0, 1, 2, 3];
+    const shuffledIndices = shuffleArray([...indices]);
+    const shuffledOptions = shuffledIndices.map(i => question.options[i]);
+    const newCorrectIndex = shuffledIndices.indexOf(question.correct);
+    return {
+        options: shuffledOptions,
+        correct: newCorrectIndex
+    };
+}
+
+function startQuiz(level) {
+    let total = 20;
+    if (level === 'medium') total = 50;
+    if (level === 'hard') total = 150;
+
+    let pool = shuffleArray([...allQuestions]);
+    pool = pool.map(q => {
+        const shuffled = shuffleOptions(q);
+        return {
+            question: q.question,
+            options: shuffled.options,
+            correct: shuffled.correct
+        };
+    });
+
+    currentQuestions = pool.slice(0, total);
+
+    currentIndex = 0;
+    score = 0;
+    correct = 0;
+    wrong = 0;
+    times = [];
+    isAnswered = false;
+
+    levelSelection.style.display = 'none';
+    quizArea.classList.add('active');
+    resultArea.classList.remove('active');
+    
+    // SEMBUNYIKAN TOMBOL KRITIK & SARAN SAAT QUIZ DIMULAI
+    feedbackBtn.classList.add('hidden');
+
+    renderQuestion();
+}
+
+function renderQuestion() {
+    if (currentIndex >= currentQuestions.length) {
+        showResult();
+        return;
+    }
+
+    const q = currentQuestions[currentIndex];
+    questionText.textContent = q.question;
+    questionCounter.textContent = `Soal ${currentIndex + 1} / ${currentQuestions.length}`;
+    progressFill.style.width = `${((currentIndex + 1) / currentQuestions.length) * 100}%`;
+
+    optionsContainer.innerHTML = '';
+    const labels = ['A', 'B', 'C', 'D'];
+    q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = `${labels[idx]}. ${opt}`;
+        btn.dataset.index = idx;
+        btn.addEventListener('click', () => selectAnswer(idx));
+        optionsContainer.appendChild(btn);
+    });
+
+    isAnswered = false;
+    timer = 10;
+    timerDisplay.textContent = '⏱️ 10';
+    timerDisplay.classList.remove('warning');
+    clearInterval(timerInterval);
+    timerInterval = setInterval(() => {
+        timer--;
+        timerDisplay.textContent = `⏱️ ${timer}`;
+        if (timer <= 3) timerDisplay.classList.add('warning');
+        if (timer <= 0) {
+            clearInterval(timerInterval);
+            if (!isAnswered) {
+                isAnswered = true;
+                wrong++;
+                document.querySelectorAll('.option-btn').forEach(b => b.classList.add('disabled'));
+                document.querySelectorAll('.option-btn')[q.correct].classList.add('correct');
+                playSound('salah');
+                setTimeout(() => {
+                    currentIndex++;
+                    renderQuestion();
+                }, 1000);
+            }
+        }
+    }, 1000);
+}
+
+function selectAnswer(idx) {
+    if (isAnswered) return;
+    isAnswered = true;
+    clearInterval(timerInterval);
+
+    const q = currentQuestions[currentIndex];
+    const buttons = document.querySelectorAll('.option-btn');
+    const timeTaken = 10 - timer;
+
+    times.push(timeTaken);
+
+    if (idx === q.correct) {
+        correct++;
+        const bonus = timeTaken <= 5 ? 20 : 10;
+        const point = 10 + bonus;
+        score += point;
+        buttons[idx].classList.add('correct');
+        playSound('benar');
+    } else {
+        wrong++;
+        buttons[idx].classList.add('wrong');
+        buttons[q.correct].classList.add('correct');
+        playSound('salah');
+    }
+
+    buttons.forEach(b => b.classList.add('disabled'));
+
+    setTimeout(() => {
+        currentIndex++;
+        renderQuestion();
+    }, 1000);
+}
+
+function showResult() {
+    quizArea.classList.remove('active');
+    resultArea.classList.add('active');
+    
+    // TOMBOL KRITIK & SARAN TETAP HILANG SAAT RESULT
+    feedbackBtn.classList.add('hidden');
+
+    const total = currentQuestions.length;
+    finalScore.textContent = score;
+    totalQuestions.textContent = total;
+    correctCount.textContent = correct;
+    wrongCount.textContent = wrong;
+
+    const avgTime = times.length > 0 ? times.reduce((a, b) => a + b, 0) / times.length : 0;
+    avgTimeResult.textContent = avgTime.toFixed(1) + 's';
+
+    const randomMotivation = motivationalMessages[Math.floor(Math.random() * motivationalMessages.length)];
+
+    let msg = '';
+    const percentage = (score / (total * 20)) * 100;
+
+    if (percentage >= 90) {
+        msg = '🏆🔥 ' + randomMotivation;
+        triggerFireworks();
+    } else if (percentage >= 70) {
+        msg = '💪✨ ' + randomMotivation;
+    } else if (percentage >= 50) {
+        msg = '📚🇮🇩 ' + randomMotivation;
+    } else if (percentage >= 30) {
+        msg = '💪📚 ' + randomMotivation;
+    } else {
+        msg = '❤️🤍 ' + randomMotivation;
+    }
+
+    resultMessage.textContent = msg;
+}
+
+function resetQuiz() {
+    resultArea.classList.remove('active');
+    levelSelection.style.display = 'block';
+    quizArea.classList.remove('active');
+    document.getElementById('fireworksContainer').style.display = 'none';
+    clearInterval(timerInterval);
+    
+    // MUNCULKAN KEMBALI TOMBOL KRITIK & SARAN SAAT KEMBALI KE LOBBY
+    feedbackBtn.classList.remove('hidden');
+}
+
+// ============================================================
+// FIREWORKS EFFECT
+// ============================================================
+
+function triggerFireworks() {
+    const container = document.getElementById('fireworksContainer');
+    container.style.display = 'block';
+
+    const colors = ['#ff0000', '#ffd700', '#00ff00', '#ff69b4', '#00bfff', '#ff4500', '#ffffff', '#ff1493'];
+
+    for (let i = 0; i < 50; i++) {
+        const firework = document.createElement('div');
+        firework.className = 'firework';
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        const angle = Math.random() * Math.PI * 2;
+        const distance = 60 + Math.random() * 120;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance;
+
+        firework.style.left = x + '%';
+        firework.style.top = y + '%';
+        firework.style.setProperty('--tx', tx + 'px');
+        firework.style.setProperty('--ty', ty + 'px');
+        firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+        firework.style.width = (4 + Math.random() * 6) + 'px';
+        firework.style.height = firework.style.width;
+        firework.style.animationDuration = (1 + Math.random() * 1.2) + 's';
+
+        container.appendChild(firework);
+
+        setTimeout(() => firework.remove(), 2500);
+    }
+
+    setTimeout(() => {
+        container.style.display = 'none';
+    }, 3000);
+}
+
+// ============================================================
+// BENDERA BERKIBAR - RINGAN
+// ============================================================
+
+function createFlags() {
+    const container = document.getElementById('flagContainer');
+    const flagCount = Math.max(5, Math.floor(window.innerWidth / 120));
+    for (let i = 0; i < flagCount; i++) {
+        const flag = document.createElement('div');
+        flag.className = 'flag';
+        flag.style.width = (window.innerWidth / flagCount) + 'px';
+        flag.innerHTML = '<div class="flag-red"></div><div class="flag-white"></div>';
+        flag.style.animationDelay = (i * 0.2) + 's';
+        flag.style.animationDuration = (2.5 + Math.random() * 1) + 's';
+        container.appendChild(flag);
+    }
+}
+
+createFlags();
+
+window.addEventListener('resize', () => {
+    document.getElementById('flagContainer').innerHTML = '';
+    createFlags();
+});
+
+// ============================================================
+// BAMBU JATUH - DIKITIN (3 per 1.5 detik)
+// ============================================================
+
+function createBamboos() {
+    const container = document.getElementById('bambooContainer');
+    const bambooEmojis = ['🎋', '🇮🇩', '🔥'];
+    // Hanya 10 bambu total
+    for (let i = 0; i < 10; i++) {
+        const bamboo = document.createElement('div');
+        bamboo.className = 'bamboo';
+        bamboo.textContent = bambooEmojis[Math.floor(Math.random() * bambooEmojis.length)];
+        bamboo.style.left = Math.random() * 100 + '%';
+        bamboo.style.fontSize = (20 + Math.random() * 20) + 'px';
+        bamboo.style.animationDuration = (10 + Math.random() * 2) + 's';
+        bamboo.style.animationDelay = (Math.random() * 12) + 's';
+        container.appendChild(bamboo);
+    }
+}
+
+createBamboos();
+
+// ============================================================
+// API / OBOR EFEK PARTIKEL - DIKITIN (8 partikel)
+// ============================================================
+
+function createFireParticles() {
+    const colors = ['#ff6b00', '#ff4500', '#ff8c00', '#ffd700'];
+    for (let i = 0; i < 8; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'fire-particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = (80 + Math.random() * 15) + '%';
+        particle.style.width = (3 + Math.random() * 6) + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.boxShadow = '0 0 15px ' + particle.style.background;
+        particle.style.animationDuration = (2 + Math.random() * 2) + 's';
+        particle.style.animationDelay = (Math.random() * 4) + 's';
+        document.body.appendChild(particle);
+    }
+}
+
+createFireParticles();
+
+console.log('🇮🇩 SELAMAT HUT RI KE-81! MERDEKA!!! 🔥🎉');
+console.log('🔥 TOTAL SOAL: ' + allQuestions.length + ' SOAL UNIK!');
+console.log('🎵 Sound effect: Benar & Salah (Web Audio)');
+console.log('🎋 Efek dikit: 10 bambu, 8 api, 5+ bendera');
+console.log('🖼️ Bingkai LZ.png berdenyut pelan!');
+console.log('🎵 Tombol Lagu Indonesia Raya di pojok kanan atas!');
+console.log('📧 Tombol Kritik & Saran hanya muncul di LOBBY!');
+</script>
+</body>
+</html>
