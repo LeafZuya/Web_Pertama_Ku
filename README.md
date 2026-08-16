@@ -722,6 +722,56 @@
 
 </div>
        </div>
+      <div class="card" style="
+      border: 3px solid #000;
+      background: linear-gradient(135deg, #d90000, #ffffff, #ff0202, #e3b1b1);
+      color: #000;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  ">
+
+      <h2 style="text-align:center; color:#000; font-weight:bold;">
+          🇮🇩QUIZ SPESIAL HARI KEMERDEKAAN (Limited Event)🔥
+      </h2>
+
+      <!-- Gambar Ilustrasi -->
+      <!-- Gambar Ilustrasi GOLD FRAME Mewah -->
+  <div style="text-align:center; margin-bottom:15px;">
+      <div class="gold-frame" onclick="playFrameSound()">
+          <img src="Merdeka.png" alt="Support Palestine">
+      </div>
+    
+
+      <!-- Sound Efek -->
+      <audio id="frameSound" src="IDN.mp3"></audio>
+      <script>
+  function playFrameSound() {
+      const audio = document.getElementById("frameSound");
+      audio.currentTime = 0;
+      audio.play();
+  }
+  </script>
+  </div>
+
+      <!-- Tombol PNG Menuju Website Donasi -->
+      <div class="donate-btn-wrapper">
+      <a href="Miami.html" target="_blank"
+          class="donate-btn">
+          <img src="MerdekaT.png" alt="Donasi Palestina">
+      </a>
+      
+  </div>
+
+      <!-- Deskripsi -->
+      <p style="text-align:center; background:#ff5c5c; padding:10px; border-radius:10px;">
+          <b>"🇮🇩 'Bangsaku yang tercinta, janganlah kamu lupa pada sejarah perjuanganmu. Karena dari sanalah kita belajar untuk terus maju.'"</b><br>
+          
+          <b>~By:LeafZuya</b>
+      </p>
+      
+      <p style="text-align:center; background:#ffffff; padding:10px; border-radius:10px;">Gass Aja Mainin,bakal Di Tutup saat <b>25 Agustus 2026</b> Awokawokawok</p>
+  </div>
        <div class="card" style="
       border: 3px solid #000;
       background: linear-gradient(135deg, #1a1a1a, #ffffff, #009739, #ce1126);
@@ -773,6 +823,7 @@
       
       <p style="text-align:center; background:#fff; padding:10px; border-radius:10px;">Nanti Kalian Akan Diarahkan Ke <b>WEBSITE/SITUS RESMI DAN AMAN</b> untuk Menyumbangkan Amal Sumbangan...Jadi Uang-Nya Tidak Masuk Ke <b>REKENING PRIBADI-KU</b> Yahh!!...</p>
   </div>
+      
       <div class="card">
         <h2>📘 Pelajaran Favorit</h2>
         <p>Matematika & Informatika 💚💙 Karena Melatih Berpikir Kritis dalam menyelesaikan Sesuatu Masalah...!!!!! hehe...gak jelas ah...</p>
